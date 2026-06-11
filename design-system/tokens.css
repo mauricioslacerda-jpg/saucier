@@ -1,0 +1,161 @@
+/* ============================================================
+   SAUCIER — Design Tokens
+   Marca: Saucier Molhos Artesanais
+   Tagline: "Por uma vida com mais tempero!"
+   ------------------------------------------------------------
+   Cor primária ancorada no logo oficial: #CC541C
+   (amostrada por pixel de saucier_logo_Prancheta 1 cópia 2.png)
+   HSL base: 19° 76% 45%
+   Formato HSL para permitir variações programáticas e alpha.
+   ============================================================ */
+
+:root {
+  /* ---------- MARCA / PRIMÁRIA (laranja terracota Saucier) ---------- */
+  --saucier-orange: 19 76% 45%;          /* #CC541C — cor oficial, base 500 */
+
+  --orange-50:  19 80% 96%;
+  --orange-100: 19 78% 90%;
+  --orange-200: 19 77% 80%;
+  --orange-300: 19 76% 68%;
+  --orange-400: 19 76% 56%;
+  --orange-500: 19 76% 45%;              /* #CC541C — oficial */
+  --orange-600: 19 78% 38%;
+  --orange-700: 19 80% 30%;
+  --orange-800: 19 82% 23%;
+  --orange-900: 19 84% 16%;
+
+  /* ---------- NEUTROS (preto do logo + brancos) ---------- */
+  /* leve calor (h=20) para harmonizar com o laranja */
+  --neutral-0:   0 0% 100%;              /* branco puro — fundo de marca */
+  --neutral-50:  20 14% 97%;
+  --neutral-100: 20 12% 94%;
+  --neutral-200: 20 10% 88%;
+  --neutral-300: 20  8% 78%;
+  --neutral-400: 20  6% 62%;
+  --neutral-500: 20  5% 46%;
+  --neutral-600: 20  6% 34%;
+  --neutral-700: 20  8% 24%;
+  --neutral-800: 20 10% 15%;
+  --neutral-900: 20 12% 9%;
+  --neutral-950: 20 14% 5%;              /* quase-preto do logo */
+
+  /* ---------- SEMÂNTICAS ---------- */
+  --success: 142 55% 38%;
+  --warning: 38 92% 50%;
+  --error:   0 72% 48%;
+  --info:    205 75% 45%;
+
+  /* ============================================================
+     TOKENS SEMÂNTICOS (modo claro) — referenciam a paleta acima
+     ============================================================ */
+  --bg:            var(--neutral-0);
+  --bg-subtle:     var(--neutral-50);
+  --bg-muted:      var(--neutral-100);
+  --surface:       var(--neutral-0);
+  --surface-raised:var(--neutral-0);
+
+  --text:          var(--neutral-950);
+  --text-muted:    var(--neutral-600);
+  --text-subtle:   var(--neutral-500);
+  --text-on-brand: var(--neutral-0);     /* branco sobre laranja/preto */
+
+  --brand:         var(--orange-500);
+  --brand-hover:   var(--orange-600);
+  --brand-active:  var(--orange-700);
+  --brand-subtle:  var(--orange-50);
+
+  --border:        var(--neutral-200);
+  --border-strong: var(--neutral-300);
+  --ring:          var(--orange-500);
+
+  /* ---------- TIPOGRAFIA ---------- */
+  /* Display = Bebas Neue (oficial, condensada — ecoa "MOLHOS ARTESANAIS").
+     Corpo  = Inter (neutra, legível; substituível por system-ui).        */
+  --font-display: "Bebas Neue", "Anton", Impact, sans-serif;
+  --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Escala tipográfica (1.250 — major third) */
+  --text-xs:   0.75rem;   /* 12 */
+  --text-sm:   0.875rem;  /* 14 */
+  --text-base: 1rem;      /* 16 */
+  --text-lg:   1.25rem;   /* 20 */
+  --text-xl:   1.563rem;  /* 25 */
+  --text-2xl:  1.953rem;  /* 31 */
+  --text-3xl:  2.441rem;  /* 39 */
+  --text-4xl:  3.052rem;  /* 49 */
+  --text-5xl:  3.815rem;  /* 61 */
+
+  --leading-tight:  1.1;
+  --leading-snug:   1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.65;
+
+  /* Bebas Neue pede tracking levemente positivo em caixa-alta */
+  --tracking-display: 0.02em;
+  --tracking-wide:    0.06em;
+  --tracking-normal:  0;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-bold:    700;
+
+  /* ---------- ESPAÇAMENTO (grade base 4px) ---------- */
+  --space-1: 0.25rem;  /* 4  */
+  --space-2: 0.5rem;   /* 8  */
+  --space-3: 0.75rem;  /* 12 */
+  --space-4: 1rem;     /* 16 */
+  --space-6: 1.5rem;   /* 24 */
+  --space-8: 2rem;     /* 32 */
+  --space-12:3rem;     /* 48 */
+  --space-16:4rem;     /* 64 */
+  --space-24:6rem;     /* 96 */
+
+  /* ---------- RAIO (a marca usa a "pílula" — arredondamento forte) ---------- */
+  --radius-sm:   0.375rem;
+  --radius-md:   0.625rem;
+  --radius-lg:   1rem;
+  --radius-xl:   1.5rem;
+  --radius-pill: 9999px;     /* assinatura visual: MOLHOS ARTESANAIS */
+
+  /* ---------- SOMBRAS (quentes, ancoradas no laranja) ---------- */
+  --shadow-sm: 0 1px 2px hsl(20 30% 10% / 0.08);
+  --shadow-md: 0 4px 12px hsl(20 30% 10% / 0.10);
+  --shadow-lg: 0 12px 32px hsl(20 30% 10% / 0.14);
+  --shadow-brand: 0 8px 24px hsl(var(--orange-500) / 0.32);
+
+  /* ---------- MOVIMENTO ---------- */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+}
+
+/* ============================================================
+   MODO ESCURO — fundo quase-preto do logo, laranja como protagonista
+   ============================================================ */
+:root[data-theme="dark"],
+.dark {
+  --bg:            var(--neutral-950);
+  --bg-subtle:     var(--neutral-900);
+  --bg-muted:      var(--neutral-800);
+  --surface:       var(--neutral-900);
+  --surface-raised:var(--neutral-800);
+
+  --text:          var(--neutral-50);
+  --text-muted:    var(--neutral-300);
+  --text-subtle:   var(--neutral-400);
+  --text-on-brand: var(--neutral-0);
+
+  --brand:         19 66% 58%;           /* regra 70/60 (#37 Zander): laranja é cor quente, satura menos no dark */
+  --brand-hover:   var(--orange-300);
+  --brand-active:  var(--orange-200);
+  --brand-subtle:  var(--neutral-800);
+
+  --border:        var(--neutral-700);
+  --border-strong: var(--neutral-600);
+  --ring:          var(--orange-400);
+
+  --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.4);
+  --shadow-md: 0 4px 12px hsl(0 0% 0% / 0.5);
+  --shadow-lg: 0 12px 32px hsl(0 0% 0% / 0.6);
+}
