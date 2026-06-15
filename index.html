@@ -3,8 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#CC541C">
+<meta name="author" content="Mauricio Lacerda — Saucier Molhos Artesanais">
+<link rel="icon" type="image/png" href="design-system/assets/saucier-logo-laranja.png">
+
+<!-- ════════════ TRACKING · CAMINHO PRONTO (trocar os IDs) ════════════
+     Arquitetura recomendada: GTM é o container ÚNICO. Dentro dele você
+     configura GA4 + Meta Pixel SEM tocar neste código. Os eventos
+     'generate_lead' (dataLayer) e 'Lead' (fbq) já disparam no submit.
+     Passo a passo em: tracking-setup.md
+═══════════════════════════════════════════════════════════════════════ -->
+<!-- Google Tag Manager  · TROCAR GTM-XXXXXXX -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<!-- End Google Tag Manager -->
+
+<!-- ALTERNATIVA sem GTM (descomente UMA das abordagens, não as duas):
+  GA4 direto · TROCAR G-XXXXXXXXXX
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+
+  Meta Pixel direto · TROCAR 000000000000000
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,
+  'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','000000000000000');
+  fbq('track','PageView');</script>
+-->
+<!-- ════════════ fim tracking ════════════ -->
+
 <title>Saucier · Por uma vida com mais tempero</title>
-<meta name="description" content="Curso online de molhos artesanais com técnica de cozinha profissional, no seu fogão de casa. 11 módulos, 40+ molhos, do clássico ao autoral. Comece pelo ebook grátis com 10 receitas de pesto.">
+<meta name="description" content="Curso online de molhos artesanais com técnica de cozinha profissional, no seu fogão de casa. 10 módulos e 2 bônus, 40+ molhos, do clássico ao autoral. Comece pelo ebook grátis com 10 receitas de pesto.">
 <link rel="canonical" href="https://www.saucier.com.br/">
 
 <!-- Open Graph / redes sociais -->
@@ -38,7 +73,7 @@
   "@context": "https://schema.org",
   "@type": "Course",
   "name": "Curso de Molhos Artesanais Saucier",
-  "description": "Curso online de molhos artesanais com técnica de cozinha profissional. 11 módulos e mais de 40 molhos, dos molhos-mãe franceses aos sabores autorais brasileiros, cada um com vídeo e ficha técnica.",
+  "description": "Curso online de molhos artesanais com técnica de cozinha profissional. 10 módulos e 2 bônus, mais de 40 molhos, dos molhos-mãe franceses aos sabores autorais brasileiros, cada um com vídeo e ficha técnica.",
   "inLanguage": "pt-BR",
   "provider": { "@type": "Organization", "name": "Saucier Molhos Artesanais", "sameAs": "https://www.saucier.com.br" },
   "instructor": { "@type": "Person", "name": "Mauricio Lacerda", "jobTitle": "Chef e fundador da Saucier" },
@@ -83,6 +118,10 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { font-family: var(--font-body); background: hsl(var(--bg)); color: hsl(var(--text)); line-height: var(--leading-normal); }
+  /* textura de grão de papel — sutil, cobre o site todo (anti-superfície-lisa) */
+  body::before { content: ""; position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+    opacity: 0.05; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
   img { display: block; max-width: 100%; }
   .wrap { max-width: 1120px; margin: 0 auto; padding-inline: var(--space-6); }
   h1,h2,h3 { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking-display); line-height: var(--leading-tight); }
@@ -109,15 +148,12 @@
     display: flex; gap: var(--space-2); align-items: center; justify-content: center; white-space: nowrap; }
   .slogan-bar .leaf { filter: hue-rotate(0deg); }
 
-  /* ---- Nav (liquid glass + shrink ao rolar) ---- */
+  /* ---- Nav (papel sólido + linha de tinta; shrink ao rolar) ---- */
   nav { position: sticky; top: 0; z-index: 50;
-    background: hsl(0 0% 100% / 0.55);
-    backdrop-filter: blur(18px) saturate(180%); -webkit-backdrop-filter: blur(18px) saturate(180%);
-    border-bottom: 1px solid hsl(0 0% 100% / 0.45);
-    box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.65), 0 2px 16px hsl(20 30% 20% / 0.05);
-    transition: background var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease); }
-  nav.scrolled { background: hsl(0 0% 100% / 0.78);
-    box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.75), 0 6px 24px hsl(20 30% 20% / 0.12); }
+    background: hsl(var(--neutral-50));
+    border-bottom: 1.5px solid hsl(var(--neutral-950) / 0.88);
+    transition: padding var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease); }
+  nav.scrolled { box-shadow: 0 5px 18px hsl(26 30% 12% / 0.12); }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6);
     padding-block: var(--space-3); transition: padding var(--dur-base) var(--ease); }
   nav.scrolled .wrap { padding-block: var(--space-2); }
@@ -351,22 +387,21 @@
   .blog-card p { font-size: var(--text-sm); color: hsl(var(--text-muted)); }
   .blog-soon { margin-top: var(--space-8); color: hsl(var(--text-subtle)); font-size: var(--text-sm); }
 
-  /* ---- FAQ (polido) ---- */
-  .faq .lista { max-width: 800px; margin: var(--space-16) auto 0; display: flex; flex-direction: column; gap: var(--space-3); text-align: left; }
-  .faq details { background: hsl(var(--surface)); border: 1px solid hsl(var(--border)); border-radius: var(--radius-lg);
-    padding: var(--space-5) var(--space-6); box-shadow: var(--shadow-sm);
-    transition: box-shadow var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease); }
-  .faq details:hover { border-color: hsl(var(--brand) / .5); }
-  .faq details[open] { border-color: hsl(var(--brand) / .5); box-shadow: var(--shadow-md); }
-  .faq summary { font-weight: 700; font-size: var(--text-lg); cursor: pointer; list-style: none; display: flex;
-    justify-content: space-between; align-items: center; gap: var(--space-4); }
+  /* ---- FAQ (sumário de livro de receitas: números editoriais + linhas de tinta) ---- */
+  .faq .lista { max-width: 760px; margin: var(--space-16) auto 0; text-align: left;
+    border-top: 2px solid hsl(var(--neutral-950) / 0.85); counter-reset: faq; }
+  .faq details { border-bottom: 1px solid hsl(var(--neutral-950) / 0.18); padding: var(--space-5) 0; }
+  .faq summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: var(--space-4);
+    font-weight: 700; font-size: var(--text-lg); color: hsl(var(--text)); line-height: 1.25; }
   .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: "+"; flex: none; width: 30px; height: 30px; border-radius: 50%;
-    background: hsl(var(--brand-subtle)); color: hsl(var(--brand)); display: inline-flex; align-items: center;
-    justify-content: center; font-size: var(--text-xl); line-height: 1; transition: all var(--dur-base) var(--ease); }
-  .faq details[open] summary::after { content: "\2013"; background: hsl(var(--brand)); color: #fff; }
-  .faq details[open] summary { margin-bottom: var(--space-4); }
-  .faq details p { color: hsl(var(--text-muted)); font-size: var(--text-base); line-height: var(--leading-relaxed); }
+  .faq summary::before { counter-increment: faq; content: counter(faq, decimal-leading-zero);
+    font-family: var(--font-display); font-size: var(--text-xl); letter-spacing: var(--tracking-display);
+    color: hsl(var(--brand)); flex: none; min-width: 2.6ch; line-height: 1; }
+  .faq summary::after { content: "+"; margin-left: auto; font-family: var(--font-display); font-size: var(--text-2xl);
+    color: hsl(var(--brand)); flex: none; line-height: 1; transition: transform var(--dur-base) var(--ease); }
+  .faq details[open] summary::after { content: "−"; }
+  .faq details p { color: hsl(var(--text-muted)); font-size: var(--text-base); line-height: var(--leading-relaxed);
+    margin: var(--space-3) 0 0; padding-left: calc(2.6ch + var(--space-4)); max-width: 62ch; }
 
   /* ---- CTA final ---- */
   .final { background: hsl(var(--brand)); color: hsl(var(--text-on-brand)); text-align: center; }
@@ -397,6 +432,10 @@
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) · TROCAR GTM-XXXXXXX -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- SLOGAN BAR -->
 <div class="slogan-bar">
@@ -680,11 +719,13 @@
         <span class="passo">03</span>
         <span class="selo">Curso completo</span>
         <h3>Vire o chef dos molhos</h3>
-        <div class="preco">10 + 2 bônus</div>
+        <div class="preco">R$ 290<span style="display:block;font-family:var(--font-body);font-size:var(--text-sm);letter-spacing:0;opacity:.85;margin-top:4px">à vista no Pix, ou 12x no cartão</span></div>
         <ul>
+          <li>Todos os módulos e os 2 bônus</li>
           <li>50+ videoaulas com ficha técnica</li>
           <li>Dos clássicos aos seus molhos autorais</li>
           <li>Acesso vitalício</li>
+          <li>Garantia de 7 dias: o risco é meu</li>
         </ul>
         <!-- TROCAR pelo link de checkout direto da Hotmart, se houver -->
         <a href="https://hotmart.com/pt-br/marketplace/produtos/molhos-artesanais-n7btz/H70087725N" target="_blank" rel="noopener" class="btn btn-on-dark">Quero o curso</a>
@@ -699,58 +740,63 @@
   <div class="wrap">
     <div class="center">
       <div class="eyebrow">O currículo</div>
-      <h2 class="section-title">11 módulos. Mais de 40 molhos. Você no comando.</h2>
+      <h2 class="section-title">10 módulos e 2 bônus. Mais de 40 molhos. Você no comando.</h2>
       <p class="section-desc">Da técnica de base aos clássicos do mundo todo, até os seus molhos autorais. Cada receita com vídeo e ficha técnica.</p>
     </div>
 
     <div class="modgrid">
       <article class="modcard">
-        <div class="mod-head"><span class="mod-n">01</span><span class="mod-cat">Fundamentos</span></div>
+        <div class="mod-head"><span class="mod-n">01</span><span class="mod-cat">Introdução</span></div>
+        <h3>A história e o método</h3>
+        <div class="receitas"><span>História dos molhos</span><span>Metodologia da casa</span></div>
+      </article>
+      <article class="modcard">
+        <div class="mod-head"><span class="mod-n">02</span><span class="mod-cat">Fundamentos</span></div>
         <h3>Utensílios e tipos de molho</h3>
         <div class="receitas"><span>Higienização</span><span>Conservação</span><span>Tipos de molho</span></div>
       </article>
       <article class="modcard">
-        <div class="mod-head"><span class="mod-n">02</span><span class="mod-cat">Molhos escuros</span></div>
+        <div class="mod-head"><span class="mod-n">03</span><span class="mod-cat">Molhos escuros</span></div>
         <h3>A base dos assados</h3>
         <div class="receitas"><span>Caldos</span><span>Demi Glace</span><span>Madeira</span><span>Teriyaki</span><span>Gravy</span></div>
       </article>
       <article class="modcard">
-        <div class="mod-head"><span class="mod-n">03</span><span class="mod-cat">Molhos brancos</span></div>
+        <div class="mod-head"><span class="mod-n">04</span><span class="mod-cat">Molhos brancos</span></div>
         <h3>Cremosos e clássicos</h3>
         <div class="receitas"><span>Béchamel</span><span>Mornay</span><span>Alfredo</span><span>Alho vegano</span></div>
       </article>
       <article class="modcard">
-        <div class="mod-head"><span class="mod-n">04</span><span class="mod-cat">Emulsões</span></div>
+        <div class="mod-head"><span class="mod-n">05</span><span class="mod-cat">Emulsões</span></div>
         <h3>A mágica que não desanda</h3>
         <div class="receitas"><span>Maionese</span><span>Hollandaise</span><span>Carbonara</span><span>Caesar</span></div>
       </article>
       <article class="modcard">
-        <div class="mod-head"><span class="mod-n">05</span><span class="mod-cat">Molhos verdes</span></div>
+        <div class="mod-head"><span class="mod-n">06</span><span class="mod-cat">Molhos verdes</span></div>
         <h3>Frescor na mesa</h3>
         <div class="receitas"><span>Chimichurri</span><span>Pesto</span><span>Pesto de tomate seco</span><span>Guacamole</span></div>
       </article>
       <article class="modcard">
-        <div class="mod-head"><span class="mod-n">06</span><span class="mod-cat">Atomatados</span></div>
+        <div class="mod-head"><span class="mod-n">07</span><span class="mod-cat">Atomatados</span></div>
         <h3>Os queridinhos da casa</h3>
         <div class="receitas"><span>Molho de tomate</span><span>Ketchup</span><span>Barbecue de goiabada</span><span>Ketchup de bacon</span></div>
       </article>
       <article class="modcard">
-        <div class="mod-head"><span class="mod-n">07</span><span class="mod-cat">Picantes</span></div>
+        <div class="mod-head"><span class="mod-n">08</span><span class="mod-cat">Picantes</span></div>
         <h3>No ponto da pimenta</h3>
         <div class="receitas"><span>Mostarda</span><span>Mostarda oriental</span><span>Sriracha</span></div>
       </article>
       <article class="modcard">
-        <div class="mod-head"><span class="mod-n">08</span><span class="mod-cat">Temperos</span></div>
+        <div class="mod-head"><span class="mod-n">09</span><span class="mod-cat">Temperos</span></div>
         <h3>A assinatura do chef</h3>
         <div class="receitas"><span>Tempero do Chef</span><span>Picles</span><span>Rubs</span></div>
       </article>
       <article class="modcard">
-        <div class="mod-head"><span class="mod-n">09</span><span class="mod-cat">Doces</span></div>
+        <div class="mod-head"><span class="mod-n">10</span><span class="mod-cat">Doces</span></div>
         <h3>Molhos para a sobremesa</h3>
         <div class="receitas"><span>Apple Sauce</span><span>Toffee</span><span>Zabaione</span></div>
       </article>
       <article class="modcard bonus">
-        <div class="mod-head"><span class="mod-n">10</span><span class="mod-cat">Bônus</span></div>
+        <div class="mod-head"><span class="mod-n">★</span><span class="mod-cat">2 bônus</span></div>
         <h3>Do experimento ao autoral</h3>
         <div class="receitas"><span>Fermentação de pimentas</span><span>Criação de sabores</span></div>
       </article>
@@ -758,12 +804,13 @@
 
     <div class="curso-cta">
       <div class="stats">
-        <div><div class="n">11</div><div class="l">módulos</div></div>
+        <div><div class="n">10</div><div class="l">módulos + 2 bônus</div></div>
         <div><div class="n">40+</div><div class="l">molhos com ficha técnica</div></div>
         <div><div class="n">∞</div><div class="l">acesso vitalício</div></div>
       </div>
       <h3>Vire o chef dos molhos da sua casa</h3>
       <a href="https://hotmart.com/pt-br/marketplace/produtos/molhos-artesanais-n7btz/H70087725N" target="_blank" rel="noopener" class="btn btn-on-dark">Quero o curso completo</a>
+      <p style="margin-top:var(--space-4);font-size:var(--text-sm);opacity:.92">R$ 290 à vista no Pix, ou 12x no cartão. Garantia de 7 dias: se não for para você, devolvo cada centavo.</p>
     </div>
   </div>
 </section>
@@ -779,7 +826,7 @@
       <div>
         <p>Eu sou o <b>Mauricio Lacerda</b>, o cara dos molhos. Em 2020 perdi o emprego e fui parar na cozinha.
           Estudei no SENAC como chef executivo, fiz técnica de molhos no Le Cordon Bleu Brasil e criei a Saucier.</p>
-        <p>Comecei nos potes, entregando molho artesanal de porta em porta no Rio. Em um ano, <b>mais de 240
+        <p>Comecei nos potes, entregando molho artesanal de porta em porta no Rio. Em um ano, <b>246
           famílias</b> levaram Saucier para a mesa, e o pesto virou campeão de recompra. A demanda existia.
           Faltava colocar a técnica na mão de mais gente.</p>
         <p>Foi por isso que criei o curso. O que estava nos potes agora está no seu fogão, aula por aula.
@@ -809,11 +856,10 @@
   <div class="wrap">
     <div class="eyebrow">Manifesto</div>
     <p class="abertura">A cozinha é o <b>coração da casa</b>.</p>
-    <p class="corpo">É ali que o dia começa e termina. A família se junta, a conversa acontece, a memória se faz.
-      E o molho é o que separa <b>comer</b> de <b>viver</b>. Comida sem molho alimenta. Comida com molho marca.
-      Uma é combustível. A outra é encontro.</p>
-    <p class="corpo">Cozinha sem molho é vida sem graça. A Saucier existe para mudar isso. Não para vender um pote,
-      mas para devolver o tempero à mesa, à casa, à vida.</p>
+    <p class="corpo">É ali que o dia começa e termina, a família se junta, a conversa acontece.
+      E o molho é o que separa <b>comer</b> de <b>viver</b>: comida sem molho alimenta, comida com molho marca.</p>
+    <p class="corpo">A Saucier existe para devolver o tempero à mesa. Não para vender um pote,
+      mas para colocar a técnica na sua mão.</p>
     <p class="tag">🧡&nbsp;Por uma vida com mais tempero&nbsp;🌿</p>
   </div>
 </section>
@@ -823,10 +869,10 @@
   <div class="wrap">
     <div class="eyebrow">Não é teoria</div>
     <h2 class="section-title">A Saucier já chegou na mesa</h2>
-    <div class="hero-n">240+</div>
-    <p class="hero-l">famílias já levaram Saucier para a mesa no Rio</p>
+    <div class="hero-n">246</div>
+    <p class="hero-l">famílias levaram Saucier para a mesa no Rio. E voltaram a comprar.</p>
     <div class="sub">
-      <span><b>381</b> potes do pesto campeão</span>
+      <span><b>381</b> potes do pesto, o campeão de recompra</span>
       <span class="sep">·</span>
       <span>molho de verdade desde <b>2020</b></span>
     </div>
@@ -873,7 +919,7 @@
 <section class="block final">
   <div class="wrap">
     <h2>Seu próximo molho começa agora</h2>
-    <p>Deixa o e-mail. A receita do pesto chega na hora. E com ela, o caminho para dominar todos os outros.</p>
+    <p>Deixa o e-mail. A receita do pesto chega na hora.</p>
     <form action="#" method="post" onsubmit="return fakeSubmit(event)">
       <input type="email" name="email" placeholder="Seu melhor e-mail" required>
       <button type="submit" class="btn btn-on-dark">Quero a receita do pesto</button>
@@ -913,10 +959,19 @@
     });
   });
 
-  // Placeholder de envio. Substituir pela integração real (RD Station / provedor de e-mail).
+  // Envio do lead (ebook do pesto).
+  // TODO(construção): trocar o stub abaixo pelo POST real ao destino de captura
+  // (Hotmart Forms/lista ou ferramenta de e-mail). Só falta o endpoint/ID.
+  // Já dispara generate_lead (GA4) + Lead (Meta), conforme o plano de tracking do dossiê.
   function fakeSubmit(e){
     e.preventDefault();
     const f = e.target;
+    try {
+      window.dataLayer = window.dataLayer || [];
+      var origem = (f.closest('section,header') && f.closest('section,header').id) || 'captura';
+      window.dataLayer.push({ event: 'generate_lead', form_id: origem, currency: 'BRL', value: 0 });
+      if (typeof fbq === 'function') fbq('track', 'Lead');
+    } catch (err) {}
     f.innerHTML = '<p style="color:hsl(var(--brand));font-weight:700;text-align:center">✓ Pronto. Confira seu e-mail. A receita do pesto está a caminho.</p>';
     return false;
   }
