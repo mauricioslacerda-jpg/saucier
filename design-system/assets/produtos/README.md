@@ -1,5 +1,5 @@
 ---
-title: "Video — README"
+title: "Produtos — README"
 sefirah: keter
 tipo: companion
 status: aprovado
@@ -10,15 +10,15 @@ tags: [keter, companion]
 <!-- companion-binaries:start -->
 ## 📎 Anexos clicáveis
 
-### 🎥 Vídeo
-
-- [Abrir `chef-cozinha.mp4`](chef-cozinha.mp4)
-- [Abrir `cozinha.mp4`](cozinha.mp4)
-
 ### 🖼️ Imagens
 
-- [Abrir `chef-cozinha-poster.jpg`](chef-cozinha-poster.jpg)
-- [Abrir `cozinha-poster.jpg`](cozinha-poster.jpg)
+- [Abrir `abacaxi.png`](abacaxi.png)
+- [Abrir `chimi.png`](chimi.png)
+- [Abrir `goiabada.png`](goiabada.png)
+- [Abrir `pesto-azeitona.png`](pesto-azeitona.png)
+- [Abrir `pesto.png`](pesto.png)
+- [Abrir `temperodochef.png`](temperodochef.png)
+- [Abrir `temperovovo.png`](temperovovo.png)
 
 <!-- companion-binaries:end -->
 

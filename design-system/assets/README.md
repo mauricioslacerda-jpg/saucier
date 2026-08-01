@@ -1,5 +1,5 @@
 ---
-title: "Video — README"
+title: "Assets — README"
 sefirah: keter
 tipo: companion
 status: aprovado
@@ -10,15 +10,11 @@ tags: [keter, companion]
 <!-- companion-binaries:start -->
 ## 📎 Anexos clicáveis
 
-### 🎥 Vídeo
-
-- [Abrir `chef-cozinha.mp4`](chef-cozinha.mp4)
-- [Abrir `cozinha.mp4`](cozinha.mp4)
-
 ### 🖼️ Imagens
 
-- [Abrir `chef-cozinha-poster.jpg`](chef-cozinha-poster.jpg)
-- [Abrir `cozinha-poster.jpg`](cozinha-poster.jpg)
+- [Abrir `saucier-logo-alt.png`](saucier-logo-alt.png)
+- [Abrir `saucier-logo-laranja.png`](saucier-logo-laranja.png)
+- [Abrir `saucier-logo-preto.png`](saucier-logo-preto.png)
 
 <!-- companion-binaries:end -->
 

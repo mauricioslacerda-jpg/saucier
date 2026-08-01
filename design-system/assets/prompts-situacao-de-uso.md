@@ -1,3 +1,9 @@
+---
+sefirah: malkuth
+tipo: design-system
+status: aprovado
+---
+
 # Prompts — Fotos dos molhos em situação de uso (geração por IA)
 
 > **Como usar:** estes prompts são de **edição com imagem de referência** (Nano Banana / Gemini "image edit", ou ChatGPT com imagem). 
