@@ -75,8 +75,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     color: hsl(var(--brand)); display: inline-flex; align-items: center; gap: var(--space-3); }
   .eyebrow::before { content: ""; width: 30px; height: 2px; background: hsl(var(--brand)); flex: none; }
 
-  /* Verde Saucier — extraído por amostragem do pote de pesto (#8A904F) */
-  :root { --verde: 66 29% 44%; --verde-escuro: 68 34% 27%; --verde-suave: 66 32% 94%; }
+  /* Verde Saucier ORIGINAL da LP antiga: #396451 (principal) + #54724F (sálvia) */
+  :root { --verde: 153 27% 31%; --verde-vivo: 153 32% 38%; --verde-escuro: 155 32% 20%; --verde-suave: 150 24% 94%; --salvia: 107 18% 38%; }
 
   .btn { font: inherit; font-weight: 700; cursor: pointer; border: 1px solid transparent; display: inline-block; text-align: center;
     min-width: 9rem; padding: var(--space-4) var(--space-12); border-radius: var(--radius-pill);
@@ -86,7 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .btn-primary:hover { background: hsl(var(--brand-hover)); transform: translateY(-1px); }
   .btn-on-dark { background: #fff; color: hsl(var(--orange-700)); box-shadow: var(--shadow-lg);
     padding: var(--space-6) var(--space-16); font-size: var(--text-xl); border: 2px solid #fff; }
-  .btn-on-dark:hover { background: hsl(var(--verde)); color: #fff; border-color: hsl(var(--verde));
+  .btn-on-dark:hover { background: hsl(var(--verde-vivo)); color: #fff; border-color: hsl(var(--verde-vivo));
     transform: translateY(-2px); box-shadow: 0 14px 30px hsl(20 60% 15% / .35); }
   .btn-sub { display: block; font-size: var(--text-xs); font-weight: 500; margin-top: var(--space-3); opacity: .85; }
 
@@ -138,7 +138,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Sua vida vai mudar (4 transformações da LP antiga) */
   .mudar .foto { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); margin-top: var(--space-12); }
   .mudar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-top: var(--space-12); text-align: left; }
-  .mudar-item { border-left: 3px solid hsl(var(--verde)); padding-left: var(--space-6); }
+  .mudar-item { border-left: 3px solid hsl(var(--salvia)); padding-left: var(--space-6); }
   .mudar-item h3 { font-size: var(--text-xl); margin-bottom: var(--space-2); }
   .mudar-item p { font-size: var(--text-sm); color: hsl(var(--text-muted)); }
 
@@ -150,12 +150,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .modcard p { font-size: var(--text-sm); color: hsl(var(--text-muted)); }
   .modcard p b { color: hsl(var(--brand)); }
 
-  /* Quanto vale (value stack da LP antiga) — área verde-escura */
-  .valor { background: hsl(var(--verde-escuro)); color: #fff; }
+  /* Quanto vale (value stack da LP antiga) — verde original #396451 */
+  .valor { background: hsl(var(--verde)); color: #fff; }
   .valor .lista { max-width: 720px; margin: var(--space-12) auto 0; }
   .valor .item { display: flex; justify-content: space-between; gap: var(--space-6); align-items: baseline;
     padding-block: var(--space-4); border-bottom: 1px solid hsl(0 0% 100% / .15); }
-  .valor .item p { color: hsl(66 25% 82%); font-size: var(--text-sm); max-width: 48ch; }
+  .valor .item p { color: hsl(150 24% 86%); font-size: var(--text-sm); max-width: 48ch; }
   .valor .item .v { font-family: var(--font-display); font-size: var(--text-2xl); color: hsl(var(--orange-400));
     letter-spacing: var(--tracking-display); white-space: nowrap; }
   .valor .total { text-align: center; margin-top: var(--space-12); }
@@ -163,7 +163,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     text-decoration: line-through; opacity: .55; }
   .valor .total .voce-paga { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 4.5rem);
     letter-spacing: var(--tracking-display); color: hsl(var(--orange-400)); line-height: 1.05; }
-  .valor .total small { display: block; font-family: var(--font-body); font-size: var(--text-sm); color: hsl(66 25% 82%); margin-top: var(--space-2); }
+  .valor .total small { display: block; font-family: var(--font-body); font-size: var(--text-sm); color: hsl(150 24% 86%); margin-top: var(--space-2); }
 
   /* Bônus (com os valores da LP antiga) */
   .bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-top: var(--space-12); }
@@ -316,7 +316,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <article class="modcard"><span class="mod-n">09</span><h3>Temperos</h3><p>Temperos práticos e duráveis que se encaixam em inúmeras receitas. O verdadeiro curinga do dia a dia.</p></article>
       <article class="modcard"><span class="mod-n">10</span><h3>Molhos Doces</h3><p>Perfeitos para sobremesas e também para carnes, trazendo mais sabor e possibilidades para a sua gastronomia.</p></article>
     </div>
-    <div class="center" style="margin-top:var(--space-12)">
+    <div class="center" style="margin-top:var(--space-16)">
       <a class="btn btn-primary" href="https://pay.hotmart.com/H70087725N?src=lp-curso&sck=modulos" rel="noopener">Quero aprender a fazer molhos deliciosos</a>
     </div>
   </div>
@@ -361,7 +361,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="preco-bonus"><s>Valeria R$ 150</s> · <b>grátis para alunos</b></span>
       </div>
     </div>
-    <div class="center" style="margin-top:var(--space-12)">
+    <div class="center" style="margin-top:var(--space-16)">
       <a class="btn btn-primary" href="https://pay.hotmart.com/H70087725N?src=lp-curso&sck=bonus" rel="noopener">Quero garantir minha vaga</a>
     </div>
   </div>
