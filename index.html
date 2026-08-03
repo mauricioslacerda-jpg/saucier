@@ -183,8 +183,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hero .logo { width: 280px; margin-bottom: var(--space-6); background: #fff; border-radius: var(--radius-pill);
     padding: var(--space-4) var(--space-6); box-shadow: var(--shadow-lg); }
   .hero h1 { font-size: var(--text-5xl); margin-bottom: var(--space-4); }
-  .hero .lead { font-size: var(--text-lg); max-width: 46ch; margin-bottom: var(--space-8); opacity: .95; }
+  .hero .lead { font-size: var(--text-lg); max-width: 46ch; margin-bottom: var(--space-5); opacity: .95; }
   .hero .lead b { font-weight: 700; }
+  .hero .proof { font-size: var(--text-sm); font-weight: 700; opacity: .92; margin-bottom: var(--space-8); max-width: 46ch; }
 
   /* ---- Capture card ---- */
   .capture { background: hsl(var(--surface)); color: hsl(var(--text)); border-radius: var(--radius-xl);
@@ -475,9 +476,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
       <img class="logo" src="design-system/assets/saucier-logo-laranja.png" alt="Saucier">
       <h1>O que falta na sua comida não é talento. É molho.</h1>
-      <p class="lead">Você não tem muito tempo de cozinha, mas quer dar um upgrade na comida do dia a dia.
-        A diferença mora no molho. Eu ensino a fazer molho com <b>técnica de cozinha profissional</b>,
+      <p class="lead">O mesmo frango de sempre, com um molho de verdade por cima, vira outro prato.
+        Eu ensino a fazer molho com <b>técnica de cozinha profissional</b>, em 15 minutos,
         no fogão que você já tem, do zero até você virar o saucier da sua casa.</p>
+      <p class="proof">246 famílias no Rio já levaram esses molhos para a mesa. O pesto sozinho passou de 2.000 potes vendidos.</p>
       <a href="#curso" class="btn btn-ghost-on-dark">Conhecer o curso →</a>
     </div>
 
@@ -485,10 +487,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="capture" id="receita">
       <div class="eyebrow">Ebook grátis</div>
       <h2>10 receitas de pesto, prontas em 15 minutos</h2>
-      <p>Os pestos mais pedidos da Saucier, com passo a passo e lista de compras de cada um.</p>
-      <!-- Integrar com RD Station / provedor de e-mail no action -->
+      <p>As 10 receitas do pesto que foi recomprado mais de 2.000 vezes. Passo a passo e lista de compras de cada uma.</p>
+      <!-- Trocar pelo form do Hotmart Send quando Mauricio enviar o código -->
       <form action="#" method="post" onsubmit="return fakeSubmit(event)">
-        <input type="text" name="nome" placeholder="Seu nome" required>
         <input type="email" name="email" placeholder="Seu melhor e-mail" required>
         <button type="submit" class="btn btn-primary">Quero o ebook grátis</button>
         <small>Sem spam. Só receita.</small>
@@ -518,10 +519,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- MECANISMO · sofisticação 3-4 exige mecanismo, não claim -->
 <section class="block">
   <div class="wrap center">
-    <div class="eyebrow">Por que funciona</div>
+    <div class="eyebrow">O Método 5 Molhos-Mãe</div>
     <h2 class="section-title">Técnica de chef. Panela de casa.</h2>
-    <p class="section-desc">Molho é técnica, e técnica se aprende. O método do Le Cordon Bleu traduzido
-      para a panela de casa, com ingrediente de qualquer mercado.</p>
+    <p class="section-desc">O curso inteiro se apoia num princípio da cozinha clássica: 5 molhos-mãe geram
+      dezenas de molhos-filhos. Aprenda a base uma vez e você deixa de decorar receita.
+      É o método de Escoffier, traduzido para a panela de casa.</p>
     <div class="steps">
       <div class="step">
         <div class="num">01</div>
@@ -675,6 +677,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="molho-static">
         <span>+ muitos</span>
         <small>no curso completo</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAÇÃO (apontável, Harry Dry regra 3) -->
+<section class="block">
+  <div class="wrap center">
+    <div class="eyebrow">Por que este e não outro</div>
+    <h2 class="section-title">O que só a Saucier pode dizer</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Só molho</h3>
+        <p>Curso generalista dedica uma aula a molhos. Aqui são 10 módulos, porque molho é o que muda o prato.</p>
+      </div>
+      <div class="step">
+        <h3>Receita que já foi produto</h3>
+        <p>Esses molhos venderam mais de 2.000 potes no Rio antes de virarem aula. Não são receitas de teste.</p>
+      </div>
+      <div class="step">
+        <h3>Do clássico ao seu</h3>
+        <p>Você termina o curso criando um molho com a sua assinatura, não repetindo a minha.</p>
       </div>
     </div>
   </div>
@@ -905,7 +929,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="block final">
   <div class="wrap">
     <h2>Seu próximo molho começa agora</h2>
-    <p>Deixa o e-mail. A receita do pesto chega na hora.</p>
+    <p>Ebook grátis hoje, primeiras aulas grátis depois, curso completo quando fizer sentido para você.
+      Deixa o e-mail: o pesto chega na hora.</p>
     <form action="#" method="post" onsubmit="return fakeSubmit(event)">
       <input type="email" name="email" placeholder="Seu melhor e-mail" required>
       <button type="submit" class="btn btn-on-dark">Quero a receita do pesto</button>
