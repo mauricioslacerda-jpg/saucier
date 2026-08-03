@@ -37,6 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "provider": { "@type": "Organization", "name": "Saucier Molhos Artesanais", "sameAs": "https://saucier.com.br/" },
   "instructor": { "@type": "Person", "name": "Mauricio Lacerda", "jobTitle": "Chef e fundador da Saucier" },
   "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online" },
+  "educationalCredentialAwarded": "Certificado de conclusão",
   "offers": { "@type": "Offer", "price": "290.00", "priceCurrency": "BRL", "availability": "https://schema.org/InStock", "url": "https://saucier.com.br/curso/" }
 }
 </script>
@@ -52,7 +53,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     { "@type": "Question", "name": "Preciso de equipamento profissional?", "acceptedAnswer": { "@type": "Answer", "text": "Não. As receitas usam panela, fogão e utensílios que você já tem. O módulo de utensílios lista tudo que é necessário." } },
     { "@type": "Question", "name": "Nunca cozinhei. Consigo acompanhar?", "acceptedAnswer": { "@type": "Answer", "text": "Consegue. O curso começa do zero (higienização, utensílios, tipos de molho) e cada receita tem vídeo com o ponto exato mais ficha técnica para acompanhar." } },
     { "@type": "Question", "name": "Não dá para aprender isso de graça no YouTube?", "acceptedAnswer": { "@type": "Answer", "text": "Receita solta, dá. O que não dá é a ordem: no YouTube você coleciona vídeos; aqui você constrói base. Primeiro os molhos-mãe, depois as famílias de molhos, no fim o seu autoral. E cada receita tem ficha técnica com ponto e rendimento. É a diferença entre juntar receitas e aprender o ofício." } },
-    { "@type": "Question", "name": "O curso serve para quem quer vender molhos?", "acceptedAnswer": { "@type": "Answer", "text": "Serve. O bônus de Criação de Sabores ensina a desenvolver receitas autorais, que foi como a própria Saucier começou. Mas o coração do curso é para quem cozinha em casa." } }
+    { "@type": "Question", "name": "O curso serve para quem quer vender molhos?", "acceptedAnswer": { "@type": "Answer", "text": "Serve. O bônus de Criação de Sabores ensina a desenvolver receitas autorais, que foi como a própria Saucier começou. Mas o coração do curso é para quem cozinha em casa." } },
+    { "@type": "Question", "name": "Recebo certificado?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Ao concluir as aulas, você emite o certificado de conclusão direto na plataforma." } }
   ]
 }
 </script>
@@ -198,7 +200,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .oferta li::before { content: "✓"; font-weight: 700; flex: none; }
   .oferta .preco { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 4.5rem); letter-spacing: var(--tracking-display); line-height: 1; }
   .oferta .preco small { display: block; font-family: var(--font-body); font-size: var(--text-sm); letter-spacing: 0; margin-top: var(--space-2); opacity: .9; }
-  .oferta .garantia { margin-top: var(--space-6); font-size: var(--text-sm); opacity: .95; max-width: 42ch; margin-inline: auto; }
+  .oferta .garantia { margin-top: var(--space-4); font-size: var(--text-sm); opacity: .95; max-width: 42ch; margin-inline: auto; }
+  .oferta .selo-garantia { margin-top: var(--space-8); display: flex; justify-content: center; }
+  .oferta .selo-garantia svg { transform: rotate(-6deg); filter: drop-shadow(0 8px 14px hsl(20 60% 15% / .3)); }
+
+  /* Galeria de fotos reais dos molhos */
+  .galeria { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); margin-top: var(--space-12); }
+  .galeria img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
 
   /* FAQ */
   .faq .lista { max-width: 760px; margin: var(--space-12) auto 0; text-align: left;
@@ -220,6 +228,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   @media (max-width: 860px) {
     .hero .grid, .ganho-grid, .mudar-grid, .bonus-grid, .broto .grid { grid-template-columns: 1fr; }
+    .galeria { grid-template-columns: 1fr 1fr; }
     .hero .chef-foto { max-height: 340px; }
     .potes img { height: 88px; }
   }
@@ -251,6 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="selos-mini">
         <span>Assista como e onde quiser</span>
         <span>Grupo exclusivo de alunos</span>
+        <span>Certificado de conclusão</span>
         <span>Garantia incondicional de 7 dias</span>
       </div>
     </div>
@@ -292,6 +302,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="mudar-item"><h3>Despertar o seu chef interior</h3><p>Liberdade e criatividade para inovar e personalizar receitas, transformando cada refeição numa experiência sua.</p></div>
       <div class="mudar-item"><h3>Dominar os segredos dos chefs</h3><p>Técnicas avançadas e dicas que normalmente ficam reservadas à cozinha profissional, aplicadas no seu fogão.</p></div>
       <div class="mudar-item"><h3>Poder transformar paixão em lucro</h3><p>Para quem tem restaurante ou lanchonete: um toque especial no cardápio, com sabores que fidelizam clientes.</p></div>
+    </div>
+    <div class="galeria">
+      <img src="../design-system/assets/fotos/molho-chimichurri.jpg" alt="Pote de chimichurri Saucier, foto oficial da marca" loading="lazy">
+      <img src="../design-system/assets/fotos/molho-pesto.jpg" alt="Pote de pesto tradicional Saucier, foto oficial da marca" loading="lazy">
+      <img src="../design-system/assets/fotos/molho-goiabada.jpg" alt="Pote de ketchup de goiabada Saucier, foto oficial da marca" loading="lazy">
+      <img src="../design-system/assets/fotos/carne-chimichurri-cerveja.jpg" alt="Carne fatiada com chimichurri Saucier na tábua, cerveja ao fundo" loading="lazy">
     </div>
     <img class="foto" src="../design-system/assets/fotos/demi-glace-prato.jpg" alt="Molho demi glace escorrendo sobre carne no prato" loading="lazy">
   </div>
@@ -398,10 +414,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li>50+ aulas em 10 módulos + 2 bônus</li>
         <li>Ficha técnica e informação nutricional de cada molho</li>
         <li>Grupo exclusivo de alunos</li>
+        <li>Certificado de conclusão</li>
         <li>Acesso vitalício, sem mensalidade</li>
       </ul>
       <div class="preco">R$ 290<small>à vista no Pix, ou em até 12x no cartão</small></div>
       <a class="btn btn-on-dark" style="margin-top:var(--space-8)" href="https://pay.hotmart.com/H70087725N?src=lp-curso&sck=oferta" rel="noopener">Quero preparar molhos deliciosos</a>
+      <div class="selo-garantia" aria-hidden="true">
+        <svg viewBox="0 0 160 160" width="130" height="130">
+          <circle cx="80" cy="80" r="76" fill="#fff"/>
+          <circle cx="80" cy="80" r="70" fill="none" stroke="hsl(19 76% 45%)" stroke-width="2.5" stroke-dasharray="4 5"/>
+          <text x="80" y="66" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="40" fill="hsl(19 76% 45%)">7 DIAS</text>
+          <text x="80" y="90" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="hsl(155 32% 20%)">DE GARANTIA</text>
+          <text x="80" y="108" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="hsl(155 32% 20%)">INCONDICIONAL</text>
+        </svg>
+      </div>
       <p class="garantia"><b>Você tem 7 dias para testar, de graça.</b> Entre no curso e, se sentir que não é
         para você, é só pedir reembolso que a Hotmart devolve todo o investimento. O risco é do chef.</p>
     </div>
@@ -420,6 +446,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <details><summary>Quais as formas de pagamento?</summary><p>Cartão em até 12x, Pix ou boleto, direto no checkout seguro da Hotmart.</p></details>
       <details><summary>Preciso de equipamento profissional?</summary><p>Não. As receitas usam panela, fogão e utensílios que você já tem. O módulo de utensílios lista tudo que é necessário.</p></details>
       <details><summary>Nunca cozinhei. Consigo acompanhar?</summary><p>Consegue. O curso começa do zero (higienização, utensílios, tipos de molho) e cada receita tem vídeo com o ponto exato mais ficha técnica para acompanhar.</p></details>
+      <details><summary>Recebo certificado?</summary><p>Sim. Ao concluir as aulas, você emite o certificado de conclusão direto na plataforma.</p></details>
       <details><summary>Não dá para aprender isso de graça no YouTube?</summary><p>Receita solta, dá. O que não dá é a ordem: no YouTube você coleciona vídeos; aqui você constrói base. Primeiro os molhos-mãe, depois as famílias de molhos, no fim o seu autoral. E cada receita tem ficha técnica com ponto e rendimento. É a diferença entre juntar receitas e aprender o ofício.</p></details>
       <details><summary>O curso serve para quem quer vender molhos?</summary><p>Serve. O bônus de Criação de Sabores ensina a desenvolver receitas autorais, que foi como a própria Saucier começou. Mas o coração do curso é para quem cozinha em casa.</p></details>
     </div>
