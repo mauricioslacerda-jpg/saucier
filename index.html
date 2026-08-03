@@ -180,7 +180,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background: hsl(19 80% 36% / 0.9); }
   @media (prefers-reduced-motion: reduce) { .hero-bg { display: none; } }
   .hero .grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-16); align-items: center; }
-  .hero .logo { width: 280px; margin-bottom: var(--space-6); filter: brightness(0) invert(1); }
+  .hero .logo { width: 280px; margin-bottom: var(--space-6); background: #fff; border-radius: var(--radius-pill);
+    padding: var(--space-4) var(--space-6); box-shadow: var(--shadow-lg); }
   .hero h1 { font-size: var(--text-5xl); margin-bottom: var(--space-4); }
   .hero .lead { font-size: var(--text-lg); max-width: 46ch; margin-bottom: var(--space-8); opacity: .95; }
   .hero .lead b { font-weight: 700; }
@@ -420,7 +421,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* ---- Footer ---- */
   footer { background: hsl(var(--neutral-950)); color: hsl(var(--neutral-400)); padding-block: var(--space-12); }
   footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-6); }
-  footer img { height: 40px; filter: brightness(0) invert(1); opacity: .9; }
+  footer img { height: 40px; }
   footer a { color: hsl(var(--neutral-300)); text-decoration: none; margin-left: var(--space-6); font-size: var(--text-sm); }
   footer a:hover { color: hsl(var(--orange-400)); }
 
@@ -918,7 +919,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <img src="design-system/assets/saucier-logo-laranja.png" alt="Saucier">
     <div>
       <a href="https://www.instagram.com/saucier_brasil/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://wa.me/5521967307290" target="_blank" rel="noopener">WhatsApp</a>
       <a href="#receita">Receita grátis</a>
     </div>
   </div>

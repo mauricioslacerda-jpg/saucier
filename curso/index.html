@@ -91,7 +91,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   nav a.back { font-weight: 700; color: hsl(var(--text)); text-decoration: none; font-size: var(--text-sm); }
 
   .hero { background: hsl(var(--orange-600)); color: hsl(var(--text-on-brand)); padding-block: var(--space-20); text-align: center; }
-  .hero .logo { width: 220px; margin: 0 auto var(--space-6); filter: brightness(0) invert(1); }
+  .hero .logo { width: 220px; margin: 0 auto var(--space-6); background: #fff; border-radius: var(--radius-pill);
+    padding: var(--space-3) var(--space-5); box-shadow: var(--shadow-lg); }
   .hero h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); max-width: 22ch; margin: 0 auto var(--space-4); }
   .hero .lead { font-size: var(--text-lg); max-width: 52ch; margin: 0 auto var(--space-8); opacity: .95; }
   .hero .selos-mini { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-8);
@@ -159,7 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .faq details p { color: hsl(var(--text-muted)); margin: var(--space-3) 0 0; padding-left: calc(2.6ch + var(--space-4)); max-width: 62ch; }
 
   footer { background: hsl(var(--neutral-950)); color: hsl(var(--neutral-400)); padding-block: var(--space-10); text-align: center; font-size: var(--text-xs); }
-  footer img { height: 34px; margin: 0 auto var(--space-4); filter: brightness(0) invert(1); opacity: .9; }
+  footer img { height: 34px; margin: 0 auto var(--space-4); }
   footer a { color: hsl(var(--neutral-300)); }
 
   @media (max-width: 860px) {
