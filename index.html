@@ -487,10 +487,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="eyebrow">Ebook grátis</div>
       <h2>10 receitas de pesto, prontas em 15 minutos</h2>
       <p>As 10 receitas do pesto que foi recomprado mais de 2.000 vezes. Passo a passo e lista de compras de cada uma.</p>
-      <!-- Trocar pelo form do Hotmart Send quando Mauricio enviar o código -->
-      <form action="#" method="post" onsubmit="return fakeSubmit(event)">
-        <input type="email" name="email" placeholder="Seu melhor e-mail" required>
-        <button type="submit" class="btn btn-primary">Quero o ebook grátis</button>
+      <!-- Formulário real: Hotmart Send "Captura Leads Pesto Pelo Mundo" (aauPxLB) -->
+      <form klicksend-form-id="aauPxLB" autocomplete="off" method="post" action="https://handler.send.hotmart.com/subscription/aauPxLB?hotfeature=53">
+        <input type="text" autocomplete="off" name="first_name" id="first_name" placeholder="Seu nome" value="">
+        <input type="email" autocomplete="off" name="email" id="email" placeholder="Seu melhor e-mail" value="" required>
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+          <input type="text" autocomplete="new-password" name="b_aauPxLB" tabindex="-1" value="">
+        </div>
+        <button klicksend-form-submit-id="aauPxLB" class="btn btn-primary">Quero o ebook grátis</button>
         <small>Sem spam. Só receita.</small>
       </form>
     </div>
@@ -930,9 +934,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Seu próximo molho começa agora</h2>
     <p>Ebook grátis hoje, primeiras aulas grátis depois, curso completo quando fizer sentido para você.
       Deixa o e-mail: o pesto chega na hora.</p>
-    <form action="#" method="post" onsubmit="return fakeSubmit(event)">
-      <input type="email" name="email" placeholder="Seu melhor e-mail" required>
-      <button type="submit" class="btn btn-on-dark">Quero a receita do pesto</button>
+    <form klicksend-form-id="aauPxLB" autocomplete="off" method="post" action="https://handler.send.hotmart.com/subscription/aauPxLB?hotfeature=53">
+      <input type="email" autocomplete="off" name="email" placeholder="Seu melhor e-mail" value="" required>
+      <div style="position: absolute; left: -5000px;" aria-hidden="true">
+        <input type="text" autocomplete="new-password" name="b_aauPxLB" tabindex="-1" value="">
+      </div>
+      <button klicksend-form-submit-id="aauPxLB" class="btn btn-on-dark">Quero a receita do pesto</button>
     </form>
   </div>
 </section>
@@ -968,22 +975,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
-  // Envio do lead (ebook do pesto).
-  // TODO(construção): trocar o stub abaixo pelo POST real ao destino de captura
-  // (Hotmart Forms/lista ou ferramenta de e-mail). Só falta o endpoint/ID.
-  // Já dispara generate_lead (GA4) + Lead (Meta), conforme o plano de tracking do dossiê.
-  function fakeSubmit(e){
-    e.preventDefault();
-    const f = e.target;
+  // Captura REAL via Hotmart Send (form aauPxLB) — os dois forms da página.
+  // Repassa UTMs da URL para o handler + dispara generate_lead (GA4) e Lead (Meta) no envio.
+  document.querySelectorAll('form[klicksend-form-id="aauPxLB"]').forEach(function(form){
     try {
-      window.dataLayer = window.dataLayer || [];
-      var origem = (f.closest('section,header') && f.closest('section,header').id) || 'captura';
-      window.dataLayer.push({ event: 'generate_lead', form_id: origem, currency: 'BRL', value: 0 });
-      if (typeof fbq === 'function') fbq('track', 'Lead');
-    } catch (err) {}
-    f.innerHTML = '<p style="color:hsl(var(--brand));font-weight:700;text-align:center">✓ Pronto. Confira seu e-mail. A receita do pesto está a caminho.</p>';
-    return false;
-  }
+      var pageParams = new URLSearchParams(window.location.search);
+      var u = new URL(form.action);
+      var base = u.searchParams.size > 0 ? u.searchParams.toString() + '&' : '';
+      form.action = u.origin + u.pathname + '?' + base + pageParams.toString();
+    } catch (e) {}
+    form.addEventListener('submit', function(){
+      try {
+        window.dataLayer = window.dataLayer || [];
+        var origem = (form.closest('section,header') && form.closest('section,header').id) || 'captura';
+        window.dataLayer.push({ event: 'generate_lead', form_id: origem, currency: 'BRL', value: 0 });
+        if (typeof fbq === 'function') fbq('track', 'Lead');
+      } catch (err) {}
+    });
+  });
 </script>
 </body>
 </html>
