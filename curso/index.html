@@ -102,6 +102,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   section.block { padding-block: var(--space-20); }
   .center { text-align: center; }
+
+  /* Verde Saucier — extraído por amostragem do pote de pesto (#8A904F) */
+  :root { --verde: 66 29% 44%; --verde-escuro: 68 34% 27%; --verde-suave: 66 32% 94%; }
+
+  /* ---- Fala, meu broto (chef, verde) ---- */
+  .broto { background: hsl(var(--verde-suave)); }
+  .broto .grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: var(--space-12); align-items: center; }
+  .broto img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); }
+  .broto .eyebrow { color: hsl(var(--verde-escuro)); }
+  .broto .eyebrow::before { background: hsl(var(--verde-escuro)); }
+  .broto h2 { font-size: var(--text-4xl); margin-block: var(--space-2) var(--space-4); }
+  .broto p { color: hsl(var(--text-muted)); margin-bottom: var(--space-4); max-width: 58ch; }
+  .broto p b { color: hsl(var(--verde-escuro)); }
+  .broto .badge-le { display: inline-block; border: 1.5px solid hsl(var(--verde-escuro) / .5); border-radius: var(--radius-pill);
+    padding: var(--space-2) var(--space-4); font-size: var(--text-xs); font-weight: 700; letter-spacing: var(--tracking-wide);
+    text-transform: uppercase; color: hsl(var(--verde-escuro)); }
+
+  /* ---- Potes reais (personalidade) ---- */
+  .potes { display: flex; justify-content: center; align-items: flex-end; gap: var(--space-6); flex-wrap: wrap; margin-top: var(--space-12); }
+  .potes img { height: 120px; mix-blend-mode: multiply; filter: drop-shadow(0 10px 8px hsl(20 35% 25% / .18)); }
+  .potes-legenda { text-align: center; margin-top: var(--space-4); font-size: var(--text-sm); color: hsl(var(--text-subtle)); }
   .center .section-title { font-size: var(--text-4xl); margin-block: var(--space-2) var(--space-3); }
   .center .section-desc { color: hsl(var(--text-muted)); max-width: 58ch; margin-inline: auto; }
 
@@ -127,7 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .quem-col h3 { font-size: var(--text-2xl); margin-bottom: var(--space-4); }
   .quem-col ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); color: hsl(var(--text-muted)); font-size: var(--text-base); }
   .quem-col li { display: flex; gap: var(--space-3); align-items: flex-start; }
-  .quem-col.sim li::before { content: "✓"; font-weight: 700; color: hsl(var(--brand)); flex: none; }
+  .quem-col.sim li::before { content: "✓"; font-weight: 700; color: hsl(var(--verde)); flex: none; }
   .quem-col.nao li::before { content: "✕"; font-weight: 700; color: hsl(var(--text-subtle)); flex: none; }
 
   .prova-band { background: hsl(var(--neutral-950)); color: #fff; text-align: center; }
@@ -165,7 +186,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   footer a { color: hsl(var(--neutral-300)); }
 
   @media (max-width: 860px) {
-    .entrega-grid, .quem-grid { grid-template-columns: 1fr; }
+    .entrega-grid, .quem-grid, .broto .grid { grid-template-columns: 1fr; }
+    .potes img { height: 88px; }
   }
 </style>
 </head>
@@ -199,6 +221,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </header>
 
+<!-- FALA, MEU BROTO (chef, verde Saucier) -->
+<section class="block broto">
+  <div class="wrap grid">
+    <img src="../design-system/assets/video/chef-cozinha-poster.jpg" alt="Chef Mauricio Lacerda na cozinha da Saucier" loading="lazy">
+    <div>
+      <div class="eyebrow">Quem te ensina</div>
+      <h2>Fala, meu broto! 🌱</h2>
+      <p>Eu sou o <b>Mauricio Lacerda</b>, chef executivo formado no SENAC, com técnica de molhos
+        do Le Cordon Bleu Brasil. Em 2020 perdi o emprego, minha irmã perguntou
+        <b>"qual o pior que pode acontecer?"</b>, e num fim de semana nasceu a Saucier.
+        <b>A crise transforma.</b></p>
+      <p>Esses molhos sustentaram um delivery de verdade no Rio antes de virarem aula.
+        O que estava nos potes agora vai para a sua panela, no seu ritmo, sem atalho mágico.</p>
+      <span class="badge-le">SENAC · Le Cordon Bleu Brasil</span>
+    </div>
+  </div>
+</section>
+
 <!-- O QUE VOCÊ RECEBE -->
 <section class="block entregas">
   <div class="wrap center">
@@ -214,6 +254,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="entrega"><h3>Bônus: Fermentação de Pimentas</h3><p>Um curso dentro do curso. Crie pimentas fermentadas com a picância e a personalidade que você quiser.</p></div>
       <div class="entrega"><h3>Bônus: Criação de Sabores</h3><p>O método para desenvolver molhos autorais, aquele twist que vira a sua assinatura na cozinha.</p></div>
     </div>
+    <div class="potes">
+      <img src="../design-system/assets/produtos/chimi.png" alt="Chimichurri Saucier" loading="lazy">
+      <img src="../design-system/assets/produtos/pesto.png" alt="Pesto Saucier" loading="lazy">
+      <img src="../design-system/assets/produtos/goiabada.png" alt="Ketchup de Goiabada Saucier" loading="lazy">
+      <img src="../design-system/assets/produtos/abacaxi.png" alt="Ketchup de Abacaxi Saucier" loading="lazy">
+      <img src="../design-system/assets/produtos/temperovovo.png" alt="Tempero da Vovó Saucier" loading="lazy">
+    </div>
+    <p class="potes-legenda">Os molhos da casa: dos potes do delivery para a sua panela.</p>
   </div>
 </section>
 
@@ -332,7 +380,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
   <div class="wrap">
     <img src="../design-system/assets/saucier-logo-alt.png" alt="Saucier">
-    <p>© Saucier Molhos Artesanais. Por uma vida com mais tempero.</p>
+    <p>© Saucier Molhos Artesanais. Por uma vida com mais tempero 🌱</p>
     <p style="margin-top:var(--space-2)"><a href="../">Página inicial</a> · <a href="https://www.instagram.com/saucier_brasil/" rel="noopener">Instagram</a></p>
   </div>
 </footer>
