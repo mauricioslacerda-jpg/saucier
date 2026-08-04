@@ -13,6 +13,7 @@ tags: [keter, companion]
 ### 🖼️ Imagens
 
 - [Abrir `carne-chimichurri-cerveja.jpg`](carne-chimichurri-cerveja.jpg)
+- [Abrir `chef-feliz-pesto.jpg`](chef-feliz-pesto.jpg)
 - [Abrir `chef-pote-pesto.png`](chef-pote-pesto.png)
 - [Abrir `demi-glace-prato.jpg`](demi-glace-prato.jpg)
 - [Abrir `familia-molhos.jpg`](familia-molhos.jpg)
