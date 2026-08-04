@@ -100,12 +100,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   nav a.back { font-weight: 700; color: hsl(var(--text)); text-decoration: none; font-size: var(--text-sm); }
 
   /* Hero: releitura do topo da LP antiga (chef apontando o pote) */
-  .hero { background: hsl(var(--orange-600)); color: hsl(var(--text-on-brand)); padding-block: var(--space-16); overflow: hidden; }
-  .hero .grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--space-12); align-items: center; }
+  .hero { background: hsl(var(--orange-600)); color: hsl(var(--text-on-brand)); padding-top: var(--space-16); overflow: hidden; }
+  .hero .grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--space-12); align-items: end; }
   .hero .logo { width: 200px; margin-bottom: var(--space-6); }
   .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin-bottom: var(--space-4); max-width: 16ch; }
   .hero .lead { font-size: var(--text-lg); max-width: 46ch; margin-bottom: var(--space-8); opacity: .95; }
-  .hero .chef-foto { max-height: 480px; margin: 0 auto; filter: drop-shadow(0 18px 24px hsl(20 60% 15% / .35)); }
+  .hero .texto-col { padding-bottom: var(--space-16); }
+  .hero .foto-col { position: relative; display: flex; justify-content: center; align-items: flex-end; height: 100%; }
+  .hero .glow { position: absolute; bottom: -10%; width: 90%; aspect-ratio: 1; border-radius: 50%;
+    background: radial-gradient(circle, hsl(var(--verde-vivo) / .55) 0%, hsl(var(--verde-vivo) / .22) 45%, transparent 72%);
+    filter: blur(18px); z-index: 0; }
+  .hero .chef-foto { position: relative; z-index: 1; max-height: 620px; width: auto; max-width: 105%;
+    filter: drop-shadow(0 18px 24px hsl(20 60% 15% / .35)); }
   /* selos = texto informativo, não botão (só é botão o que é clicável) */
   .hero .selos-mini { display: flex; gap: var(--space-2) var(--space-6); flex-wrap: wrap; margin-top: var(--space-8);
     font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wide); opacity: .92; }
@@ -249,7 +255,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HERO · releitura do topo da LP antiga -->
 <header class="hero">
   <div class="wrap grid">
-    <div>
+    <div class="texto-col">
       <img class="logo" src="../design-system/assets/saucier-logo-alt.png" alt="Saucier Molhos Artesanais">
       <h1>Mais tempero e menos tempo na cozinha</h1>
       <p class="lead">O Curso Saucier de Molhos Artesanais: 50+ aulas gravadas em 10 módulos e 2 bônus,
@@ -264,7 +270,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span>Garantia incondicional de 7 dias</span>
       </div>
     </div>
-    <img class="chef-foto" src="../design-system/assets/fotos/chef-pote-pesto.png" alt="Chef Mauricio Lacerda apontando para um pote de pesto Saucier" loading="eager">
+    <div class="foto-col">
+      <div class="glow"></div>
+      <img class="chef-foto" src="../design-system/assets/fotos/chef-pote-pesto.png" alt="Chef Mauricio Lacerda apontando para um pote de pesto Saucier" loading="eager">
+    </div>
   </div>
 </header>
 
