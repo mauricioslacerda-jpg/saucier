@@ -13,7 +13,6 @@
      'generate_lead' (dataLayer) e 'Lead' (fbq) já disparam no submit.
      Passo a passo em: tracking-setup.md
 ═══════════════════════════════════════════════════════════════════════ -->
-<!-- Hotmart Send reCAPTCHA (form bMu7l9j) --><script src="https://send.hotmart.com/static/js/recaptcha.min.js"></script>
 <!-- Google Tag Manager  · TROCAR GTM-XXXXXXX -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -197,6 +196,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     border: 1px solid hsl(var(--border-strong)); background: hsl(var(--bg-subtle)); color: hsl(var(--text)); }
   .capture input:focus-visible { outline: none; border-color: hsl(var(--brand)); box-shadow: 0 0 0 3px hsl(var(--ring) / .25); }
   .capture small { color: hsl(var(--text-subtle)); font-size: var(--text-xs); text-align: center; }
+  .gdpr-texto { font-size: 10px; line-height: 1.4; color: hsl(var(--text-subtle)); }
+  .gdpr-texto a { color: hsl(var(--text-muted)); }
+  .gdpr-row { display: flex; gap: var(--space-2); align-items: flex-start; text-align: left; }
+  .gdpr-row input[type="checkbox"] { margin-top: 3px; flex: none; }
+  .gdpr-row label { font-size: var(--text-xs); color: hsl(var(--text-muted)); }
+  .final .gdpr-row label, .final .gdpr-texto { color: hsl(0 0% 100% / .85); }
 
   /* ---- Sections ---- */
   section.block { padding-block: var(--space-24); }
