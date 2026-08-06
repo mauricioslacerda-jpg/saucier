@@ -36,10 +36,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .btn-primary { background: hsl(var(--brand)); color: hsl(var(--text-on-brand)); box-shadow: var(--shadow-brand); }
   .btn-primary:hover { background: hsl(var(--verde-vivo)); transform: translateY(-1px); }
 
-  header.topo { text-align: center; padding-block: var(--space-10) var(--space-6); }
+  header.topo { text-align: center; padding-block: var(--space-12) var(--space-6); }
   header.topo img { width: 44px; margin: 0 auto var(--space-4); }
 
-  .hero { position: relative; text-align: center; padding-block: var(--space-10) var(--space-16); overflow: hidden; }
+  .hero { position: relative; text-align: center; padding-block: var(--space-12) var(--space-16); overflow: hidden; }
   .hero .flutuantes { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
   .hero .flutuantes img { position: absolute; filter: blur(2.5px); opacity: .28; }
   .hero .flutuantes img.destaque { filter: blur(.5px); opacity: .85; z-index: 2; }
@@ -56,19 +56,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   .aviso { margin-top: var(--space-6); font-size: var(--text-sm); color: hsl(var(--text-subtle)); }
 
-  .cross { background: hsl(var(--bg-subtle)); border-radius: var(--radius-xl); padding: var(--space-10) var(--space-8);
-    text-align: center; margin-top: var(--space-12); }
+  .cross { background: hsl(var(--bg-subtle)); border-radius: var(--radius-xl); padding: var(--space-12) var(--space-8);
+    text-align: center; margin-top: var(--space-12); margin-bottom: var(--space-12); }
   .cross .eyebrow { font-weight: 700; font-size: var(--text-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase;
     color: hsl(var(--brand)); margin-bottom: var(--space-3); }
-  .cross h2 { font-size: var(--text-3xl); margin-bottom: var(--space-4); }
-  .cross p { color: hsl(var(--text-muted)); margin-bottom: var(--space-6); max-width: 50ch; margin-inline: auto; }
+  .cross h2 { font-size: var(--text-3xl); margin-bottom: var(--space-5); }
+  .cross p { color: hsl(var(--text-muted)); margin-bottom: var(--space-4); max-width: 52ch; margin-inline: auto; }
+  .cross .oferta { display: inline-flex; align-items: center; gap: var(--space-2); background: hsl(var(--verde) / .12); color: hsl(var(--verde));
+    font-weight: 800; font-size: var(--text-sm); padding: var(--space-2) var(--space-5); border-radius: var(--radius-pill); margin-bottom: var(--space-6); }
   .cross .btn-secondary { background: transparent; color: hsl(var(--brand)); border-color: hsl(var(--brand)); }
   .cross .btn-secondary:hover { background: hsl(var(--brand-subtle)); }
+  .cross .cupom-nota { margin-top: var(--space-4); margin-bottom: 0; font-size: var(--text-xs); color: hsl(var(--text-subtle)); }
 
-  footer { text-align: center; padding: var(--space-16) 0 var(--space-10); color: hsl(var(--text-subtle)); font-size: var(--text-sm); }
+  footer { text-align: center; padding: var(--space-16) 0 var(--space-12); color: hsl(var(--text-subtle)); font-size: var(--text-sm); }
   footer a { color: hsl(var(--text-muted)); }
 
-  @media (max-width: 600px) { .hero { padding-block: var(--space-6) var(--space-10); } }
+  @media (max-width: 600px) { .hero { padding-block: var(--space-6) var(--space-12); } }
 </style>
 </head>
 <body>
@@ -100,10 +103,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="cross">
   <div class="wrap">
     <div class="eyebrow">Isso foi só o começo</div>
-    <h2>Quer ir mais fundo?</h2>
-    <p>O ebook é uma amostra. No curso completo você aprende os molhos-mãe, as emulsões, os atomatados,
-      os picantes, e como criar o seu próprio molho autoral. 10 módulos, 2 bônus, técnica SENAC + Le Cordon Bleu.</p>
-    <a class="btn btn-secondary" href="/curso/">Conhecer o curso completo →</a>
+    <h2>E já que você chegou até aqui...</h2>
+    <p>10 receitas prontas é ótimo pra semana. Mas o pesto é só um molho — e você tem uma vida inteira de pratos
+      pela frente. No curso completo eu ensino o método por trás de qualquer molho bom: os molhos-mãe, as emulsões,
+      os atomatados, os picantes, e como criar a sua própria receita autoral do zero. Técnica de SENAC + Le Cordon Bleu,
+      sem precisar decorar nada.</p>
+    <div class="oferta">🎁 5% OFF com o cupom PESTO5</div>
+    <div><a class="btn btn-secondary" href="/curso/">Conhecer o curso completo →</a></div>
+    <p class="cupom-nota">Aplique o cupom PESTO5 no checkout. Vale enquanto essa página estiver no ar.</p>
   </div>
 </section>
 
