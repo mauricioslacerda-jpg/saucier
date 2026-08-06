@@ -7,6 +7,7 @@
 <meta name="theme-color" content="#CC541C">
 <meta name="author" content="Mauricio Lacerda — Saucier Molhos Artesanais">
 <link rel="icon" type="image/png" href="design-system/assets/saucier-logo-laranja.png">
+<script src="//send.hotmart.com/static/js/recaptcha.min.js"></script>
 <!-- ════════════ TRACKING · CAMINHO PRONTO (trocar os IDs) ════════════
      Arquitetura recomendada: GTM é o container ÚNICO. Dentro dele você
      configura GA4 + Meta Pixel SEM tocar neste código. Os eventos
@@ -196,7 +197,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     border: 1px solid hsl(var(--border-strong)); background: hsl(var(--bg-subtle)); color: hsl(var(--text)); }
   .capture input:focus-visible { outline: none; border-color: hsl(var(--brand)); box-shadow: 0 0 0 3px hsl(var(--ring) / .25); }
   .capture small { color: hsl(var(--text-subtle)); font-size: var(--text-xs); text-align: center; }
-  .gdpr-texto { font-size: 10px; line-height: 1.4; color: hsl(var(--text-subtle)); }
+  .gdpr-texto { font-size: 10px; line-height: 1.4; color: hsl(var(--text-subtle)); margin-bottom: var(--space-2); text-align: left; }
   .gdpr-texto a { color: hsl(var(--text-muted)); }
   .gdpr-row { display: flex; gap: var(--space-2); align-items: flex-start; text-align: left; }
   .gdpr-row input[type="checkbox"] { margin-top: 3px; flex: none; }
