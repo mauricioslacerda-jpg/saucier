@@ -66,6 +66,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; max-width: 100%; }
   body { font-family: var(--font-body); background: hsl(var(--bg)); color: hsl(var(--text)); line-height: var(--leading-normal); }
   body::before { content: ""; position: fixed; inset: 0; z-index: 9999; pointer-events: none;
     opacity: 0.05; mix-blend-mode: multiply;
@@ -242,6 +243,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .galeria { grid-template-columns: 1fr 1fr; }
     .hero .chef-foto { max-height: 340px; }
     .potes img { height: 88px; }
+    /* grid items mantêm min-width:auto por padrão e não encolhem abaixo do max-content,
+       o que estoura a viewport mesmo em 1 coluna — forçar min-width:0 em todos */
+    .hero .grid > *, .ganho-grid > *, .mudar-grid > *, .bonus-grid > *, .broto .grid > * { min-width: 0; }
   }
 </style>
 </head>
