@@ -110,14 +110,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hero .glow { position: absolute; bottom: -10%; width: 90%; aspect-ratio: 1; border-radius: 50%;
     background: radial-gradient(circle, hsl(var(--verde-vivo) / .55) 0%, hsl(var(--verde-vivo) / .22) 45%, transparent 72%);
     filter: blur(18px); z-index: 0; }
-  .hero .chef-foto { position: relative; z-index: 1; max-height: 620px; width: auto; max-width: 105%;
+  .hero .chef-foto { position: relative; z-index: 1; max-height: 760px; width: auto; max-width: 112%;
     filter: drop-shadow(0 18px 24px hsl(20 60% 15% / .35)); }
-  .hero .video-card { position: relative; z-index: 1; width: 440px; max-width: 100%; border-radius: var(--radius-lg);
-    overflow: hidden; border: 6px solid #fff; box-shadow: 0 18px 30px hsl(20 60% 15% / .35); transform: rotate(-2deg); }
-  .hero .video-card video { display: block; width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; }
-  .hero .video-legenda { position: absolute; left: var(--space-4); bottom: var(--space-4); z-index: 2;
-    background: hsl(0 0% 0% / .45); color: #fff; font-size: var(--text-xs); font-weight: 700;
-    padding: var(--space-1) var(--space-3); border-radius: var(--radius-pill); backdrop-filter: blur(2px); }
   /* selos = texto informativo, não botão (só é botão o que é clicável) */
   .hero .selos-mini { display: flex; gap: var(--space-2) var(--space-6); flex-wrap: wrap; margin-top: var(--space-8);
     font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wide); opacity: .92; }
@@ -278,13 +272,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="foto-col">
       <div class="glow"></div>
-      <div class="video-card">
-        <span class="video-legenda">🌿 Direto da cozinha Saucier</span>
-        <video autoplay muted loop playsinline preload="metadata" poster="../design-system/assets/videos/pesto-loop-poster.jpg" aria-label="Mãos escolhendo folhas de manjericão fresco para o pesto Saucier">
-          <source src="../design-system/assets/videos/pesto-loop.webm" type="video/webm">
-          <source src="../design-system/assets/videos/pesto-loop.mp4" type="video/mp4">
-        </video>
-      </div>
+      <img class="chef-foto" src="../design-system/assets/fotos/chef-pote-pesto.png" alt="Chef Mauricio Lacerda apontando para um pote de pesto Saucier" loading="eager">
     </div>
   </div>
 </header>
