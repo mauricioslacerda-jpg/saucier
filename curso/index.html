@@ -152,8 +152,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* Como funciona (módulos com as descrições da LP antiga) */
   .modgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-6); margin-top: var(--space-12); }
-  .modcard { background: hsl(var(--surface)); border: 1px solid hsl(var(--border)); border-radius: var(--radius-lg); padding: var(--space-6); }
-  .modcard .mod-n { font-family: var(--font-display); font-size: var(--text-3xl); color: hsl(var(--brand)); line-height: 1; letter-spacing: var(--tracking-display); }
+  .modcard { background: hsl(var(--surface)); border: 1px solid hsl(var(--border)); border-radius: var(--radius-lg); overflow: hidden; }
+  .modcard .mod-video { position: relative; aspect-ratio: 16/10; background: hsl(var(--neutral-950)); }
+  .modcard .mod-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .modcard .mod-n { position: absolute; top: var(--space-3); left: var(--space-3); z-index: 1;
+    font-family: var(--font-display); font-size: var(--text-2xl); line-height: 1; letter-spacing: var(--tracking-display);
+    color: #fff; background: hsl(var(--brand) / .92); padding: var(--space-1) var(--space-3); border-radius: var(--radius-md); }
+  .modcard .mod-texto { padding: var(--space-6); }
+  .modcard.sem-video .mod-n { position: static; display: inline-block; color: hsl(var(--brand)); background: none; padding: 0; font-size: var(--text-3xl); }
+  .modcard.sem-video .mod-texto { padding-top: var(--space-6); }
   .modcard h3 { font-size: var(--text-xl); margin: var(--space-2) 0 var(--space-2); line-height: 1.05; }
   .modcard p { font-size: var(--text-sm); color: hsl(var(--text-muted)); }
   .modcard p b { color: hsl(var(--brand)); }
@@ -330,16 +337,102 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="section-title">10 módulos, do fundamento ao autoral</h2>
     </div>
     <div class="modgrid">
-      <article class="modcard"><span class="mod-n">01</span><h3>Introdução</h3><p>A história dos molhos e a metodologia que usamos aqui na Saucier.</p></article>
-      <article class="modcard"><span class="mod-n">02</span><h3>Conservação, Utensílios e Higienização</h3><p>Técnicas de conservação, os utensílios necessários e como manter tudo higienizado com segurança alimentar.</p></article>
-      <article class="modcard"><span class="mod-n">03</span><h3>Molhos Escuros</h3><p>Os molhos de caldos de carne e ossos, como o Demi Glace, e por que eles são tão importantes para a gastronomia mundial.</p></article>
-      <article class="modcard"><span class="mod-n">04</span><h3>Molhos Brancos</h3><p>Béchamel, Alfredo e até um molho de Alho Vegano exclusivo do curso Saucier.</p></article>
-      <article class="modcard"><span class="mod-n">05</span><h3>Emulsões</h3><p>Misturas de líquidos que normalmente não se misturariam: o famoso Hollandaise e a clássica Maionese, sem desandar.</p></article>
-      <article class="modcard"><span class="mod-n">06</span><h3>Molhos Verdes</h3><p>Feitos a frio, à base de ervas: Chimichurri, Guacamole e a <b>melhor receita de pesto da internet</b>, exclusivíssima da Saucier.</p></article>
-      <article class="modcard"><span class="mod-n">07</span><h3>Atomatados</h3><p>O clássico molho de tomate, o super popular Ketchup e uma receita maravilhosa de Barbecue.</p></article>
-      <article class="modcard"><span class="mod-n">08</span><h3>Picantes</h3><p>Receitas pungentes como a Mostarda e a Sriracha, além de surpresinhas que só o aluno Saucier experimenta.</p></article>
-      <article class="modcard"><span class="mod-n">09</span><h3>Temperos</h3><p>Temperos práticos e duráveis que se encaixam em inúmeras receitas. O verdadeiro curinga do dia a dia.</p></article>
-      <article class="modcard"><span class="mod-n">10</span><h3>Molhos Doces</h3><p>Perfeitos para sobremesas e também para carnes, trazendo mais sabor e possibilidades para a sua gastronomia.</p></article>
+      <article class="modcard sem-video">
+        <div class="mod-texto">
+          <span class="mod-n">01</span>
+          <h3>Introdução</h3><p>A história dos molhos e a metodologia que usamos aqui na Saucier.</p>
+        </div>
+      </article>
+      <article class="modcard">
+        <div class="mod-video">
+          <span class="mod-n">02</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="../design-system/assets/videos/modulos/modulo-02-poster.jpg" aria-hidden="true">
+            <source src="../design-system/assets/videos/modulos/modulo-02.webm" type="video/webm">
+            <source src="../design-system/assets/videos/modulos/modulo-02.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="mod-texto"><h3>Conservação, Utensílios e Higienização</h3><p>Técnicas de conservação, os utensílios necessários e como manter tudo higienizado com segurança alimentar.</p></div>
+      </article>
+      <article class="modcard">
+        <div class="mod-video">
+          <span class="mod-n">03</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="../design-system/assets/videos/modulos/modulo-03-poster.jpg" aria-hidden="true">
+            <source src="../design-system/assets/videos/modulos/modulo-03.webm" type="video/webm">
+            <source src="../design-system/assets/videos/modulos/modulo-03.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="mod-texto"><h3>Molhos Escuros</h3><p>Os molhos de caldos de carne e ossos, como o Demi Glace, e por que eles são tão importantes para a gastronomia mundial.</p></div>
+      </article>
+      <article class="modcard">
+        <div class="mod-video">
+          <span class="mod-n">04</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="../design-system/assets/videos/modulos/modulo-04-poster.jpg" aria-hidden="true">
+            <source src="../design-system/assets/videos/modulos/modulo-04.webm" type="video/webm">
+            <source src="../design-system/assets/videos/modulos/modulo-04.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="mod-texto"><h3>Molhos Brancos</h3><p>Béchamel, Alfredo e até um molho de Alho Vegano exclusivo do curso Saucier.</p></div>
+      </article>
+      <article class="modcard">
+        <div class="mod-video">
+          <span class="mod-n">05</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="../design-system/assets/videos/modulos/modulo-05-poster.jpg" aria-hidden="true">
+            <source src="../design-system/assets/videos/modulos/modulo-05.webm" type="video/webm">
+            <source src="../design-system/assets/videos/modulos/modulo-05.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="mod-texto"><h3>Emulsões</h3><p>Misturas de líquidos que normalmente não se misturariam: o famoso Hollandaise e a clássica Maionese, sem desandar.</p></div>
+      </article>
+      <article class="modcard">
+        <div class="mod-video">
+          <span class="mod-n">06</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="../design-system/assets/videos/modulos/modulo-06-poster.jpg" aria-hidden="true">
+            <source src="../design-system/assets/videos/modulos/modulo-06.webm" type="video/webm">
+            <source src="../design-system/assets/videos/modulos/modulo-06.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="mod-texto"><h3>Molhos Verdes</h3><p>Feitos a frio, à base de ervas: Chimichurri, Guacamole e a <b>melhor receita de pesto da internet</b>, exclusivíssima da Saucier.</p></div>
+      </article>
+      <article class="modcard">
+        <div class="mod-video">
+          <span class="mod-n">07</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="../design-system/assets/videos/modulos/modulo-07-poster.jpg" aria-hidden="true">
+            <source src="../design-system/assets/videos/modulos/modulo-07.webm" type="video/webm">
+            <source src="../design-system/assets/videos/modulos/modulo-07.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="mod-texto"><h3>Atomatados</h3><p>O clássico molho de tomate, o super popular Ketchup e uma receita maravilhosa de Barbecue.</p></div>
+      </article>
+      <article class="modcard">
+        <div class="mod-video">
+          <span class="mod-n">08</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="../design-system/assets/videos/modulos/modulo-08-poster.jpg" aria-hidden="true">
+            <source src="../design-system/assets/videos/modulos/modulo-08.webm" type="video/webm">
+            <source src="../design-system/assets/videos/modulos/modulo-08.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="mod-texto"><h3>Picantes</h3><p>Receitas pungentes como a Mostarda e a Sriracha, além de surpresinhas que só o aluno Saucier experimenta.</p></div>
+      </article>
+      <article class="modcard">
+        <div class="mod-video">
+          <span class="mod-n">09</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="../design-system/assets/videos/modulos/modulo-09-poster.jpg" aria-hidden="true">
+            <source src="../design-system/assets/videos/modulos/modulo-09.webm" type="video/webm">
+            <source src="../design-system/assets/videos/modulos/modulo-09.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="mod-texto"><h3>Temperos</h3><p>Temperos práticos e duráveis que se encaixam em inúmeras receitas. O verdadeiro curinga do dia a dia.</p></div>
+      </article>
+      <article class="modcard">
+        <div class="mod-video">
+          <span class="mod-n">10</span>
+          <video autoplay muted loop playsinline preload="metadata" poster="../design-system/assets/videos/modulos/modulo-10-poster.jpg" aria-hidden="true">
+            <source src="../design-system/assets/videos/modulos/modulo-10.webm" type="video/webm">
+            <source src="../design-system/assets/videos/modulos/modulo-10.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="mod-texto"><h3>Molhos Doces</h3><p>Perfeitos para sobremesas e também para carnes, trazendo mais sabor e possibilidades para a sua gastronomia.</p></div>
+      </article>
     </div>
     <div class="center" style="margin-top:var(--space-16)">
       <a class="btn btn-primary" href="https://pay.hotmart.com/H70087725N?src=lp-curso&sck=modulos" rel="noopener">Quero aprender a fazer molhos deliciosos</a>
