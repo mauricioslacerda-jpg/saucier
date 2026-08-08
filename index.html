@@ -125,6 +125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     opacity: 0.05; mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
   img { display: block; max-width: 100%; }
+  .only-mobile { display: none; }
   .wrap { max-width: 1120px; margin: 0 auto; padding-inline: var(--space-6); }
   h1,h2,h3 { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking-display); line-height: var(--leading-tight); }
   .eyebrow { font-weight: 700; font-size: var(--text-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase;
@@ -443,7 +444,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero .grid > *, .curso .grid > *, .chef .grid > *,
     .steps > *, .dores-grid > *, .degraus > *, .historia-grid > *, .blog .blog-grid > * { min-width: 0; }
     .degrau.destaque { transform: none; }
-    .molhos { grid-template-columns: 1fr 1fr; }
+    /* vitrine de molhos: carrossel horizontal em vez de grid 2 col espremido —
+       mantém o card no mesmo tamanho/proporção, só rola de lado */
+    .molhos { display: flex; grid-template-columns: unset; overflow-x: auto; scroll-snap-type: x mandatory;
+      gap: var(--space-4); margin-inline: calc(var(--space-6) * -1); padding-inline: var(--space-6);
+      padding-bottom: var(--space-3); scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .molhos::-webkit-scrollbar { display: none; }
+    .molhos .flip, .molhos .molho-static { flex: 0 0 78vw; max-width: 300px; scroll-snap-align: center; }
+    .only-mobile { display: inline; }
     .hero h1 { font-size: var(--text-4xl); }
     .final form { flex-direction: column; }
     .final .row { flex-direction: column; }
@@ -575,8 +583,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-title">Os molhos da casa</h2>
     <p class="section-desc">Estes molhos saíram da cozinha da Saucier para a mesa de centenas de famílias no Rio.
       No curso, você aprende a fazer cada um e a inventar os próximos.</p>
-    <p class="section-desc" style="margin-top:var(--space-3);font-size:var(--text-sm);color:hsl(var(--brand));font-weight:700">
-      Toque em cada molho para ver onde ele entra.</p>
+    <p class="section-desc swipe-hint" style="margin-top:var(--space-3);font-size:var(--text-sm);color:hsl(var(--brand));font-weight:700">
+      Toque em cada molho para ver onde ele entra.<span class="only-mobile"> Deslize para o lado para ver os outros.</span></p>
     <div class="molhos">
 
       <div class="flip" tabindex="0" role="button" aria-label="Chimichurri: ver aplicações">
