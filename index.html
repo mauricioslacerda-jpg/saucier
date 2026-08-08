@@ -182,6 +182,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hero-overlay { position: absolute; inset: 0; z-index: -1;
     background: hsl(19 80% 36% / 0.9); }
   @media (prefers-reduced-motion: reduce) { .hero-bg { display: none; } }
+  .hero-video-mobile { display: none; }
   .hero .grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-16); align-items: center; }
   .hero .logo { width: 280px; margin-bottom: var(--space-6); }
   .hero h1 { font-size: var(--text-5xl); margin-bottom: var(--space-4); }
@@ -452,6 +453,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .molhos::-webkit-scrollbar { display: none; }
     .molhos .flip, .molhos .molho-static { flex: 0 0 78vw; max-width: 300px; scroll-snap-align: center; }
     .only-mobile { display: inline; }
+    /* video de fundo do hero não funciona bem espremido no mobile — esconder e
+       mostrar o mesmo vídeo, contido, abaixo do CTA "Conhecer o curso" */
+    .hero-bg, .hero-overlay { display: none; }
+    .hero-video-mobile { display: flex; justify-content: center; position: relative; margin-top: var(--space-8); margin-bottom: var(--space-8); }
+    .hero-video-mobile .glow { position: absolute; width: 78%; aspect-ratio: 1; border-radius: 50%;
+      background: radial-gradient(circle, hsl(150 65% 55% / .80) 0%, hsl(150 65% 50% / .35) 45%, transparent 68%);
+      filter: blur(12px); z-index: 0; }
+    .hero-video-mobile .video-card { position: relative; z-index: 1; width: 82%; max-width: 340px;
+      border-radius: var(--radius-lg); overflow: hidden; border: 6px solid #fff;
+      box-shadow: 0 18px 30px hsl(20 60% 15% / .35); transform: rotate(-1.5deg); }
+    .hero-video-mobile .video-card video { display: block; width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; }
     .hero h1 { font-size: var(--text-4xl); }
     .final form { flex-direction: column; }
     .final .row { flex-direction: column; }
@@ -503,6 +515,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         no fogão que você já tem, do zero até você virar o saucier da sua casa.</p>
       <p class="proof">246 famílias no Rio já levaram esses molhos para a mesa. O pesto sozinho passou de 2.000 potes vendidos.</p>
       <a href="#curso" class="btn btn-ghost-on-dark">Conhecer o curso →</a>
+      <div class="hero-video-mobile">
+        <div class="glow"></div>
+        <div class="video-card">
+          <video autoplay muted loop playsinline preload="metadata" poster="design-system/assets/video/chef-cozinha-poster.jpg">
+            <source src="design-system/assets/video/chef-cozinha.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
 
     <!-- CAPTURA · CTA dominante -->
@@ -890,7 +910,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           e o pesto virou campeão de recompra. Faltava colocar a técnica na mão de mais gente. Por isso o curso.
           Eu ensino como cozinheiro ensina: <b>sem atalho mágico, sem virar chef em sete dias</b>.
           E não quero que você compre curso para deixar engavetado. Quero molho na sua panela.</p>
-        <img class="historia-foto" src="design-system/assets/fotos/carne-chimichurri-cerveja.jpg" alt="Carne fatiada com chimichurri Saucier na tábua, cerveja ao fundo, foto da sessão oficial da marca" loading="lazy">
+        <img class="historia-foto" src="design-system/assets/fotos/chef-feliz-pesto.jpg" alt="Mauricio Lacerda, chef e fundador da Saucier, sorrindo com um pote de pesto na mão" loading="lazy">
       </div>
       <div class="historia-aside">
         <span class="badge-le">SENAC · Le Cordon Bleu Brasil</span>
