@@ -123,6 +123,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .center .section-title { font-size: var(--text-4xl); margin-block: var(--space-2) var(--space-3); }
   .center .section-desc { color: hsl(var(--text-muted)); max-width: 58ch; margin-inline: auto; }
 
+  /* Esse curso é pra você (3 públicos) */
+  .publico-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-top: var(--space-12); }
+  .publico { background: hsl(var(--surface)); border: 1px solid hsl(var(--border)); border-radius: var(--radius-xl); overflow: hidden; text-align: left; }
+  .publico img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .publico .conteudo { padding: var(--space-6); }
+  .publico .tag { font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wide); color: hsl(var(--brand)); display: block; margin-bottom: var(--space-2); }
+  .publico h3 { font-family: var(--font-display); font-size: var(--text-xl); letter-spacing: var(--tracking-display); line-height: 1.15; margin-bottom: var(--space-2); }
+  .publico p { font-size: var(--text-sm); color: hsl(var(--text-muted)); }
+
   /* O que você ganha (grade da LP antiga) — área verde */
   .ganhos { background: hsl(var(--verde-suave)); }
   .ganhos .eyebrow { color: hsl(var(--verde-escuro)); }
@@ -238,13 +247,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   footer a { color: hsl(var(--neutral-300)); }
 
   @media (max-width: 860px) {
-    .hero .grid, .ganho-grid, .mudar-grid, .bonus-grid, .broto .grid { grid-template-columns: 1fr; }
+    .hero .grid, .ganho-grid, .mudar-grid, .bonus-grid, .broto .grid, .publico-grid { grid-template-columns: 1fr; }
     .galeria { grid-template-columns: 1fr 1fr; }
     .hero .chef-foto { max-height: 340px; }
     .potes img { height: 88px; }
     /* grid items mantêm min-width:auto por padrão e não encolhem abaixo do max-content,
        o que estoura a viewport mesmo em 1 coluna — forçar min-width:0 em todos */
-    .hero .grid > *, .ganho-grid > *, .mudar-grid > *, .bonus-grid > *, .broto .grid > * { min-width: 0; }
+    .hero .grid > *, .ganho-grid > *, .mudar-grid > *, .bonus-grid > *, .broto .grid > *, .publico-grid > * { min-width: 0; }
   }
 </style>
 </head>
@@ -284,6 +293,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </header>
+
+<!-- ESSE CURSO É PRA VOCÊ (3 públicos) -->
+<section class="block">
+  <div class="wrap center">
+    <div class="eyebrow">Esse curso é pra você</div>
+    <h2 class="section-title">Você se encaixa em pelo menos um desses</h2>
+    <div class="publico-grid">
+      <article class="publico">
+        <img src="../design-system/assets/fotos/publico-familia.jpg" alt="Mãe cozinhando com as filhas na cozinha" loading="lazy">
+        <div class="conteudo">
+          <span class="tag">Nunca fez um curso de gastronomia</span>
+          <h3>Faaaala meu broto 🌱 Comida boa não devia ser mistério.</h3>
+          <p>Você não precisa saber cozinhar pra começar. O curso vai do zero: higienização, utensílios que você já tem em casa, e os molhos-mãe que destravam dezenas de receitas.</p>
+        </div>
+      </article>
+      <article class="publico">
+        <img src="../design-system/assets/fotos/publico-especializacao.jpg" alt="Mulher cozinhando enquanto consulta receita no tablet" loading="lazy">
+        <div class="conteudo">
+          <span class="tag">Quer se especializar</span>
+          <h3>Você já cozinha bem. Aqui está a técnica que sustenta isso.</h3>
+          <p>SENAC + Le Cordon Bleu Brasil, os molhos-mãe da cozinha clássica de Escoffier, ficha técnica e informação nutricional de cada receita. Não é receita solta, é o sistema por trás dela.</p>
+        </div>
+      </article>
+      <article class="publico">
+        <img src="../design-system/assets/fotos/chef-feliz-pesto.jpg" alt="Mauricio Lacerda sorrindo com um pote de pesto Saucier" loading="lazy">
+        <div class="conteudo">
+          <span class="tag">Quer ganhar dinheiro com isso</span>
+          <h3>A crise transforma. Meu molho virou produto. O seu também pode.</h3>
+          <p>Comecei vendendo pote de porta em porta no Rio. Em um ano, 246 famílias levaram Saucier pra mesa. O bônus de Criação de Sabores ensina o mesmo caminho que eu percorri.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
 <!-- O QUE VOCÊ GANHA (grade da LP antiga) -->
 <section class="block ganhos">
