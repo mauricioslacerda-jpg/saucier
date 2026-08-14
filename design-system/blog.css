@@ -128,6 +128,9 @@ nav a.back { font-weight: 700; color: hsl(var(--text)); text-decoration: none; f
   color: hsl(var(--brand)); margin-bottom: var(--space-2); display: block; }
 .blog-card h2 { font-size: var(--text-xl); margin-bottom: var(--space-3); color: hsl(var(--text)); }
 .blog-card p { color: hsl(var(--text-muted)); font-size: var(--text-sm); }
+.blog-card[data-receita="Pesto"] { background: radial-gradient(circle at 28% 22%, hsl(var(--verde-vivo) / .22) 0%, transparent 65%), hsl(var(--neutral-0));
+  border-color: hsl(var(--verde-vivo) / .45); }
+.blog-card[data-receita="Pesto"]:hover { border-color: hsl(var(--verde-vivo)); }
 
 .back-to-top { position: fixed; right: var(--space-6); bottom: var(--space-6); z-index: 40; width: 48px; height: 48px;
   border-radius: 50%; background: hsl(var(--brand)); color: hsl(var(--text-on-brand)); border: none; cursor: pointer;
@@ -150,6 +153,21 @@ nav a.back { font-weight: 700; color: hsl(var(--text)); text-decoration: none; f
 #cookie-banner .cookie-decline:hover { background: hsl(var(--neutral-50) / .1); }
 body:has(#cookie-banner.show) .back-to-top { bottom: calc(var(--space-6) + 60px); }
 
+
+/* Envie sua receita de família */
+.receita-familia { background: hsl(var(--verde-suave)); padding-block: var(--space-16); }
+.receita-familia h2 { font-size: var(--text-3xl); margin-block: var(--space-2) var(--space-4); }
+.receita-familia > .wrap-wide > p { color: hsl(var(--text-muted)); max-width: 62ch; margin-bottom: var(--space-8); }
+.receita-familia .rf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); align-items: start; }
+.receita-familia .rf-grid > * { min-width: 0; }
+.receita-familia .modelo { background: hsl(var(--neutral-0)); border-radius: var(--radius-lg); padding: var(--space-6); border: 1px solid hsl(var(--neutral-950) / 0.12); }
+.receita-familia .modelo h3 { font-size: var(--text-lg); font-family: var(--font-body); font-weight: 700; margin-bottom: var(--space-4); color: hsl(var(--verde-escuro)); }
+.receita-familia .modelo pre { white-space: pre-wrap; font-family: var(--font-body); font-size: var(--text-sm); color: hsl(var(--text-muted)); line-height: var(--leading-relaxed); }
+.receita-familia form { display: flex; flex-direction: column; gap: var(--space-4); }
+.receita-familia input, .receita-familia textarea { font: inherit; padding: var(--space-4); border-radius: var(--radius-md); border: 1px solid hsl(var(--neutral-950) / 0.2); background: hsl(var(--neutral-0)); }
+.receita-familia textarea { resize: vertical; min-height: 140px; }
+.receita-familia .rf-nota { font-size: var(--text-xs); color: hsl(var(--text-subtle)); margin-top: var(--space-2); }
+@media (max-width: 720px) { .receita-familia .rf-grid { grid-template-columns: 1fr; } }
 
 footer { padding-block: var(--space-12); text-align: center; color: hsl(var(--text-muted)); font-size: var(--text-sm); }
 footer img { height: 24px; margin: 0 auto var(--space-4); }
