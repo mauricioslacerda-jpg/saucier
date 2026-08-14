@@ -92,12 +92,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transform: translateY(-2px); box-shadow: 0 14px 30px hsl(20 60% 15% / .35); }
   .btn-sub { display: block; font-size: var(--text-xs); font-weight: 500; margin-top: var(--space-3); opacity: .85; }
 
+  .back-to-top { position: fixed; right: var(--space-6); bottom: var(--space-6); z-index: 40; width: 48px; height: 48px;
+    border-radius: 50%; background: hsl(var(--brand)); color: hsl(var(--text-on-brand)); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; font-size: var(--text-xl); box-shadow: var(--shadow-lg);
+    opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease); }
+  .back-to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .back-to-top:hover { background: hsl(var(--brand-hover)); }
+
   nav { position: sticky; top: 0; z-index: 50; background: hsl(var(--neutral-50));
     border-bottom: 1.5px solid hsl(var(--neutral-950) / 0.88); }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); padding-block: var(--space-3); }
   nav img { height: 30px; }
   nav a.cta { font-weight: 700; color: hsl(var(--brand)); text-decoration: none; font-size: var(--text-sm); }
   nav a.back { font-weight: 700; color: hsl(var(--text)); text-decoration: none; font-size: var(--text-sm); }
+  nav .navlinks { display: flex; gap: var(--space-6); align-items: center; }
+
+  /* Hambúrguer mobile (CSS-only, checkbox hack) */
+  #nav-toggle { display: none; }
+  .nav-burger { display: none; cursor: pointer; padding: var(--space-2); }
+  .nav-burger span { display: block; width: 22px; height: 2.5px; background: hsl(var(--text)); margin: 5px 0; transition: transform var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease); }
+  .nav-drawer { display: contents; }
+  .nav-scrim { display: none; }
+  @media (max-width: 860px) {
+    .nav-burger { display: block; }
+    .nav-drawer { display: block; position: fixed; inset: 0 0 0 auto; width: min(78vw, 300px); height: 100vh;
+      background: hsl(var(--neutral-0)); box-shadow: -8px 0 24px hsl(26 30% 6% / .25); z-index: 60;
+      transform: translateX(100%); transition: transform var(--dur-base) var(--ease); padding: var(--space-20) var(--space-8) var(--space-8); }
+    .nav-drawer .navlinks { flex-direction: column; align-items: flex-start; gap: var(--space-6); display: flex; }
+    .nav-drawer .navlink, .nav-drawer .back { font-size: var(--text-lg); }
+    #nav-toggle:checked ~ .nav-drawer { transform: translateX(0); }
+    #nav-toggle:checked ~ .nav-scrim { display: block; position: fixed; inset: 0; background: hsl(26 30% 6% / .4); z-index: 55; }
+    #nav-toggle:checked ~ .nav-burger span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    #nav-toggle:checked ~ .nav-burger span:nth-child(2) { opacity: 0; }
+    #nav-toggle:checked ~ .nav-burger span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+  }
 
   /* Hero: releitura do topo da LP antiga (chef apontando o pote) */
   .hero { background: hsl(var(--orange-600)); color: hsl(var(--text-on-brand)); padding-top: var(--space-16); overflow: hidden; }
@@ -264,8 +292,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav>
   <div class="wrap">
     <a href="../"><img src="../design-system/assets/saucier-logo-laranja.png" alt="Saucier Molhos Artesanais"></a>
-    <a href="../" class="back">← Página inicial</a>
-    <a href="#oferta" class="cta">Compre agora →</a>
+    <input type="checkbox" id="nav-toggle">
+    <div class="nav-drawer">
+      <div class="navlinks">
+        <a href="../" class="back">← Página inicial</a>
+        <a href="../blog/" class="back">Blog</a>
+      </div>
+    </div>
+    <label class="nav-burger" for="nav-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></label>
+    <label class="nav-scrim" for="nav-toggle"></label>
+    <a href="#oferta" class="cta">Comprar →</a>
   </div>
 </nav>
 
@@ -619,6 +655,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.dataLayer.push({ event: 'view_item', item_id: 'H70087725N', currency: 'BRL', value: 290 });
     if (typeof fbq === 'function') fbq('track', 'ViewContent', { content_ids: ['H70087725N'], content_type: 'product', value: 290, currency: 'BRL' });
   } catch (e) {}
+</script>
+
+<button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">&uarr;</button>
+<script>
+  (function () {
+    var btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', function () {
+      btn.classList.toggle('show', window.scrollY > 150);
+    }, { passive: true });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    var toggle = document.getElementById('nav-toggle');
+    document.querySelectorAll('.nav-drawer a').forEach(function (a) {
+      a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
+    });
+  })();
 </script>
 </body>
 </html>

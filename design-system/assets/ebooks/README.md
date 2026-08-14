@@ -14,6 +14,10 @@ tags: [keter, companion]
 
 - [Abrir `Pesto-Pelo-Mundo-Saucier.pdf`](Pesto-Pelo-Mundo-Saucier.pdf)
 
+### 🖼️ Imagens
+
+- [Abrir `capa-preview.jpg`](capa-preview.jpg)
+
 <!-- companion-binaries:end -->
 
 ## Sobre esta pasta

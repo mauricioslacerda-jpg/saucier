@@ -10,4 +10,19 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://saucier.com.br/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://saucier.com.br/blog/molhos-mae-guia-completo/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://saucier.com.br/blog/molho-bechamel-sem-embolar/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/maionese-caseira-sem-desandar/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/molho-hollandaise-sem-talhar/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/molho-de-tomate-caseiro/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/ketchup-caseiro-sem-conservante/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/mostarda-caseira/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/chimichurri-autentico/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/quanto-tempo-dura-molho-caseiro/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/melhor-receita-pesto-tradicional/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

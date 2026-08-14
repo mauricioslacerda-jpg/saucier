@@ -24,6 +24,8 @@ tags: [keter, companion]
 - [Abrir `molho-tempero-vovo.jpg`](molho-tempero-vovo.jpg)
 - [Abrir `molho-temperos.jpg`](molho-temperos.jpg)
 - [Abrir `picanha-chimichurri.jpg`](picanha-chimichurri.jpg)
+- [Abrir `publico-especializacao.jpg`](publico-especializacao.jpg)
+- [Abrir `publico-familia.jpg`](publico-familia.jpg)
 
 <!-- companion-binaries:end -->
 

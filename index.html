@@ -170,7 +170,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   nav .navlink:hover { color: hsl(var(--brand)); }
   nav .email-link { display: inline-flex; gap: 5px; align-items: center; color: hsl(var(--text-muted)); font-weight: 500; }
   nav a.cta { font-weight: 700; color: hsl(var(--brand)); text-decoration: none; font-size: var(--text-sm); }
-  @media (max-width: 820px) { nav .navlinks, nav .email-link { display: none; } }
+
+  /* Hambúrguer mobile (CSS-only, checkbox hack) */
+  #nav-toggle { display: none; }
+  .nav-burger { display: none; cursor: pointer; padding: var(--space-2); }
+  .nav-burger span { display: block; width: 24px; height: 2.5px; background: hsl(var(--text)); margin: 5px 0; transition: transform var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease); }
+  .nav-drawer { display: contents; }
+  .nav-scrim { display: none; }
+
+  @media (max-width: 820px) {
+    .nav-burger { display: block; }
+    .nav-drawer { display: block; position: fixed; inset: 0 0 0 auto; width: min(78vw, 320px); height: 100vh;
+      background: hsl(var(--neutral-0)); box-shadow: -8px 0 24px hsl(26 30% 6% / .25); z-index: 60;
+      transform: translateX(100%); transition: transform var(--dur-base) var(--ease); padding: var(--space-20) var(--space-8) var(--space-8); overflow-y: auto; }
+    .nav-drawer .navlinks { flex-direction: column; align-items: flex-start; gap: var(--space-6); display: flex; }
+    .nav-drawer .navlink { font-size: var(--text-lg); }
+    .nav-drawer .email-link { margin-top: var(--space-8); }
+    #nav-toggle:checked ~ .nav-drawer { transform: translateX(0); }
+    #nav-toggle:checked ~ .nav-scrim { display: block; position: fixed; inset: 0; background: hsl(26 30% 6% / .4); z-index: 55; }
+    #nav-toggle:checked ~ .nav-burger span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    #nav-toggle:checked ~ .nav-burger span:nth-child(2) { opacity: 0; }
+    #nav-toggle:checked ~ .nav-burger span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+  }
+
+  /* Botão voltar ao topo */
+  .back-to-top { position: fixed; right: var(--space-6); bottom: var(--space-6); z-index: 40; width: 48px; height: 48px;
+    border-radius: 50%; background: hsl(var(--brand)); color: hsl(var(--text-on-brand)); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; font-size: var(--text-xl); box-shadow: var(--shadow-lg);
+    opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease); }
+  .back-to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .back-to-top:hover { background: hsl(var(--brand-hover)); }
 
   /* ---- Hero ---- */
   /* hero com vídeo de fundo (cozinha real 8K) + overlay laranja (#24 Zander: gradiente quente) */
@@ -485,14 +514,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- NAV -->
 <nav>
   <div class="wrap">
-    <img src="design-system/assets/saucier-logo-laranja.png" alt="Saucier Molhos Artesanais">
-    <div class="navlinks">
-      <a href="#curso" class="navlink">O curso</a>
-      <a href="#historia" class="navlink">História</a>
-      <a href="#manifesto" class="navlink">Manifesto</a>
+    <a href="./"><img src="design-system/assets/saucier-logo-laranja.png" alt="Saucier Molhos Artesanais"></a>
+    <input type="checkbox" id="nav-toggle">
+    <div class="nav-drawer">
+      <div class="navlinks">
+        <a href="#curso" class="navlink">O curso</a>
+        <a href="#historia" class="navlink">História</a>
+        <a href="#manifesto" class="navlink">Manifesto</a>
+        <a href="blog/" class="navlink">Blog</a>
+        <a href="mailto:contato@saucier.com.br" class="navlink email-link">✉ contato@saucier.com.br</a>
+      </div>
     </div>
+    <label class="nav-burger" for="nav-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></label>
+    <label class="nav-scrim" for="nav-toggle"></label>
     <div class="nav-actions">
-      <a href="mailto:contato@saucier.com.br" class="navlink email-link">✉ contato@saucier.com.br</a>
       <a href="#receita" class="cta">Ebook grátis →</a>
     </div>
   </div>
@@ -1047,6 +1082,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       } catch (err) {}
     });
   });
+</script>
+
+<button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">&uarr;</button>
+<script>
+  (function () {
+    var btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', function () {
+      btn.classList.toggle('show', window.scrollY > 150);
+    }, { passive: true });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    var toggle = document.getElementById('nav-toggle');
+    document.querySelectorAll('.nav-drawer a').forEach(function (a) {
+      a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
+    });
+  })();
 </script>
 </body>
 </html>
