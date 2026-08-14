@@ -57,53 +57,98 @@
 </header>
 
 <main class="wrap-wide">
-  <div class="blog-grid">
-    <a class="blog-card" href="molhos-mae-guia-completo/">
+  <section class="blog-filtros">
+    <p class="filtros-ajuda">Filtre por tema, receita ou autor, ou ordene por data e popularidade. A receita de pesto vem sempre primeiro. 🌱</p>
+    <div class="filtros-linha">
+      <label>Tema principal
+        <select id="f-tema">
+          <option value="">Todos</option>
+          <option value="Condimentos">Condimentos</option>
+          <option value="Emulsões">Emulsões</option>
+          <option value="Guia prático">Guia prático</option>
+          <option value="Molhos verdes">Molhos verdes</option>
+          <option value="Molhos-mãe clássicos">Molhos-mãe clássicos</option>
+        </select>
+      </label>
+      <label>Receita
+        <select id="f-receita">
+          <option value="">Todas</option>
+          <option value="Béchamel">Béchamel</option>
+          <option value="Chimichurri">Chimichurri</option>
+          <option value="Conservação">Conservação</option>
+          <option value="Hollandaise">Hollandaise</option>
+          <option value="Ketchup">Ketchup</option>
+          <option value="Maionese">Maionese</option>
+          <option value="Molho de tomate">Molho de tomate</option>
+          <option value="Molhos-mãe">Molhos-mãe</option>
+          <option value="Mostarda">Mostarda</option>
+          <option value="Pesto">Pesto</option>
+        </select>
+      </label>
+      <label>Autor
+        <select id="f-autor">
+          <option value="">Todos</option>
+          <option value="Mauricio Lacerda">Mauricio Lacerda</option>
+        </select>
+      </label>
+      <label>Ordenar por
+        <select id="f-ordem">
+          <option value="pop">Popularidade</option>
+          <option value="recente">Mais recentes</option>
+          <option value="antigo">Mais antigos</option>
+        </select>
+      </label>
+    </div>
+    <p class="filtros-vazio" id="filtros-vazio" hidden>Nenhum post encontrado com esse filtro. Tenta outra combinação.</p>
+  </section>
+
+  <div class="blog-grid" id="blog-grid">
+    <a class="blog-card" href="molhos-mae-guia-completo/" data-tema="Molhos-mãe clássicos" data-receita="Molhos-mãe" data-autor="Mauricio Lacerda" data-data="2026-07-20" data-pop="95" data-pin="0">
       <span class="tag">molhos-mãe</span>
       <h2>Os 5 molhos-mãe da culinária clássica: o guia completo</h2>
       <p>A base que sustenta toda a culinária clássica, explicada sem enrolação: o que é cada um dos 5 molhos-mãe, pra que serve e por onde continuar.</p>
     </a>
-    <a class="blog-card" href="molho-bechamel-sem-embolar/">
+    <a class="blog-card" href="molho-bechamel-sem-embolar/" data-tema="Molhos-mãe clássicos" data-receita="Béchamel" data-autor="Mauricio Lacerda" data-data="2026-07-22" data-pop="50" data-pin="0">
       <span class="tag">molho béchamel</span>
       <h2>Molho béchamel: como fazer sem embolar</h2>
       <p>Por que o béchamel empelota e como evitar, com proporções certas e os erros mais comuns de quem está começando.</p>
     </a>
-    <a class="blog-card" href="maionese-caseira-sem-desandar/">
+    <a class="blog-card" href="maionese-caseira-sem-desandar/" data-tema="Emulsões" data-receita="Maionese" data-autor="Mauricio Lacerda" data-data="2026-07-24" data-pop="65" data-pin="0">
       <span class="tag">maionese caseira</span>
       <h2>Como fazer maionese caseira sem desandar</h2>
       <p>A técnica da emulsão explicada de um jeito que faz sentido, mais o conserto pra quando a maionese desanda mesmo assim.</p>
     </a>
-    <a class="blog-card" href="molho-hollandaise-sem-talhar/">
+    <a class="blog-card" href="molho-hollandaise-sem-talhar/" data-tema="Emulsões" data-receita="Hollandaise" data-autor="Mauricio Lacerda" data-data="2026-07-26" data-pop="55" data-pin="0">
       <span class="tag">molho hollandaise</span>
       <h2>Molho hollandaise: como fazer sem talhar</h2>
       <p>O molho-mãe mais delicado dos cinco, explicado com a técnica de banho-maria e o conserto pra quando ele talha.</p>
     </a>
-    <a class="blog-card" href="molho-de-tomate-caseiro/">
+    <a class="blog-card" href="molho-de-tomate-caseiro/" data-tema="Molhos-mãe clássicos" data-receita="Molho de tomate" data-autor="Mauricio Lacerda" data-data="2026-07-28" data-pop="75" data-pin="0">
       <span class="tag">molho de tomate caseiro</span>
       <h2>Molho de tomate caseiro: como corrigir a acidez</h2>
       <p>Receita base do molho de tomate caseiro e a explicação simples de por que ele fica ácido, e como corrigir sem exagerar no açúcar.</p>
     </a>
-    <a class="blog-card" href="ketchup-caseiro-sem-conservante/">
+    <a class="blog-card" href="ketchup-caseiro-sem-conservante/" data-tema="Molhos-mãe clássicos" data-receita="Ketchup" data-autor="Mauricio Lacerda" data-data="2026-07-30" data-pop="70" data-pin="0">
       <span class="tag">ketchup caseiro</span>
       <h2>Ketchup caseiro: receita sem conservante</h2>
       <p>A receita de ketchup caseiro sem conservante, com o dado de sódio que compara direto com a versão industrializada.</p>
     </a>
-    <a class="blog-card" href="mostarda-caseira/">
+    <a class="blog-card" href="mostarda-caseira/" data-tema="Condimentos" data-receita="Mostarda" data-autor="Mauricio Lacerda" data-data="2026-08-01" data-pop="40" data-pin="0">
       <span class="tag">mostarda caseira</span>
       <h2>Mostarda caseira: como fazer em casa</h2>
       <p>A receita mais simples do cluster, com a curiosidade científica de por que a mostarda pica mais quando feita com líquido frio.</p>
     </a>
-    <a class="blog-card" href="chimichurri-autentico/">
+    <a class="blog-card" href="chimichurri-autentico/" data-tema="Molhos verdes" data-receita="Chimichurri" data-autor="Mauricio Lacerda" data-data="2026-08-03" data-pop="80" data-pin="0">
       <span class="tag">chimichurri autêntico</span>
       <h2>Chimichurri autêntico: a receita argentina original</h2>
       <p>A receita original argentina, sem cebola nem tomate, e a diferença de proporção que corta melhor a gordura da carne.</p>
     </a>
-    <a class="blog-card" href="quanto-tempo-dura-molho-caseiro/">
+    <a class="blog-card" href="quanto-tempo-dura-molho-caseiro/" data-tema="Guia prático" data-receita="Conservação" data-autor="Mauricio Lacerda" data-data="2026-08-05" data-pop="60" data-pin="0">
       <span class="tag">quanto tempo dura molho caseiro na geladeira</span>
       <h2>Quanto tempo dura um molho caseiro na geladeira</h2>
       <p>O guia de conservação que amarra todos os outros: quanto tempo dura cada categoria de molho e como esterilizar o pote certo.</p>
     </a>
-    <a class="blog-card" href="melhor-receita-pesto-tradicional/">
+    <a class="blog-card" href="melhor-receita-pesto-tradicional/" data-tema="Molhos verdes" data-receita="Pesto" data-autor="Mauricio Lacerda" data-data="2026-08-07" data-pop="98" data-pin="1">
       <span class="tag">melhor receita de pesto</span>
       <h2>A melhor receita de pesto tradicional (genovês)</h2>
       <p>A receita clássica genovesa e o motivo, explicado de forma simples, de por que o pesto costuma escurecer no liquidificador.</p>
@@ -135,5 +180,37 @@
   })();
 </script>
 <script src="../design-system/consent.js" defer></script>
+<script>
+  (function () {
+    var grid = document.getElementById('blog-grid');
+    var cards = Array.prototype.slice.call(grid.children);
+    var fTema = document.getElementById('f-tema');
+    var fReceita = document.getElementById('f-receita');
+    var fAutor = document.getElementById('f-autor');
+    var fOrdem = document.getElementById('f-ordem');
+    var vazio = document.getElementById('filtros-vazio');
+
+    function aplicar() {
+      var tema = fTema.value, receita = fReceita.value, autor = fAutor.value, ordem = fOrdem.value;
+      var visiveis = cards.filter(function (c) {
+        return (!tema || c.dataset.tema === tema) &&
+               (!receita || c.dataset.receita === receita) &&
+               (!autor || c.dataset.autor === autor);
+      });
+      visiveis.sort(function (a, b) {
+        if (ordem === 'pop') return Number(b.dataset.pop) - Number(a.dataset.pop);
+        if (ordem === 'recente') return b.dataset.data.localeCompare(a.dataset.data);
+        return a.dataset.data.localeCompare(b.dataset.data);
+      });
+      visiveis.sort(function (a, b) { return Number(b.dataset.pin) - Number(a.dataset.pin); });
+      cards.forEach(function (c) { c.hidden = visiveis.indexOf(c) === -1; });
+      visiveis.forEach(function (c) { grid.appendChild(c); });
+      vazio.hidden = visiveis.length > 0;
+    }
+
+    [fTema, fReceita, fAutor, fOrdem].forEach(function (el) { el.addEventListener('change', aplicar); });
+    aplicar();
+  })();
+</script>
 </body>
 </html>
