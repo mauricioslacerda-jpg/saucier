@@ -22,6 +22,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing:
 .btn:focus-visible { outline: none; box-shadow: 0 0 0 3px hsl(var(--ring) / 0.45); }
 .btn-primary { background: hsl(var(--brand)); color: hsl(var(--text-on-brand)); box-shadow: var(--shadow-brand); }
 .btn-primary:hover { background: hsl(var(--brand-hover)); transform: translateY(-1px); }
+/* Verde = engajamento/comunidade (enviar receita, explorar blog), nunca venda — laranja é reservado pra conversão */
+.btn-verde { background: hsl(var(--verde-vivo)); color: #fff; box-shadow: 0 8px 24px hsl(153 32% 30% / .32); }
+.btn-verde:hover { background: hsl(var(--verde-escuro)); transform: translateY(-1px); }
 
 nav { position: sticky; top: 0; z-index: 50; background: hsl(var(--neutral-50));
   border-bottom: 1.5px solid hsl(var(--neutral-950) / 0.88); }
