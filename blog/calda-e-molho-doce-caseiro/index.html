@@ -67,6 +67,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -85,7 +86,7 @@
   <p>Cristalização começa quando grãos de açúcar não totalmente dissolvidos ficam presos na borda da panela. Mexer o açúcar antes dele dissolver por completo é o erro mais comum, porque espalha esses grãos pela calda inteira e cada um vira um ponto de partida para recristalizar tudo.</p>
   <h2>A técnica correta</h2>
   <p>Dissolve o açúcar na água em fogo baixo, sem mexer, só balançando a panela se precisar. Deixa ferver sem tocar. Só depois que a calda já está fervendo e homogênea é seguro mexer ocasionalmente até o ponto desejado.</p>
-  <p><a class="btn btn-primary" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../curso/">Quero ver esse módulo no curso →</a></p>
+  <p><a class="btn btn-verde" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../curso/">Quero ver esse módulo no curso →</a></p>
   <h2>Como evitar cristalização de vez</h2>
   <p>Um fio de limão ou uma colher de glucose de milho adicionados no início interferem na formação da estrutura cristalina do açúcar, tornando a calda muito mais resistente a cristalizar mesmo se mexida cedo demais.</p>
   <h2>Onde usar</h2>
@@ -96,7 +97,7 @@
 <div class="wrap">
   <div class="cta-box">
     <p>Doces é o módulo que fecha a escada do Curso Saucier, do fundamento ao autoral, com a mesma técnica de sempre: sem mistério, só ponto certo.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -138,6 +139,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

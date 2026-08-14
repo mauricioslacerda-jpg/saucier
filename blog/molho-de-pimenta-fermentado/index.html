@@ -67,6 +67,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -85,18 +86,18 @@
   <p>O sal deve ficar entre 2% e 3% do peso total de pimenta mais água, medido em balança de cozinha, não no olho. Sal de menos deixa a fermentação vulnerável a bactéria indesejada, sal de mais trava a fermentação por completo.</p>
   <h2>O que acontece durante a fermentação</h2>
   <p>Bactérias lácticas naturalmente presentes na pimenta se alimentam do açúcar do vegetal e produzem ácido láctico, o mesmo processo do chucrute e do kimchi. É esse ácido que dá a acidez complexa da fermentação, diferente da acidez plana de adicionar vinagre depois de pronto.</p>
-  <p><a class="btn btn-primary" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../curso/">Quero ver esse módulo no curso →</a></p>
+  <p><a class="btn btn-verde" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../curso/">Quero ver esse módulo no curso →</a></p>
   <h2>Sinais de que está indo bem</h2>
   <p>Bolhinhas subindo, cheiro ácido e levemente alcoólico, e a pimenta afundando com o tempo são sinais normais. Mofo na superfície (fiapos coloridos, não a película branca inofensiva de kahm yeast) é sinal de descartar o lote.</p>
   <h2>Depois de fermentado</h2>
-  <p>Bate tudo no liquidificador com um pouco da própria salmoura até virar molho, ajusta a consistência, e pode adicionar um fio de vinagre só se quiser mais acidez pontual. Guarda na geladeira, onde a fermentação desacelera bastante mas continua lenta.</p>
+  <p>Bate tudo no liquidificador com um pouco da própria salmoura até virar molho, ajusta a consistência, e pode adicionar um fio de vinagre só se quiser mais acidez pontual. Guarda na geladeira, onde a fermentação desacelera bastante mas continua lenta. É o mesmo cuidado artesanal por trás da <a href="../melhor-receita-pesto-tradicional/">melhor receita de pesto</a>.</p>
 
 </article>
 
 <div class="wrap">
   <div class="cta-box">
     <p>Fermentação de Pimentas é um dos 2 bônus do Curso Saucier, do zero até o engarrafamento.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -138,6 +139,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

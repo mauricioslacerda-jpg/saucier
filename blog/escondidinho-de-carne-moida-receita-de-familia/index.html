@@ -66,6 +66,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -83,7 +84,7 @@
   <h2>Ingredientes</h2>
   <p>1 bandeja de carne moída<br>Alho e temperos a gosto<br>Um pouco de molho de tomate<br>Batatas inglesas (o suficiente pra render um purê fofo)<br>Manteiga ou margarina<br>Queijo mussarela em fatias ou ralado</p>
   <h2>Modo de preparo</h2>
-  <p>Cozinha a carne moída com alho e temperos a gosto. Adiciona um pouco de molho de tomate, só pra deixar molhadinha, não encharcada.</p>
+  <p>Cozinha a carne moída com alho e temperos a gosto. Adiciona um pouco de <a href="../molho-de-tomate-caseiro/">molho de tomate caseiro</a>, só pra deixar molhadinha, não encharcada.</p>
   <p>Cozinha as batatas inglesas cortadas, depois amassa bem, tempera e coloca um pouco de manteiga ou margarina. Quem gosta, adiciona um pouco de leite no purê também.</p>
   <p>Monta em camadas numa travessa: purê de batata no fundo, a carne moída no meio, e mais purê por cima.</p>
   <p>Coloca queijo mussarela em fatias ou ralado por cima e leva ao forno até gratinar.</p>
@@ -95,7 +96,7 @@
 <div class="wrap">
   <div class="cta-box">
     <p>Prato de família de fim de semana combina bem com um bom molho de acompanhamento. O Curso Saucier ensina a base de vários deles.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -135,6 +136,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

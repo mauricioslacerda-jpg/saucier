@@ -69,6 +69,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -98,14 +99,14 @@
   <p>O molho de tomate é o quinto molho-mãe e também o mais conhecido fora da cozinha francesa, porque virou base de boa parte da culinária italiana e brasileira. A versão clássica é simples: tomate, cebola, alho, azeite e sal, refogados em fogo baixo até concentrar sabor. O erro mais comum é a acidez mal corrigida, e o <a href="../molho-de-tomate-caseiro/">guia de molho de tomate caseiro</a> mostra como resolver isso.</p>
   <h2>E o pesto, o chimichurri e os outros molhos verdes?</h2>
   <p>Nem todo molho bom deriva dos 5 clássicos franceses. Pesto, chimichurri e salsa verde pertencem a outra linhagem, a dos molhos verdes frescos, que usam ervas cruas em vez de roux ou cozimento. São tão importantes quanto os molhos-mãe, só que fora dessa classificação específica de Escoffier.</p>
-  <p><a class="btn btn-primary" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../#receita">Quero o ebook grátis de pesto →</a></p>
+  <p><a class="btn btn-verde" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../#receita">Quero o ebook grátis de pesto →</a></p>
   <p class="fontes">Fontes: <a href="https://www.gov.br/anvisa/pt-br/assuntos/alimentos/rotulagem/rotulagem-nutricional" rel="noopener nofollow">Perguntas e respostas sobre rotulagem nutricional (Anvisa)</a></p>
 </article>
 
 <div class="wrap">
   <div class="cta-box">
     <p>Os 5 molhos-mãe são só o começo. No Curso Saucier você aprende a lógica completa, do fundamento ao autoral, em 10 módulos e 2 bônus.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -150,6 +151,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

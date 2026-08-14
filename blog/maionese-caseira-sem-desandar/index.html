@@ -67,6 +67,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -95,7 +96,7 @@
 <div class="wrap">
   <div class="cta-box">
     <p>Se você curtiu aprender essa técnica, o ebook Pesto pelo Mundo tem mais 10 receitas de molho fresco pra praticar o resto da semana.</p>
-    <a class="btn btn-primary" href="../../#receita">Quero o ebook grátis</a>
+    <a class="btn btn-verde" href="../../#receita">Quero o ebook grátis</a>
   </div>
 </div>
 
@@ -137,6 +138,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

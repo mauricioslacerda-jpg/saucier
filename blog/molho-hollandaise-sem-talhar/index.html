@@ -67,6 +67,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -97,7 +98,7 @@
 <div class="wrap">
   <div class="cta-box">
     <p>Hollandaise é ensinado com o método passo a passo no módulo de Fundamentos do Curso Saucier, sem o susto de talhar na primeira tentativa.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -139,6 +140,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

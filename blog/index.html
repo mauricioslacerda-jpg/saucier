@@ -42,6 +42,7 @@
       <div class="navlinks">
         <a href="../" class="back">&larr; P&aacute;gina inicial</a>
         <a href="../curso/" class="back">Curso</a>
+        <a href="../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -247,9 +248,15 @@
 
 <section class="receita-familia" id="receita-familia">
   <div class="wrap-wide">
-    <div class="eyebrow">Receitas de família</div>
-    <h2 class="section-title">Manda a receita da sua família</h2>
-    <p>Homus da Maíra, escondidinho, pudim sem furinhos: o blog Saucier também é feito de receita de gente de verdade. Se sua família tem uma receita boa (molho, prato, doce, o que for), manda pra gente. A gente lê, ajusta pro formato do blog e publica com seu nome, se você topar.</p>
+    <div class="rf-intro">
+      <!-- TROCAR: foto real da família do Mauricio (TBD, ele vai enviar) -->
+      <img class="rf-foto" src="../design-system/assets/fotos/familia-molhos.jpg" alt="Família reunida na cozinha">
+      <div>
+        <div class="eyebrow">Receitas de família</div>
+        <h2 class="section-title">Um lugar pra guardar a receita da sua família</h2>
+        <p>Toda receita de família carrega uma pessoa dentro dela: quem ensinou, quem ajustava a mão no sal sem medir, quem fazia daquele jeito que só a família dela fazia. A Saucier nasceu exatamente assim, de uma receita de avó que virou negócio. Esse espaço existe pra guardar essas receitas antes que elas se percam: a sua, a da sua mãe, a da sua avó, a do tio que só faz num domingo por ano.</p>
+      </div>
+    </div>
     <div class="rf-grid">
       <div class="modelo">
         <h3>Como preencher</h3>
@@ -316,6 +323,13 @@ Pode mandar exatamente assim, do jeito que você já escreve pra família, sem s
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../design-system/consent.js" defer></script>

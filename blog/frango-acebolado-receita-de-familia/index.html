@@ -66,6 +66,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -87,7 +88,7 @@
   <p>Enquanto isso, bota um pouco de água pra ferver à parte, pra usar depois.</p>
   <p>O frango sozinho vai fazer água e depois secar. Vai mexendo bem pra cozinhar por inteiro.</p>
   <p>Aqui vem o pulo do gato: quando a água secar, deixa o frango paradinho no fogo alto pra dar uma queimadinha no fundo da panela. Depois coloca um pouquinho da água quente e mistura bem pra soltar essa "crostinha" e dourar o frango.</p>
-  <p>Repete esse processo umas 3 vezes, pro frango ficar bem douradinho por fora.</p>
+  <p>Repete esse processo umas 3 vezes, pro frango ficar bem douradinho por fora. É a mesma lógica de caramelização do fundo da panela usada no <a href="../demi-glace-molho-mais-respeitado/">demi-glace</a>.</p>
   <h2>Sobre essa receita</h2>
   <p>Receita de família enviada por Maíra Shalem, leitora do blog Saucier, dentro da série que reúne receitas de mãe e avó de quem acompanha a marca.</p>
 
@@ -96,7 +97,7 @@
 <div class="wrap">
   <div class="cta-box">
     <p>Uma boa técnica de caramelização no fundo da panela é parente direta do que se ensina no Curso Saucier sobre reduções e molhos escuros.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -136,6 +137,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

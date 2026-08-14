@@ -67,6 +67,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -86,15 +87,15 @@
   <h2>Por que a mostarda pica</h2>
   <p>O picante da mostarda vem de uma reação enzimática que só acontece quando a semente moída entra em contato com líquido frio. Água ou vinagre quentes desativam parcialmente essa enzima, e o resultado é uma mostarda mais suave. É por isso que a temperatura do líquido usado no preparo muda o sabor final, não só a textura.</p>
   <h2>Variações</h2>
-  <p>Com mel, vira honey mustard. Com ervas frescas picadas, vira uma versão mais aromática, boa pra marinar carnes.</p>
-  <p><a class="btn btn-primary" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../curso/">Quero aprender os outros 40+ molhos do curso →</a></p>
+  <p>Com mel, vira honey mustard. Com ervas frescas picadas, vira uma versão mais aromática, boa pra marinar carnes. Junto com o <a href="../ketchup-caseiro-sem-conservante/">ketchup caseiro</a>, forma a dupla clássica de condimento de mesa sem conservante.</p>
+  <p><a class="btn btn-verde" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../curso/">Quero aprender os outros 40+ molhos do curso →</a></p>
 
 </article>
 
 <div class="wrap">
   <div class="cta-box">
     <p>Mostarda é só um exemplo de quanto molho caseiro é mais simples do que parece. No Curso Saucier você aprende a lógica de dezenas deles.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -136,6 +137,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

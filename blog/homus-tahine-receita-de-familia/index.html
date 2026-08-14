@@ -66,6 +66,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -89,14 +90,14 @@
   <p>Acrescenta o azeite aos poucos, o alho amassado e o grão de bico cozido. Ajusta o sal se precisar.</p>
   <p>Serve com um fio de azeite, salsinha crua picadinha e pão sírio ou torradas.</p>
   <h2>Sobre essa receita</h2>
-  <p>Essa é uma receita de família enviada por uma leitora do blog Saucier, Maíra Shalem, dentro de uma série que reúne receitas de mãe e avó de quem acompanha a Saucier. Quer mandar a sua? O formulário está no fim da página.</p>
+  <p>Essa é uma receita de família enviada por uma leitora do blog Saucier, Maíra Shalem, dentro de uma série que reúne receitas de mãe e avó de quem acompanha a Saucier. Quer mandar a sua? O formulário está no fim da página. Se você também gosta de ajustar receita no olho, o guia de <a href="../como-criar-sua-propria-receita-de-molho/">como criar sua própria receita de molho</a> mostra o método por trás disso.</p>
 
 </article>
 
 <div class="wrap">
   <div class="cta-box">
     <p>Gostou de receita de família? O Curso Saucier ensina a técnica por trás de molhos e temperos que também viram tradição em casa.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -136,6 +137,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

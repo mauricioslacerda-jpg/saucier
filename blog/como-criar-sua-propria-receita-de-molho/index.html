@@ -67,6 +67,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -85,18 +86,18 @@
   <p>Base: o corpo do molho, o que dá volume e textura (tomate, maionese, um roux, um purê de vegetal). Ácido: o que equilibra e dá vida (vinagre, limão, vinho), sem ele o molho fica pesado e enjoativo. Gordura: o que carrega aroma e dá untuosidade (azeite, manteiga, óleo). Tempero de assinatura: a especiaria, erva ou ingrediente que torna aquele molho reconhecível e diferente de qualquer outro.</p>
   <h2>Como ajustar por prova</h2>
   <p>Muda um pilar de cada vez, em quantidade pequena, e prova antes de seguir pra próxima mudança. Mudar dois ou três ingredientes ao mesmo tempo torna impossível saber o que funcionou e o que atrapalhou.</p>
-  <p><a class="btn btn-primary" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../curso/">Quero ver esse módulo no curso →</a></p>
+  <p><a class="btn btn-verde" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../curso/">Quero ver esse módulo no curso →</a></p>
   <h2>Por que anotar em ficha técnica</h2>
   <p>Um molho bom que não pode ser repetido não é uma receita, é sorte. Anotar proporção exata, ordem dos passos e rendimento é o que separa quem cozinha bem de quem consegue vender, ensinar ou industrializar o que cozinha.</p>
   <h2>A história por trás desse método</h2>
-  <p>Foi assim que a Saucier nasceu: um pesto de família ajustado por prova, vendido de porta em porta no Rio, virou 246 famílias clientes e depois curso. Nenhum molho autoral bom nasce pronto na primeira tentativa, nasce da mesma lógica de prova e ajuste que qualquer um pode aplicar em casa.</p>
+  <p>Foi assim que a Saucier nasceu: um <a href="../melhor-receita-pesto-tradicional/">pesto de família</a> ajustado por prova, vendido de porta em porta no Rio, virou 246 famílias clientes e depois curso. Nenhum molho autoral bom nasce pronto na primeira tentativa, nasce da mesma lógica de prova e ajuste que qualquer um pode aplicar em casa.</p>
 
 </article>
 
 <div class="wrap">
   <div class="cta-box">
     <p>Criação de Sabores é um dos 2 bônus do Curso Saucier: o mesmo método que transformou o pesto de família da Saucier num negócio, passo a passo.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -138,6 +139,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

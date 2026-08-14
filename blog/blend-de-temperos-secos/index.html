@@ -67,6 +67,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -82,10 +83,10 @@
 
 <article class="article wrap">
   <h2>As 3 camadas de um blend</h2>
-  <p>Base salgada: sal, alho em pó, cebola em pó, o que dá o sabor de fundo. Camada aromática: páprica, cominho, orégano, coentro em pó, o que dá profundidade. Toque de identidade: uma pimenta específica ou erva de assinatura, o que torna aquele blend seu e não uma cópia genérica de tempero pronto.</p>
+  <p>Base salgada: sal, alho em pó, cebola em pó, o que dá o sabor de fundo. Camada aromática: páprica, cominho, orégano, coentro em pó, o que dá profundidade. Toque de identidade: uma pimenta específica ou erva de assinatura, o que torna aquele blend seu e não uma cópia genérica de tempero pronto. Se a assinatura for uma <a href="../molho-de-pimenta-fermentado/">pimenta fermentada</a>, ainda melhor.</p>
   <h2>Por que moer na hora muda tudo</h2>
   <p>Pimenta-do-reino moída na hora tem sabor muito mais forte que a industrializada, porque o óleo essencial que carrega o sabor evapora rápido assim que o grão é moído. O mesmo vale pra cominho e coentro em grão: torrar levemente e moer na hora antes de usar faz diferença perceptível.</p>
-  <p><a class="btn btn-primary" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../curso/">Quero ver esse módulo no curso →</a></p>
+  <p><a class="btn btn-verde" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../curso/">Quero ver esse módulo no curso →</a></p>
   <h2>Como guardar sem perder potência</h2>
   <p>Pote de vidro escuro ou opaco, tampa bem fechada, longe de luz direta e do calor do fogão. Um blend bem guardado dura meses, mas perde intensidade aos poucos, então vale fazer em lotes pequenos em vez de um estoque grande de uma vez.</p>
 
@@ -94,7 +95,7 @@
 <div class="wrap">
   <div class="cta-box">
     <p>O módulo de Temperos do Curso Saucier ensina a montar blends de assinatura, a mesma lógica por trás do Tempero da Vovó que começou tudo.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -136,6 +137,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

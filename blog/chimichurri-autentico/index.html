@@ -67,6 +67,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -86,17 +87,17 @@
   <h2>A diferença pra versão brasileira</h2>
   <p>A receita argentina original não leva cebola nem tomate, comuns em adaptações brasileiras. A proporção também muda: o original tem mais vinagre e menos azeite do que a maioria das receitas encontradas no Brasil, o que dá o toque ácido característico, perfeito pra cortar a gordura de uma carne grelhada.</p>
   <h2>Onde usar além de carne</h2>
-  <p>Carnes grelhadas são o uso clássico, mas o chimichurri funciona bem em legumes grelhados, batata assada e até como marinada rápida antes de ir pro fogo.</p>
+  <p>Carnes grelhadas são o uso clássico, mas o chimichurri funciona bem em legumes grelhados, batata assada e até como marinada rápida antes de ir pro fogo. Como qualquer molho fresco, vale saber <a href="../quanto-tempo-dura-molho-caseiro/">quanto tempo ele dura na geladeira</a>.</p>
   <h2>A família dos molhos verdes</h2>
   <p>Chimichurri não é um dos 5 molhos-mãe franceses. Ele pertence à família dos molhos verdes frescos, junto com pesto e salsa verde, que usam ervas cruas como base em vez de roux ou cozimento.</p>
-  <p><a class="btn btn-primary" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../#receita">Quero o ebook grátis de pesto →</a></p>
+  <p><a class="btn btn-verde" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../#receita">Quero o ebook grátis de pesto →</a></p>
 
 </article>
 
 <div class="wrap">
   <div class="cta-box">
     <p>Chimichurri é ensinado no módulo de Molhos Verdes do Curso Saucier, junto com o resto da família de molhos frescos.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -138,6 +139,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

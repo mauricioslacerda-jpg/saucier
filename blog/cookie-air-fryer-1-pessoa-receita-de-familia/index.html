@@ -66,6 +66,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -89,14 +90,14 @@
   <p>Leva na air fryer a 160°C por 6 a 8 minutos.</p>
   <p>Deixa descansar uns 5 minutos antes de comer, porque sai mole e firma enquanto esfria.</p>
   <h2>Sobre essa receita</h2>
-  <p>Receita de família enviada por Morena para o blog Saucier, dentro da série que reúne receitas de mãe e avó de quem acompanha a marca.</p>
+  <p>Receita de família enviada por Morena para o blog Saucier, dentro da série que reúne receitas de mãe e avó de quem acompanha a marca. Se quiser ir além do cookie, o guia de <a href="../calda-e-molho-doce-caseiro/">calda e molho doce caseiro</a> ensina a fazer uma calda pra servir por cima.</p>
 
 </article>
 
 <div class="wrap">
   <div class="cta-box">
     <p>Doces individuais rápidos combinam com uma calda caseira por cima. O Curso Saucier ensina o ponto certo de qualquer calda.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -136,6 +137,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

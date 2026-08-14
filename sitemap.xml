@@ -11,6 +11,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://saucier.com.br/afiliado/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://saucier.com.br/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -25,4 +30,17 @@
   <url><loc>https://saucier.com.br/blog/chimichurri-autentico/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://saucier.com.br/blog/quanto-tempo-dura-molho-caseiro/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://saucier.com.br/blog/melhor-receita-pesto-tradicional/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://saucier.com.br/blog/demi-glace-molho-mais-respeitado/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/molho-de-pimenta-fermentado/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/como-criar-sua-propria-receita-de-molho/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/blend-de-temperos-secos/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/calda-e-molho-doce-caseiro/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/homus-tahine-receita-de-familia/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/frango-acebolado-receita-de-familia/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/escondidinho-de-carne-moida-receita-de-familia/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/strogonoff-de-chocolate-receita-de-familia/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/gilo-gratinado-receita-de-familia/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/pipoca-gourmet-receita-de-familia/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/cookie-air-fryer-1-pessoa-receita-de-familia/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://saucier.com.br/blog/pudim-sem-furinhos-receita-de-familia/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

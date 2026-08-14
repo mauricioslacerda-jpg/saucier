@@ -66,6 +66,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -86,7 +87,7 @@
   <p>Numa panela, junta o leite condensado, o leite, o chocolate em pó, as gemas e a margarina. Deixa ferver, mexendo, engrossando aos poucos.</p>
   <p>Depois de ferver, reserva o creme pra esfriar.</p>
   <p>Numa vasilha à parte, junta o creme de leite sem soro e o chocolate ao leite picado (ou nozes).</p>
-  <p>Bate as claras em neve e misture tudo ao creme já frio, delicadamente.</p>
+  <p>Bate as claras em neve e misture tudo ao creme já frio, delicadamente. Outra sobremesa de família que também é sucesso por aqui é o <a href="../pudim-sem-furinhos-receita-de-familia/">pudim sem furinhos da Tia Mary</a>.</p>
   <h2>Sobre essa receita</h2>
   <p>Receita de família enviada por Celina Gomes para o blog Saucier, dentro da série que reúne receitas de mãe e avó de quem acompanha a marca.</p>
 
@@ -95,7 +96,7 @@
 <div class="wrap">
   <div class="cta-box">
     <p>Doces é um dos módulos do Curso Saucier, com a mesma lógica de ponto e técnica usada nos molhos salgados.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -135,6 +136,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

@@ -66,6 +66,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -86,7 +87,7 @@
   <p>Coloca óleo na panela pipoqueira até cobrir 2/3 do fundo. Coloca o milho até cobrir todo o fundo.</p>
   <p>Liga o fogo alto. Fecha a panela e mexe o tempo todo.</p>
   <p>Espera estourar todo o milho, e só desliga o fogo depois de 5 segundos sem ouvir nenhum estouro.</p>
-  <p>Salga a gosto. O toque de assinatura é finalizar com hondashi e um fio de azeite trufado.</p>
+  <p>Salga a gosto. O toque de assinatura é finalizar com hondashi e um fio de azeite trufado, a mesma lógica de montar um <a href="../blend-de-temperos-secos/">blend de temperos de assinatura</a>.</p>
   <h2>Sobre essa receita</h2>
   <p>Receita de família enviada por Maíra Shalem para o blog Saucier, dentro da série que reúne receitas de mãe e avó de quem acompanha a marca.</p>
 
@@ -95,7 +96,7 @@
 <div class="wrap">
   <div class="cta-box">
     <p>Um bom blend de temperos de assinatura, como esse hondashi com azeite trufado, é exatamente o que se ensina no módulo de Temperos do Curso Saucier.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -135,6 +136,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

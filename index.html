@@ -161,7 +161,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   nav { position: sticky; top: 0; z-index: 50;
     background: hsl(var(--neutral-50));
     border-bottom: 1.5px solid hsl(var(--neutral-950) / 0.88);
-    transition: padding var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease); }
+    transition: padding var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease), transform var(--dur-base) var(--ease); }
+  nav.nav-hidden { transform: translateY(-100%); }
   nav.scrolled { box-shadow: 0 5px 18px hsl(26 30% 12% / 0.12); }
   /* header sempre com 3 elementos: logo (esq) · CTA de compra (centro) · sanduíche (dir) */
   nav .wrap { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-4);
@@ -545,17 +546,23 @@ body:has(#cookie-banner.show) .back-to-top { bottom: calc(var(--space-6) + 60px)
 
   /* Envie sua receita de família */
   .receita-familia { background: hsl(var(--verde-suave)); padding-block: var(--space-16); }
+  .receita-familia .rf-intro { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: var(--space-12); align-items: center; margin-bottom: var(--space-12); }
+  .receita-familia .rf-intro > * { min-width: 0; }
+  .receita-familia .rf-foto { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg); border: 6px solid hsl(var(--neutral-0)); }
   .receita-familia h2 { font-size: var(--text-4xl); margin-block: var(--space-2) var(--space-4); }
-  .receita-familia > .wrap > p { color: hsl(var(--text-muted)); max-width: 62ch; margin-bottom: var(--space-8); }
+  .receita-familia .rf-intro p { color: hsl(var(--text-muted)); font-size: var(--text-lg); max-width: 56ch; }
   .receita-familia .rf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); align-items: start; }
   .receita-familia .rf-grid > * { min-width: 0; }
   .receita-familia .modelo { background: hsl(var(--neutral-0)); border-radius: var(--radius-lg); padding: var(--space-6); border: 1px solid hsl(var(--neutral-950) / 0.12); }
   .receita-familia .modelo h3 { font-size: var(--text-lg); font-family: var(--font-body); font-weight: 700; margin-bottom: var(--space-4); color: hsl(var(--verde-escuro)); }
   .receita-familia .modelo pre { white-space: pre-wrap; font-family: var(--font-body); font-size: var(--text-sm); color: hsl(var(--text-muted)); line-height: var(--leading-relaxed); }
-  .receita-familia form { display: flex; flex-direction: column; gap: var(--space-4); }
-  .receita-familia input, .receita-familia textarea { font: inherit; padding: var(--space-4); border-radius: var(--radius-md); border: 1px solid hsl(var(--neutral-950) / 0.2); background: hsl(var(--neutral-0)); }
+  .receita-familia form { background: hsl(var(--neutral-0)); border-radius: var(--radius-lg); padding: var(--space-6);
+    border: 1px solid hsl(var(--neutral-950) / 0.12); display: flex; flex-direction: column; gap: var(--space-4); }
+  .receita-familia input, .receita-familia textarea { font: inherit; padding: var(--space-4); border-radius: var(--radius-md); border: 1px solid hsl(var(--neutral-950) / 0.2); background: hsl(var(--bg-subtle)); }
   .receita-familia textarea { resize: vertical; min-height: 140px; }
   .receita-familia .rf-nota { font-size: var(--text-xs); color: hsl(var(--text-subtle)); margin-top: var(--space-2); }
+  @media (max-width: 720px) { .receita-familia .rf-intro { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -587,6 +594,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="#historia" class="navlink">História</a>
         <a href="#manifesto" class="navlink">Manifesto</a>
         <a href="blog/" class="navlink">Blog</a>
+        <a href="afiliado/" class="navlink">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">
         <a href="mailto:contato@saucier.com.br" class="email-link">✉ contato@saucier.com.br</a>
@@ -1214,9 +1222,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- RECEITAS DE FAMÍLIA -->
 <section class="receita-familia" id="receita-familia">
   <div class="wrap">
-    <div class="eyebrow">Receitas de família</div>
-    <h2>Manda a receita da sua família</h2>
-    <p>O blog Saucier também é feito de receita de gente de verdade. Se sua família tem uma receita boa (molho, prato, doce, o que for), manda pra gente. A gente lê, ajusta pro formato do blog e publica com seu nome, se você topar.</p>
+    <div class="rf-intro">
+      <!-- TROCAR: foto real da família do Mauricio (TBD, ele vai enviar) -->
+      <img class="rf-foto" src="design-system/assets/fotos/familia-molhos.jpg" alt="Família reunida na cozinha">
+      <div>
+        <div class="eyebrow">Receitas de família</div>
+        <h2>Um lugar pra guardar a receita da sua família</h2>
+        <p>Toda receita de família carrega uma pessoa dentro dela: quem ensinou, quem ajustava a mão no sal sem medir, quem fazia daquele jeito que só a família dela fazia. A Saucier nasceu exatamente assim, de uma receita de avó que virou negócio. Esse espaço existe pra guardar essas receitas antes que elas se percam: a sua, a da sua mãe, a da sua avó, a do tio que só faz num domingo por ano.</p>
+      </div>
+    </div>
     <div class="rf-grid">
       <div class="modelo">
         <h3>Como preencher</h3>
@@ -1327,6 +1341,13 @@ Pode mandar exatamente assim, do jeito que você já escreve pra família, sem s
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="design-system/consent.js" defer></script>

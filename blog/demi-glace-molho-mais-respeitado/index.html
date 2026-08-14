@@ -67,6 +67,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -82,10 +83,10 @@
 
 <article class="article wrap">
   <h2>O que é, de fato</h2>
-  <p>Demi-glace é uma redução: parte igual de espagnole (um dos 5 molhos-mãe) e caldo escuro de carne, cozidos juntos em fogo baixo até reduzir à metade. Não leva farinha nem creme. O corpo aveludado vem da gelatina natural liberada pelo osso durante o cozimento longo do caldo, não de nenhum espessante adicionado depois.</p>
+  <p>Demi-glace é uma redução: parte igual de espagnole (um dos <a href="../molhos-mae-guia-completo/">5 molhos-mãe</a>) e caldo escuro de carne, cozidos juntos em fogo baixo até reduzir à metade. Não leva farinha nem creme. O corpo aveludado vem da gelatina natural liberada pelo osso durante o cozimento longo do caldo, não de nenhum espessante adicionado depois.</p>
   <h2>Por que tem fama de difícil</h2>
   <p>A fama vem do tempo, não da técnica. Um caldo escuro de verdade leva ossos assados, horas de cozimento lento, e a redução final mais algumas horas. Não tem passo complicado, só não tem atalho: reduzir mais rápido em fogo alto queima o fundo e amarga o molho inteiro.</p>
-  <p><a class="btn btn-primary" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../curso/">Quero ver esse módulo no curso →</a></p>
+  <p><a class="btn btn-verde" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-8);min-width:0" href="../../curso/">Quero ver esse módulo no curso →</a></p>
   <h2>Como saber o ponto</h2>
   <p>O ponto certo é quando o demi-glace cobre as costas de uma colher numa camada fina e brilhante, sem escorrer imediatamente. Se ainda escorre rápido como caldo, precisa de mais redução.</p>
   <h2>O que nasce dele</h2>
@@ -96,7 +97,7 @@
 <div class="wrap">
   <div class="cta-box">
     <p>Demi-glace é ensinado no módulo de Molhos Escuros do Curso Saucier, com o caldo do zero e o tempo exato de cada redução.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -138,6 +139,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#CC541C">
+<meta name="author" content="Mauricio Lacerda — Saucier Molhos Artesanais">
+<link rel="icon" type="image/png" href="../design-system/assets/saucier-logo-laranja.png">
+
+<!-- Google Tag Manager · TROCAR GTM-XXXXXXX (mesmo container da home) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+<title>Seja um afiliado Saucier · Compartilhe uma vida com mais tempero</title>
+<meta name="description" content="Seja um afiliado do Curso Saucier de Molhos Artesanais. Uma carta do chef Mauricio Lacerda pra quem se interessou em compartilhar essa jornada e crescer junto.">
+<link rel="canonical" href="https://saucier.com.br/afiliado/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Saucier Molhos Artesanais">
+<meta property="og:title" content="Seja um afiliado Saucier">
+<meta property="og:description" content="Uma carta do chef Mauricio pra quem quer compartilhar uma vida com mais tempero e crescer junto com a Saucier.">
+<meta property="og:url" content="https://saucier.com.br/afiliado/">
+<meta property="og:image" content="https://saucier.com.br/design-system/assets/fotos/chef-feliz-pesto.jpg">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../design-system/tokens.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; max-width: 100%; }
+  body { font-family: var(--font-body); background: hsl(var(--bg)); color: hsl(var(--text)); line-height: var(--leading-normal); }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding-inline: var(--space-6); }
+  .wrap-narrow { max-width: 680px; margin: 0 auto; padding-inline: var(--space-6); }
+  h1,h2,h3 { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking-display); line-height: var(--leading-tight); }
+  .eyebrow { font-weight: 700; font-size: var(--text-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase;
+    color: hsl(var(--brand)); display: inline-flex; align-items: center; gap: var(--space-3); }
+  .eyebrow::before { content: ""; width: 30px; height: 2px; background: hsl(var(--brand)); flex: none; }
+
+  /* Verde Saucier ORIGINAL da LP antiga: #396451 (principal) + #54724F (sálvia) */
+  :root { --verde: 153 27% 31%; --verde-vivo: 153 32% 38%; --verde-escuro: 155 32% 20%; --verde-suave: 150 24% 94%; --salvia: 107 18% 38%; }
+
+  .btn { font: inherit; font-weight: 700; cursor: pointer; border: 1px solid transparent; display: inline-block; text-align: center;
+    min-width: 9rem; padding: var(--space-4) var(--space-12); border-radius: var(--radius-pill);
+    transition: all var(--dur-fast) var(--ease); text-decoration: none; font-size: var(--text-lg); }
+  .btn:focus-visible { outline: none; box-shadow: 0 0 0 3px hsl(var(--ring) / 0.45); }
+  .btn-primary { background: hsl(var(--brand)); color: hsl(var(--text-on-brand)); box-shadow: var(--shadow-brand); }
+  .btn-primary:hover { background: hsl(var(--brand-hover)); transform: translateY(-1px); }
+  .btn-verde { background: hsl(var(--verde-vivo)); color: #fff; box-shadow: none; }
+  .btn-verde:hover { background: hsl(var(--verde-escuro)); transform: translateY(-1px); }
+
+  .back-to-top { position: fixed; right: var(--space-6); bottom: var(--space-6); z-index: 40; width: 48px; height: 48px;
+    border-radius: 50%; background: hsl(var(--brand)); color: hsl(var(--text-on-brand)); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; font-size: var(--text-xl); box-shadow: var(--shadow-lg);
+    opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease); }
+  .back-to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .back-to-top:hover { background: hsl(var(--brand-hover)); }
+  /* Aviso de cookies (LGPD) */
+  #cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; background: hsl(var(--neutral-900));
+    color: hsl(var(--neutral-50)); padding: var(--space-4) var(--space-6); display: flex; align-items: center;
+    justify-content: center; gap: var(--space-6); flex-wrap: wrap; transform: translateY(100%);
+    transition: transform var(--dur-base) var(--ease); font-size: var(--text-xs); }
+  #cookie-banner.show { transform: translateY(0); }
+  #cookie-banner p { margin: 0; max-width: 640px; color: hsl(var(--neutral-300)); }
+  #cookie-banner .cookie-actions { display: flex; gap: var(--space-3); flex: none; }
+  #cookie-banner button { font: inherit; cursor: pointer; border-radius: var(--radius-pill); padding: var(--space-2) var(--space-6);
+    border: 1px solid hsl(var(--neutral-50) / .3); background: transparent; color: hsl(var(--neutral-50)); font-weight: 700; }
+  #cookie-banner .cookie-accept { background: hsl(var(--brand)); border-color: hsl(var(--brand)); }
+  #cookie-banner .cookie-accept:hover { background: hsl(var(--brand-hover)); }
+  #cookie-banner .cookie-decline:hover { background: hsl(var(--neutral-50) / .1); }
+  body:has(#cookie-banner.show) .back-to-top { bottom: calc(var(--space-6) + 60px); }
+
+  nav { position: sticky; top: 0; z-index: 50; background: hsl(var(--neutral-50));
+    border-bottom: 1.5px solid hsl(var(--neutral-950) / 0.88); transition: transform var(--dur-base) var(--ease); }
+  nav.nav-hidden { transform: translateY(-100%); }
+  nav .wrap { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-4); padding-block: var(--space-3); }
+  nav img { height: 30px; }
+  nav a.cta { font-weight: 700; color: hsl(var(--brand)); text-decoration: none; font-size: var(--text-sm); text-align: center; grid-column: 2; }
+
+  #nav-toggle { display: none; }
+  .nav-burger { display: flex; cursor: pointer; padding: var(--space-2); font-size: 1.5rem; line-height: 1;
+    background: none; border: none; transition: transform var(--dur-fast) var(--ease); grid-column: 3; }
+  .nav-scrim { display: none; }
+  #nav-toggle:checked ~ .nav-scrim { display: block; position: fixed; inset: 0; background: hsl(26 20% 8% / .45); z-index: 55; }
+  #nav-toggle:checked ~ .nav-burger { transform: rotate(90deg) scale(0.9); }
+
+  .nav-drawer { display: flex; flex-direction: column; position: fixed; inset: 0 0 0 auto; width: min(82vw, 320px); height: 100vh;
+    background: linear-gradient(165deg, hsl(var(--orange-50)) 0%, hsl(var(--neutral-50)) 55%);
+    box-shadow: -12px 0 32px hsl(26 30% 6% / .28); z-index: 60; border-left: 3px solid hsl(var(--verde-vivo));
+    transform: translateX(100%); transition: transform var(--dur-base) var(--ease); padding: var(--space-14) var(--space-10) var(--space-10); overflow-y: auto; }
+  #nav-toggle:checked ~ .nav-drawer { transform: translateX(0); }
+  .nav-drawer .drawer-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-10); }
+  .nav-drawer .drawer-close { font-size: var(--text-xl); background: none; border: none; cursor: pointer;
+    color: hsl(var(--text-muted)); line-height: 1; padding: var(--space-2); }
+  .nav-drawer .drawer-close:hover { color: hsl(var(--brand)); }
+  .nav-drawer .navlinks { display: flex; flex-direction: column; border-top: 2px solid hsl(var(--verde-vivo) / .5); }
+  .nav-drawer .back { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking-display);
+    font-size: var(--text-2xl); color: hsl(var(--verde-escuro)); text-decoration: none; padding: var(--space-5) 0;
+    border-bottom: 1px solid hsl(var(--verde-vivo) / .25); transition: color var(--dur-fast) var(--ease), padding-left var(--dur-fast) var(--ease); }
+  .nav-drawer .back:hover { color: hsl(var(--brand)); padding-left: var(--space-2); }
+  .nav-drawer .drawer-foot { margin-top: auto; padding-top: var(--space-10); font-size: var(--text-xs);
+    color: hsl(var(--verde-vivo)); font-weight: 700; letter-spacing: var(--tracking-wide); text-transform: uppercase; }
+
+  /* Carta do Mauricio */
+  .carta { padding-block: var(--space-16); }
+  .carta .foto { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin: 0 auto var(--space-8);
+    border: 5px solid hsl(var(--verde-suave)); box-shadow: var(--shadow-lg); }
+  .carta .script { font-family: 'Caveat', cursive; font-weight: 700; color: hsl(var(--brand)); font-size: var(--text-3xl);
+    text-align: center; margin-bottom: var(--space-2); }
+  .carta h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); text-align: center; margin-bottom: var(--space-8); }
+  .carta p { color: hsl(var(--text-muted)); font-size: var(--text-lg); margin-bottom: var(--space-5); }
+  .carta p b { color: hsl(var(--text)); }
+  .carta .assinatura { font-family: 'Caveat', cursive; font-weight: 700; color: hsl(var(--brand)); font-size: var(--text-2xl);
+    margin-top: var(--space-8); }
+
+  .como-funciona { background: hsl(var(--verde-suave)); padding-block: var(--space-16); }
+  .como-funciona .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-8); margin-top: var(--space-10); }
+  .como-funciona .grid > * { min-width: 0; }
+  .como-funciona .passo { background: hsl(var(--neutral-0)); border-radius: var(--radius-lg); padding: var(--space-6);
+    border: 1px solid hsl(var(--neutral-950) / 0.1); }
+  .como-funciona .passo .num { font-family: var(--font-display); font-size: var(--text-3xl); color: hsl(var(--verde-vivo)); }
+  .como-funciona .passo h3 { font-size: var(--text-lg); font-family: var(--font-body); font-weight: 700; margin: var(--space-3) 0; }
+  .como-funciona .passo p { color: hsl(var(--text-muted)); font-size: var(--text-sm); }
+  .como-funciona .cta-wrap { text-align: center; margin-top: var(--space-10); }
+  .como-funciona .nota { font-size: var(--text-xs); color: hsl(var(--text-subtle)); margin-top: var(--space-4); }
+
+  @media (max-width: 720px) { .como-funciona .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<nav>
+  <div class="wrap">
+    <a href="../"><img src="../design-system/assets/saucier-logo-laranja.png" alt="Saucier Molhos Artesanais"></a>
+    <input type="checkbox" id="nav-toggle">
+    <a href="https://pay.hotmart.com/H70087725N?src=afiliado&sck=nav" class="cta" rel="noopener">Comprar agora →</a>
+    <label class="nav-burger" for="nav-toggle" aria-label="Abrir menu">🥪</label>
+    <label class="nav-scrim" for="nav-toggle"></label>
+    <div class="nav-drawer">
+      <div class="drawer-head">
+        <span class="eyebrow" style="margin:0">Menu</span>
+        <label for="nav-toggle" class="drawer-close" aria-label="Fechar menu">✕</label>
+      </div>
+      <div class="navlinks">
+        <a href="../" class="back">← Página inicial</a>
+        <a href="../curso/" class="back">Curso</a>
+        <a href="../blog/" class="back">Blog</a>
+        <a href="../afiliado/" class="back">Seja um afiliado</a>
+      </div>
+      <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
+    </div>
+  </div>
+</nav>
+
+<!-- CARTA -->
+<section class="carta">
+  <div class="wrap-narrow">
+    <img class="foto" src="../design-system/assets/fotos/chef-feliz-pesto.jpg" alt="Mauricio Lacerda, chef e fundador da Saucier">
+    <div class="script">Faaaala, meu broto!</div>
+    <h1>Fico feliz que você se interessou</h1>
+    <p>Se você chegou até aqui, é porque em algum momento pensou "eu topo compartilhar isso". E olha, isso significa muito pra mim.</p>
+    <p>A Saucier nasceu de um molho de família que virou negócio, de porta em porta, no Rio. <b>246 famílias</b> levaram Saucier pra mesa antes de eu ensinar qualquer coisa. Hoje o curso é o jeito que encontrei de colocar essa técnica na mão de mais gente, sem depender só de mim pra isso acontecer.</p>
+    <p>E é exatamente aí que você entra. Minha intenção com o programa de afiliados não é só vender mais curso. É fazer com que quem acredita nisso também tenha <b>uma vida com mais tempero</b>: seja ensinando molho pra família, seja ganhando uma renda extra por indicar algo que você mesmo acredita.</p>
+    <p>Prosperidade que não é compartilhada não cresce. A minha aposta é crescer junto com quem topar essa jornada comigo.</p>
+    <p class="assinatura">Um abraço, Mauricio</p>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="como-funciona">
+  <div class="wrap-narrow" style="text-align:center">
+    <div class="eyebrow" style="justify-content:center">Como funciona</div>
+    <h2 class="section-title" style="font-size:var(--text-4xl);margin-block:var(--space-2) var(--space-3)">Ser afiliado Saucier</h2>
+    <p style="color:hsl(var(--text-muted));max-width:56ch;margin:0 auto">O programa de afiliados roda pela Hotmart, a mesma plataforma que processa a compra do curso. É gratuito pra entrar, e você recebe comissão por cada venda feita com o seu link.</p>
+  </div>
+  <div class="wrap grid">
+    <div class="passo">
+      <div class="num">01</div>
+      <h3>Você se inscreve</h3>
+      <p>Cria uma conta gratuita na Hotmart (se ainda não tiver) e se candidata como afiliado do Curso Saucier de Molhos Artesanais.</p>
+    </div>
+    <div class="passo">
+      <div class="num">02</div>
+      <h3>Você recebe seu link</h3>
+      <p>A Hotmart gera um link único pra você, que rastreia toda venda feita a partir dele, com sua comissão calculada automaticamente.</p>
+    </div>
+    <div class="passo">
+      <div class="num">03</div>
+      <h3>Você compartilha e recebe</h3>
+      <p>Compartilha o link com quem você acha que se beneficiaria do curso. A cada venda aprovada, a comissão cai direto na sua conta Hotmart.</p>
+    </div>
+  </div>
+  <div class="cta-wrap">
+    <a class="btn btn-verde" href="mailto:contato@saucier.com.br?subject=Quero%20ser%20afiliado%20Saucier">Quero ser afiliado</a>
+    <p class="nota">O link direto de afiliação na Hotmart ainda está sendo configurado. Por enquanto, manda um e-mail que a gente libera seu acesso na mão.</p>
+  </div>
+</section>
+
+<footer style="text-align:center;padding:var(--space-16) 0 var(--space-12);color:hsl(var(--text-subtle));font-size:var(--text-sm)">
+  <img src="../design-system/assets/saucier-logo-alt.png" alt="Saucier" style="height:34px;margin:0 auto var(--space-4)">
+  <p>© Saucier Molhos Artesanais. Por uma vida com mais tempero 🌱</p>
+  <p style="margin-top:var(--space-2)"><a href="../" style="color:hsl(var(--text-muted))">Página inicial</a> · <a href="../blog/" style="color:hsl(var(--text-muted))">Blog</a> · <a href="https://www.instagram.com/saucier_brasil/" rel="noopener" style="color:hsl(var(--text-muted))">Instagram</a></p>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">🌱</button>
+<script>
+  (function () {
+    var btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', function () {
+      btn.classList.toggle('show', window.scrollY > 150);
+    }, { passive: true });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    var toggle = document.getElementById('nav-toggle');
+    document.querySelectorAll('.nav-drawer a').forEach(function (a) {
+      a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
+    });
+    var lastY = window.scrollY, nav = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) nav.classList.add('nav-hidden');
+      else nav.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
+  })();
+</script>
+<script src="../design-system/consent.js" defer></script>
+</body>
+</html>

@@ -66,6 +66,7 @@
         <a href="../" class="back">&larr; Blog</a>
         <a href="../../" class="back">P&aacute;gina inicial</a>
         <a href="../../curso/" class="back">Curso</a>
+        <a href="../../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -86,7 +87,7 @@
   <p>Pré-cozinha o gilo numa água com uma pitada de sal e um fio de azeite.</p>
   <p>Escorre, deixa esfriar e corta ao meio.</p>
   <p>Coloca cada metade numa assadeira, com um pouco de mussarela ralada e tomate cereja em cubos pequenos por cima.</p>
-  <p>Tempera com orégano e azeite a gosto, e leva ao forno no máximo 8 minutos.</p>
+  <p>Tempera com orégano e azeite a gosto, e leva ao forno no máximo 8 minutos. Um fio de <a href="../chimichurri-autentico/">chimichurri</a> por cima antes de servir também vai bem.</p>
   <h2>Sobre essa receita</h2>
   <p>Receita de família enviada por Enzo Gomes para o blog Saucier, dentro da série que reúne receitas de mãe e avó de quem acompanha a marca.</p>
 
@@ -95,7 +96,7 @@
 <div class="wrap">
   <div class="cta-box">
     <p>Legume gratinado combina bem com um molho verde por cima. O Curso Saucier ensina toda a família de molhos frescos.</p>
-    <a class="btn btn-primary" href="../../curso/">Quero conhecer o curso</a>
+    <a class="btn btn-verde" href="../../curso/">Quero conhecer o curso</a>
   </div>
 </div>
 
@@ -135,6 +136,13 @@
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>

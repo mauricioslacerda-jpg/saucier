@@ -115,7 +115,8 @@ body:has(#cookie-banner.show) .back-to-top { bottom: calc(var(--space-6) + 60px)
 
 
   nav { position: sticky; top: 0; z-index: 50; background: hsl(var(--neutral-50));
-    border-bottom: 1.5px solid hsl(var(--neutral-950) / 0.88); }
+    border-bottom: 1.5px solid hsl(var(--neutral-950) / 0.88); transition: transform var(--dur-base) var(--ease); }
+  nav.nav-hidden { transform: translateY(-100%); }
   /* header sempre com 3 elementos: logo (esq) · CTA de compra (centro) · sanduíche (dir) */
   nav .wrap { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-4); padding-block: var(--space-3); }
   nav img { height: 30px; }
@@ -348,6 +349,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="navlinks">
         <a href="../" class="back">← Página inicial</a>
         <a href="../blog/" class="back">Blog</a>
+        <a href="../afiliado/" class="back">Seja um afiliado</a>
       </div>
       <div class="drawer-foot">Por uma vida com mais tempero 🌱</div>
     </div>
@@ -753,6 +755,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- PRÉVIA DO AFILIADO -->
+<section class="block" style="background:hsl(var(--verde-suave));text-align:center">
+  <div class="wrap" style="max-width:680px">
+    <div class="eyebrow" style="justify-content:center">Quer compartilhar isso?</div>
+    <h2 class="section-title">Prosperidade que não é compartilhada não cresce</h2>
+    <p style="color:hsl(var(--text-muted));font-size:var(--text-lg);margin-bottom:var(--space-8)">Se você acredita nesse curso a ponto de querer indicar pra alguém, tem um jeito de fazer isso valer a pena pros dois lados. É o programa de afiliados da Saucier: sem custo pra entrar, comissão por venda, direto pela Hotmart.</p>
+    <a class="btn btn-verde" href="../afiliado/">Conhecer o programa de afiliados &rarr;</a>
+  </div>
+</section>
+
 <!-- OFERTA -->
 <section class="block oferta" id="oferta">
   <div class="wrap">
@@ -834,6 +846,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.querySelectorAll('.nav-drawer a').forEach(function (a) {
       a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
     });
+    var lastY = window.scrollY, navEl = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (y > lastY && y > 80) navEl.classList.add('nav-hidden');
+      else navEl.classList.remove('nav-hidden');
+      lastY = y;
+    }, { passive: true });
   })();
 </script>
 <script src="../design-system/consent.js" defer></script>
