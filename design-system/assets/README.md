@@ -15,6 +15,7 @@ tags: [keter, companion]
 - [Abrir `saucier-logo-alt.png`](saucier-logo-alt.png)
 - [Abrir `saucier-logo-laranja.png`](saucier-logo-laranja.png)
 - [Abrir `saucier-logo-preto.png`](saucier-logo-preto.png)
+- [Abrir `saucier-og-image.png`](saucier-og-image.png)
 
 <!-- companion-binaries:end -->
 
