@@ -42,17 +42,17 @@ nav a.back { font-weight: 700; color: hsl(var(--text)); text-decoration: none; f
 /* Menu lateral — peça de marca: papel quente, laranja, tipografia display */
 .nav-drawer { display: flex; flex-direction: column; position: fixed; inset: 0 0 0 auto; width: min(82vw, 320px); height: 100vh;
   background: linear-gradient(165deg, hsl(var(--orange-50)) 0%, hsl(var(--neutral-50)) 55%);
-  box-shadow: -12px 0 32px hsl(26 30% 6% / .28); z-index: 60; border-left: 3px solid hsl(var(--brand));
-  transform: translateX(100%); transition: transform var(--dur-base) var(--ease); padding: var(--space-10) var(--space-8) var(--space-8); overflow-y: auto; }
+  box-shadow: -12px 0 32px hsl(26 30% 6% / .28); z-index: 60; border-left: 3px solid hsl(var(--verde-vivo));
+  transform: translateX(100%); transition: transform var(--dur-base) var(--ease); padding: var(--space-14) var(--space-10) var(--space-10); overflow-y: auto; }
 #nav-toggle:checked ~ .nav-drawer { transform: translateX(0); }
 .nav-drawer .drawer-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-10); }
 .nav-drawer .drawer-close { font-size: var(--text-xl); background: none; border: none; cursor: pointer;
   color: hsl(var(--text-muted)); line-height: 1; padding: var(--space-2); }
 .nav-drawer .drawer-close:hover { color: hsl(var(--brand)); }
-.nav-drawer .navlinks { display: flex; flex-direction: column; border-top: 2px solid hsl(var(--brand) / .4); }
+.nav-drawer .navlinks { display: flex; flex-direction: column; border-top: 2px solid hsl(var(--verde-vivo) / .5); }
 .nav-drawer .back { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking-display);
   font-size: var(--text-2xl); color: hsl(var(--verde-escuro)); text-decoration: none; padding: var(--space-5) 0;
-  border-bottom: 1px solid hsl(var(--brand) / .18); transition: color var(--dur-fast) var(--ease), padding-left var(--dur-fast) var(--ease); }
+  border-bottom: 1px solid hsl(var(--verde-vivo) / .25); transition: color var(--dur-fast) var(--ease), padding-left var(--dur-fast) var(--ease); }
 .nav-drawer .back:hover { color: hsl(var(--brand)); padding-left: var(--space-2); }
 .nav-drawer .drawer-foot { margin-top: auto; padding-top: var(--space-10); font-size: var(--text-xs);
   color: hsl(var(--verde-vivo)); font-weight: 700; letter-spacing: var(--tracking-wide); text-transform: uppercase; }
