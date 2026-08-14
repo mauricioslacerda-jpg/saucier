@@ -158,40 +158,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     border-bottom: 1.5px solid hsl(var(--neutral-950) / 0.88);
     transition: padding var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease); }
   nav.scrolled { box-shadow: 0 5px 18px hsl(26 30% 12% / 0.12); }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6);
+  /* header sempre com 3 elementos: logo (esq) · CTA de compra (centro) · sanduíche (dir) */
+  nav .wrap { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-4);
     padding-block: var(--space-3); transition: padding var(--dur-base) var(--ease); }
   nav.scrolled .wrap { padding-block: var(--space-2); }
   nav img { height: 34px; transition: height var(--dur-base) var(--ease); }
   nav.scrolled img { height: 26px; }
-  nav .navlinks { display: flex; gap: var(--space-6); align-items: center; }
-  nav .nav-actions { display: flex; gap: var(--space-6); align-items: center; }
-  nav .navlink { font-weight: 700; color: hsl(var(--text)); text-decoration: none; font-size: var(--text-sm);
-    transition: color var(--dur-fast) var(--ease); }
-  nav .navlink:hover { color: hsl(var(--brand)); }
-  nav .email-link { display: inline-flex; gap: 5px; align-items: center; color: hsl(var(--text-muted)); font-weight: 500; }
-  nav a.cta { font-weight: 700; color: hsl(var(--brand)); text-decoration: none; font-size: var(--text-sm); }
+  nav a.cta { font-weight: 700; color: hsl(var(--brand)); text-decoration: none; font-size: var(--text-sm);
+    text-align: center; grid-column: 2; }
 
-  /* Hambúrguer mobile (CSS-only, checkbox hack) */
+  /* Sanduíche (CSS-only, checkbox hack) — pictograma de sanduíche, sempre na direita, em qualquer largura */
   #nav-toggle { display: none; }
-  .nav-burger { display: none; cursor: pointer; padding: var(--space-2); }
-  .nav-burger span { display: block; width: 24px; height: 2.5px; background: hsl(var(--text)); margin: 5px 0; transition: transform var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease); }
-  .nav-drawer { display: contents; }
+  .nav-burger { display: flex; cursor: pointer; padding: var(--space-2); font-size: 1.6rem; line-height: 1;
+    background: none; border: none; transition: transform var(--dur-fast) var(--ease); grid-column: 3; }
   .nav-scrim { display: none; }
+  #nav-toggle:checked ~ .nav-scrim { display: block; position: fixed; inset: 0; background: hsl(26 20% 8% / .45); z-index: 55;
+    backdrop-filter: blur(1px); }
+  #nav-toggle:checked ~ .nav-burger { transform: rotate(90deg) scale(0.9); }
 
-  @media (max-width: 820px) {
-    .nav-burger { display: block; }
-    .nav-drawer { display: block; position: fixed; inset: 0 0 0 auto; width: min(78vw, 320px); height: 100vh;
-      background: hsl(var(--neutral-0)); box-shadow: -8px 0 24px hsl(26 30% 6% / .25); z-index: 60;
-      transform: translateX(100%); transition: transform var(--dur-base) var(--ease); padding: var(--space-20) var(--space-8) var(--space-8); overflow-y: auto; }
-    .nav-drawer .navlinks { flex-direction: column; align-items: flex-start; gap: var(--space-6); display: flex; }
-    .nav-drawer .navlink { font-size: var(--text-lg); }
-    .nav-drawer .email-link { margin-top: var(--space-8); }
-    #nav-toggle:checked ~ .nav-drawer { transform: translateX(0); }
-    #nav-toggle:checked ~ .nav-scrim { display: block; position: fixed; inset: 0; background: hsl(26 30% 6% / .4); z-index: 55; }
-    #nav-toggle:checked ~ .nav-burger span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-    #nav-toggle:checked ~ .nav-burger span:nth-child(2) { opacity: 0; }
-    #nav-toggle:checked ~ .nav-burger span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
-  }
+  /* Menu lateral — peça de marca: papel quente, laranja, tipografia display */
+  .nav-drawer { display: flex; flex-direction: column; position: fixed; inset: 0 0 0 auto; width: min(82vw, 340px); height: 100vh;
+    background: linear-gradient(165deg, hsl(var(--orange-50)) 0%, hsl(var(--neutral-50)) 55%);
+    box-shadow: -12px 0 32px hsl(26 30% 6% / .28); z-index: 60; border-left: 3px solid hsl(var(--brand));
+    transform: translateX(100%); transition: transform var(--dur-base) var(--ease); padding: var(--space-10) var(--space-8) var(--space-8); overflow-y: auto; }
+  #nav-toggle:checked ~ .nav-drawer { transform: translateX(0); }
+  .nav-drawer .drawer-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-10); }
+  .nav-drawer .drawer-close { font-size: var(--text-xl); background: none; border: none; cursor: pointer;
+    color: hsl(var(--text-muted)); line-height: 1; padding: var(--space-2); }
+  .nav-drawer .drawer-close:hover { color: hsl(var(--brand)); }
+  .nav-drawer .navlinks { display: flex; flex-direction: column; border-top: 2px solid hsl(var(--brand) / .4); }
+  .nav-drawer .navlink { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking-display);
+    font-size: var(--text-2xl); color: hsl(var(--verde-escuro)); text-decoration: none; padding: var(--space-5) 0;
+    border-bottom: 1px solid hsl(var(--brand) / .18); transition: color var(--dur-fast) var(--ease), padding-left var(--dur-fast) var(--ease); }
+  .nav-drawer .navlink:hover { color: hsl(var(--brand)); padding-left: var(--space-2); }
+  .nav-drawer .drawer-foot { margin-top: auto; padding-top: var(--space-10); }
+  .nav-drawer .email-link { display: inline-flex; gap: 5px; align-items: center; color: hsl(var(--text-muted));
+    font-weight: 500; font-size: var(--text-sm); text-decoration: none; }
+  .nav-drawer .drawer-foot p { margin-top: var(--space-4); font-size: var(--text-xs); color: hsl(var(--verde-vivo));
+    font-weight: 700; letter-spacing: var(--tracking-wide); text-transform: uppercase; }
 
   /* Botão voltar ao topo */
   .back-to-top { position: fixed; right: var(--space-6); bottom: var(--space-6); z-index: 40; width: 48px; height: 48px;
@@ -516,19 +520,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <a href="./"><img src="design-system/assets/saucier-logo-laranja.png" alt="Saucier Molhos Artesanais"></a>
     <input type="checkbox" id="nav-toggle">
+    <a href="https://pay.hotmart.com/H70087725N?src=home&sck=nav" class="cta" rel="noopener">Comprar agora →</a>
+    <label class="nav-burger" for="nav-toggle" aria-label="Abrir menu">🥪</label>
+    <label class="nav-scrim" for="nav-toggle"></label>
     <div class="nav-drawer">
+      <div class="drawer-head">
+        <span class="eyebrow" style="margin:0">Menu</span>
+        <label for="nav-toggle" class="drawer-close" aria-label="Fechar menu">✕</label>
+      </div>
       <div class="navlinks">
         <a href="#curso" class="navlink">O curso</a>
         <a href="#historia" class="navlink">História</a>
         <a href="#manifesto" class="navlink">Manifesto</a>
         <a href="blog/" class="navlink">Blog</a>
-        <a href="mailto:contato@saucier.com.br" class="navlink email-link">✉ contato@saucier.com.br</a>
       </div>
-    </div>
-    <label class="nav-burger" for="nav-toggle" aria-label="Abrir menu"><span></span><span></span><span></span></label>
-    <label class="nav-scrim" for="nav-toggle"></label>
-    <div class="nav-actions">
-      <a href="#receita" class="cta">Ebook grátis →</a>
+      <div class="drawer-foot">
+        <a href="mailto:contato@saucier.com.br" class="email-link">✉ contato@saucier.com.br</a>
+        <p>Por uma vida com mais tempero 🌱</p>
+      </div>
     </div>
   </div>
 </nav>
@@ -1084,7 +1093,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 </script>
 
-<button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">&uarr;</button>
+<button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">🌱</button>
 <script>
   (function () {
     var btn = document.getElementById('back-to-top');
