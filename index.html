@@ -204,6 +204,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease); }
   .back-to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
   .back-to-top:hover { background: hsl(var(--brand-hover)); }
+/* Aviso de cookies (LGPD) */
+#cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; background: hsl(var(--neutral-900));
+  color: hsl(var(--neutral-50)); padding: var(--space-4) var(--space-6); display: flex; align-items: center;
+  justify-content: center; gap: var(--space-6); flex-wrap: wrap; transform: translateY(100%);
+  transition: transform var(--dur-base) var(--ease); font-size: var(--text-xs); }
+#cookie-banner.show { transform: translateY(0); }
+#cookie-banner p { margin: 0; max-width: 640px; color: hsl(var(--neutral-300)); }
+#cookie-banner .cookie-actions { display: flex; gap: var(--space-3); flex: none; }
+#cookie-banner button { font: inherit; cursor: pointer; border-radius: var(--radius-pill); padding: var(--space-2) var(--space-6);
+  border: 1px solid hsl(var(--neutral-50) / .3); background: transparent; color: hsl(var(--neutral-50)); font-weight: 700; }
+#cookie-banner .cookie-accept { background: hsl(var(--brand)); border-color: hsl(var(--brand)); }
+#cookie-banner .cookie-accept:hover { background: hsl(var(--brand-hover)); }
+#cookie-banner .cookie-decline:hover { background: hsl(var(--neutral-50) / .1); }
+body:has(#cookie-banner.show) .back-to-top { bottom: calc(var(--space-6) + 60px); }
+
 
   /* ---- Hero ---- */
   /* hero com vídeo de fundo (cozinha real 8K) + overlay laranja (#24 Zander: gradiente quente) */
@@ -373,7 +388,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .curso-cta h3 { font-family: var(--font-display); font-size: var(--text-4xl); letter-spacing: var(--tracking-display); margin-bottom: var(--space-6); }
 
   /* Faixa rotativa do blog */
-  .blog-strip { padding-block: var(--space-16); overflow: hidden; background: hsl(var(--bg-subtle)); }
+  .blog-strip { padding-block: var(--space-16); overflow: hidden; background: hsl(var(--verde-suave)); }
   .blog-strip .head { text-align: center; margin-bottom: var(--space-10); }
   .blog-strip-viewport { overflow: hidden; width: 100%;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
@@ -474,7 +489,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .final p { font-size: var(--text-lg); opacity: .95; margin-bottom: var(--space-8); max-width: 48ch; margin-inline: auto; }
   .final form { display: flex; flex-direction: column; gap: var(--space-3); max-width: 480px; margin-inline: auto; text-align: left; }
   .final .row { display: flex; gap: var(--space-3); }
-  .final input[type="email"] { flex: 1; font: inherit; padding: var(--space-4); border-radius: var(--radius-pill); border: none; }
+  .final input[type="email"], .final input[type="tel"] { flex: 1; font: inherit; padding: var(--space-4); border-radius: var(--radius-pill); border: none; min-width: 0; }
   .final input:focus-visible { outline: none; box-shadow: 0 0 0 3px #fff; }
 
   /* ---- Footer ---- */
@@ -593,7 +608,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <form klicksend-form-id="1zuPpn4" autocomplete="off" method="post" action="https://handler.send.hotmart.com/subscription/1zuPpn4?hotfeature=53">
         <input type="email" autocomplete="off" name="email" id="email" placeholder="Seu melhor e-mail" value="" required>
         <input type="text" autocomplete="off" name="first_name" id="first_name" placeholder="Seu nome" value="">
-        <input type="text" autocomplete="off" name="phone" id="phone" placeholder="WhatsApp (opcional)" value="">
+        <input type="tel" autocomplete="off" name="phone" id="phone" placeholder="Seu WhatsApp" value="" required>
         <div klicksend-gdpr-text class="gdpr-texto"><p>Esses dados serão utilizados para entrarmos em contato com você e disponibilizarmos mais conteúdos e ofertas. Caso você não queira mais receber os nossos e-mails, cada e-mail que você receber incluirá, ao final, um link para remover o seu e-mail da nossa lista.</p></div>
         <div class="gdpr-row">
           <input type="checkbox" autocomplete="off" name="gdpr" id="gdpr" value="Concordo em receber os e-mails" required>
@@ -989,7 +1004,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="block blog-strip">
   <div class="wrap-wide head">
     <div class="eyebrow" style="justify-content:center">Do blog</div>
-    <h2 class="section-title">Aprenda mais um pouco, de graça</h2>
+    <h2 class="section-title">Um gostinho do que tem lá no blog</h2>
   </div>
   <div class="blog-strip-viewport">
     <div class="blog-strip-track">
@@ -1159,6 +1174,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <form klicksend-form-id="1zuPpn4" autocomplete="off" method="post" action="https://handler.send.hotmart.com/subscription/1zuPpn4?hotfeature=53">
       <div class="row">
         <input type="email" autocomplete="off" name="email" placeholder="Seu melhor e-mail" value="" required>
+        <input type="tel" autocomplete="off" name="phone" placeholder="Seu WhatsApp" value="" required>
         <button klicksend-form-submit-id="1zuPpn4" class="btn btn-on-dark">Quero a receita</button>
       </div>
       <div klicksend-gdpr-text class="gdpr-texto"><p>Esses dados serão utilizados para entrarmos em contato com você e disponibilizarmos mais conteúdos e ofertas. Caso você não queira mais receber os nossos e-mails, cada e-mail que você receber incluirá, ao final, um link para remover o seu e-mail da nossa lista.</p></div>
@@ -1240,5 +1256,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   })();
 </script>
+<script src="design-system/consent.js" defer></script>
 </body>
 </html>
