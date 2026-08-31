@@ -614,7 +614,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO · Hook + vídeo de fundo (cozinha real da Saucier) -->
 <header class="hero">
-  <video class="hero-bg" autoplay muted loop playsinline preload="none" poster="design-system/assets/video/chef-cozinha-poster.webp">
+  <video class="hero-bg" data-desktop-only autoplay muted loop playsinline preload="none" poster="design-system/assets/video/chef-cozinha-poster.webp">
     <source data-src="design-system/assets/video/chef-cozinha.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
@@ -1383,6 +1383,9 @@ Pode mandar exatamente assim, do jeito que você já escreve pra família, sem s
     Array.prototype.forEach.call(vids, function (s) { ligar(s.parentNode); });
     return;
   }
+  // video marcado como `data-desktop-only` nao carrega em tela estreita:
+  // fica so o poster. Decisao de 31/08, o video de fundo so funciona no desktop.
+  var estreito = window.matchMedia('(max-width: 767px)').matches;
   var obs = new IntersectionObserver(function (entradas) {
     entradas.forEach(function (e) {
       if (!e.isIntersecting) return;
@@ -1390,7 +1393,11 @@ Pode mandar exatamente assim, do jeito que você já escreve pra família, sem s
       obs.unobserve(e.target);
     });
   }, { rootMargin: '300px' });
-  Array.prototype.forEach.call(vids, function (s) { obs.observe(s.parentNode); });
+  Array.prototype.forEach.call(vids, function (s) {
+    var v = s.parentNode;
+    if (estreito && v.hasAttribute('data-desktop-only')) return;
+    obs.observe(v);
+  });
 })();
 </script>
 </body>
