@@ -64,6 +64,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "name": "Saucier Molhos Artesanais",
   "url": "https://saucier.com.br/",
   "logo": "https://saucier.com.br/design-system/assets/saucier-logo-laranja.png",
+  "image": "https://saucier.com.br/design-system/assets/fotos/picanha-chimichurri.webp",
   "slogan": "Por uma vida com mais tempero",
   "founder": { "@type": "Person", "name": "Mauricio Lacerda" },
   "sameAs": ["https://www.instagram.com/saucier_brasil/"]
@@ -73,6 +74,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {
   "@context": "https://schema.org",
   "@type": "Course",
+  "image": "https://saucier.com.br/design-system/assets/fotos/demi-glace-prato.webp",
   "name": "Curso de Molhos Artesanais Saucier",
   "description": "Curso online de molhos artesanais com técnica de cozinha profissional. 10 módulos e 2 bônus, mais de 40 molhos, dos molhos-mãe franceses aos sabores autorais brasileiros, cada um com vídeo e ficha técnica.",
   "inLanguage": "pt-BR",
@@ -85,6 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {
   "@context": "https://schema.org",
   "@type": "Person",
+  "image": "https://saucier.com.br/design-system/assets/fotos/chef-feliz-pesto.webp",
   "name": "Mauricio Lacerda",
   "jobTitle": "Chef e fundador da Saucier",
   "alumniOf": ["SENAC", "Le Cordon Bleu Brasil"],
@@ -127,7 +130,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   body::before { content: ""; position: fixed; inset: 0; z-index: 9999; pointer-events: none;
     opacity: 0.05; mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-  img { display: block; max-width: 100%; }
+  img { height: auto; display: block; max-width: 100%; }
   .only-mobile { display: none; }
   .wrap { max-width: 1120px; margin: 0 auto; padding-inline: var(--space-6); }
   h1,h2,h3 { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking-display); line-height: var(--leading-tight); }
@@ -171,8 +174,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   nav .wrap { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-4);
     padding-block: var(--space-3); transition: padding var(--dur-base) var(--ease); }
   nav.scrolled .wrap { padding-block: var(--space-2); }
-  nav img { height: 34px; transition: height var(--dur-base) var(--ease); }
-  nav.scrolled img { height: 26px; }
+  nav img { height: 34px; width: auto; transition: height var(--dur-base) var(--ease); }
+  nav.scrolled img { height: 26px; width: auto; }
   nav a.cta { font-weight: 700; color: hsl(var(--brand)); text-decoration: none; font-size: var(--text-sm);
     text-align: center; grid-column: 2; }
 
@@ -318,7 +321,7 @@ body:has(#cookie-banner.show) .back-to-top { bottom: calc(var(--space-6) + 60px)
     width: 58%; height: 16px; border-radius: 50%; background: radial-gradient(closest-side, hsl(20 40% 18% / .30), transparent);
     filter: blur(3px); transition: width var(--dur-base) var(--ease), opacity var(--dur-base) var(--ease); }
   .flip:hover .flip-front .stage::after { width: 48%; opacity: .7; }
-  .flip-front img { height: 215px; object-fit: contain; mix-blend-mode: multiply; z-index: 1;
+  .flip-front img { height: 215px; width: auto; object-fit: contain; mix-blend-mode: multiply; z-index: 1;
     filter: drop-shadow(0 14px 12px hsl(20 35% 25% / .16)); transition: transform 450ms cubic-bezier(.22,1,.36,1); }
   .flip:hover .flip-front img { transform: translateY(-10px) scale(1.06); }
   .flip-front .nome { font-family: var(--font-display); font-size: var(--text-2xl); letter-spacing: var(--tracking-display);
@@ -506,7 +509,7 @@ body:has(#cookie-banner.show) .back-to-top { bottom: calc(var(--space-6) + 60px)
   /* ---- Footer ---- */
   footer { background: hsl(var(--neutral-950)); color: hsl(var(--neutral-400)); padding-block: var(--space-12); }
   footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-6); }
-  footer img { height: 40px; }
+  footer img { height: 40px; width: auto; }
   footer a { color: hsl(var(--neutral-300)); text-decoration: none; margin-left: var(--space-6); font-size: var(--text-sm); }
   footer a:hover { color: hsl(var(--orange-400)); }
 
@@ -1219,6 +1222,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <input type="text" autocomplete="new-password" name="b_1zuPpn4" tabindex="-1" value="">
       </div>
     </form>
+    <p class="nota-afiliado" style="margin-top:var(--space-8);font-size:var(--text-sm);opacity:.85">
+      Já ensina molho pra alguém e quer indicar o curso? Conheça <a href="afiliado/" style="text-decoration:underline">o programa de afiliados da Saucier</a>.
+    </p>
   </div>
 </section>
 

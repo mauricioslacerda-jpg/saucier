@@ -31,6 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {
   "@context": "https://schema.org",
   "@type": "Course",
+  "image": "https://saucier.com.br/design-system/assets/fotos/chef-pote-pesto.webp",
   "name": "Curso Saucier de Molhos Artesanais",
   "description": "O melhor curso de molhos da internet: mais tempero e menos tempo na cozinha. 50+ aulas em 10 módulos e 2 bônus, com ficha técnica e informação nutricional de cada receita.",
   "inLanguage": "pt-BR",
@@ -71,7 +72,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   body::before { content: ""; position: fixed; inset: 0; z-index: 9999; pointer-events: none;
     opacity: 0.05; mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-  img { display: block; max-width: 100%; }
+  img { height: auto; display: block; max-width: 100%; }
   .wrap { max-width: 1120px; margin: 0 auto; padding-inline: var(--space-6); }
   h1,h2,h3 { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking-display); line-height: var(--leading-tight); }
   .eyebrow { font-weight: 700; font-size: var(--text-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase;
@@ -119,7 +120,7 @@ body:has(#cookie-banner.show) .back-to-top { bottom: calc(var(--space-6) + 60px)
   nav.nav-hidden { transform: translateY(-100%); }
   /* header sempre com 3 elementos: logo (esq) · CTA de compra (centro) · sanduíche (dir) */
   nav .wrap { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-4); padding-block: var(--space-3); }
-  nav img { height: 30px; }
+  nav img { height: 30px; width: auto; }
   nav a.cta { font-weight: 700; color: hsl(var(--brand)); text-decoration: none; font-size: var(--text-sm); text-align: center; grid-column: 2; }
 
   /* Sanduíche (CSS-only, checkbox hack) — sempre na direita, em qualquer largura */
@@ -198,7 +199,7 @@ body:has(#cookie-banner.show) .back-to-top { bottom: calc(var(--space-6) + 60px)
 
   /* Potes reais */
   .potes { display: flex; justify-content: center; align-items: flex-end; gap: var(--space-6); flex-wrap: wrap; margin-top: var(--space-12); }
-  .potes img { height: 120px; mix-blend-mode: multiply; filter: drop-shadow(0 10px 8px hsl(20 35% 25% / .18)); }
+  .potes img { height: 120px; width: auto; mix-blend-mode: multiply; filter: drop-shadow(0 10px 8px hsl(20 35% 25% / .18)); }
   .potes-legenda { text-align: center; margin-top: var(--space-4); font-size: var(--text-sm); color: hsl(var(--text-subtle)); }
 
   /* Sua vida vai mudar (4 transformações da LP antiga) */
@@ -316,14 +317,14 @@ body:has(#cookie-banner.show) .back-to-top { bottom: calc(var(--space-6) + 60px)
   .faq details p { color: hsl(var(--text-muted)); margin: var(--space-3) 0 0; padding-left: calc(2.6ch + var(--space-4)); max-width: 62ch; }
 
   footer { background: hsl(var(--neutral-950)); color: hsl(var(--neutral-400)); padding-block: var(--space-12); text-align: center; font-size: var(--text-xs); }
-  footer img { height: 34px; margin: 0 auto var(--space-4); }
+  footer img { height: 34px; width: auto; margin: 0 auto var(--space-4); }
   footer a { color: hsl(var(--neutral-300)); }
 
   @media (max-width: 860px) {
     .hero .grid, .ganho-grid, .mudar-grid, .bonus-grid, .broto .grid, .publico-grid { grid-template-columns: 1fr; }
     .galeria { grid-template-columns: 1fr 1fr; }
     .hero .chef-foto { max-height: 340px; }
-    .potes img { height: 88px; }
+    .potes img { height: 88px; width: auto; }
     /* grid items mantêm min-width:auto por padrão e não encolhem abaixo do max-content,
        o que estoura a viewport mesmo em 1 coluna — forçar min-width:0 em todos */
     .hero .grid > *, .ganho-grid > *, .mudar-grid > *, .bonus-grid > *, .broto .grid > *, .publico-grid > * { min-width: 0; }

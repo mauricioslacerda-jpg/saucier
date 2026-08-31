@@ -6,7 +6,7 @@
 html { scroll-behavior: smooth; }
 html, body { overflow-x: hidden; max-width: 100%; }
 body { font-family: var(--font-body); background: hsl(var(--bg)); color: hsl(var(--text)); line-height: var(--leading-normal); }
-img { display: block; max-width: 100%; }
+img { height: auto; display: block; max-width: 100%; }
 .wrap { max-width: 760px; margin: 0 auto; padding-inline: var(--space-6); }
 .wrap-wide { max-width: 1120px; margin: 0 auto; padding-inline: var(--space-6); }
 h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking-display); line-height: var(--leading-tight); }
@@ -33,7 +33,7 @@ nav { position: sticky; top: 0; z-index: 50; background: hsl(var(--neutral-50));
 nav.nav-hidden { transform: translateY(-100%); }
 /* header sempre com 3 elementos: logo (esq) · CTA de compra (centro) · sanduíche (dir) */
 nav .wrap-wide { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--space-4); padding-block: var(--space-3); }
-nav img { height: 30px; }
+nav img { height: 30px; width: auto; }
 nav a.cta { font-weight: 700; color: hsl(var(--brand)); text-decoration: none; font-size: var(--text-sm); text-align: center; grid-column: 2; }
 nav a.back { font-weight: 700; color: hsl(var(--text)); text-decoration: none; font-size: var(--text-sm); }
 
@@ -183,7 +183,7 @@ body:has(#cookie-banner.show) .back-to-top { bottom: calc(var(--space-6) + 60px)
 @media (max-width: 720px) { .receita-familia .rf-grid { grid-template-columns: 1fr; } }
 
 footer { padding-block: var(--space-12); text-align: center; color: hsl(var(--text-muted)); font-size: var(--text-sm); }
-footer img { height: 24px; margin: 0 auto var(--space-4); }
+footer img { height: 24px; width: auto; margin: 0 auto var(--space-4); }
 footer a { color: hsl(var(--text-muted)); }
 
 @media (max-width: 720px) {
