@@ -612,8 +612,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO · Hook + vídeo de fundo (cozinha real da Saucier) -->
 <header class="hero">
-  <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="design-system/assets/video/chef-cozinha-poster.jpg">
-    <source src="design-system/assets/video/chef-cozinha.mp4" type="video/mp4">
+  <video class="hero-bg" autoplay muted loop playsinline preload="none" poster="design-system/assets/video/chef-cozinha-poster.webp">
+    <source data-src="design-system/assets/video/chef-cozinha.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   <div class="wrap grid">
@@ -628,8 +628,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-video-mobile">
         <div class="glow"></div>
         <div class="video-card">
-          <video autoplay muted loop playsinline preload="metadata" poster="design-system/assets/video/chef-cozinha-poster.jpg">
-            <source src="design-system/assets/video/chef-cozinha.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline preload="none" poster="design-system/assets/video/chef-cozinha-poster.webp">
+            <source data-src="design-system/assets/video/chef-cozinha.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -1152,8 +1152,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- MANIFESTO · identidade antes da oferta -->
 <section class="block manifesto" id="manifesto">
-  <video class="manifesto-bg" autoplay muted loop playsinline preload="none" poster="design-system/assets/video/cozinha-poster.jpg">
-    <source src="design-system/assets/video/cozinha.mp4" type="video/mp4">
+  <video class="manifesto-bg" autoplay muted loop playsinline preload="none" poster="design-system/assets/video/cozinha-poster.webp">
+    <source data-src="design-system/assets/video/cozinha.mp4" type="video/mp4">
   </video>
   <div class="manifesto-overlay"></div>
   <div class="wrap">
@@ -1223,7 +1223,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </form>
     <p class="nota-afiliado" style="margin-top:var(--space-8);font-size:var(--text-sm);opacity:.85">
-      Já ensina molho pra alguém e quer indicar o curso? Conheça <a href="afiliado/" style="text-decoration:underline">o programa de afiliados da Saucier</a>.
+      Quer ganhar dinheiro indicando um curso de gastronomia? Veja <a href="afiliado/" style="text-decoration:underline">o programa de afiliados da Saucier</a>.
     </p>
   </div>
 </section>
@@ -1360,5 +1360,36 @@ Pode mandar exatamente assim, do jeito que você já escreve pra família, sem s
   })();
 </script>
 <script src="design-system/consent.js" defer></script>
+
+<!-- Vídeo sob demanda: o arquivo só entra na rede quando o elemento chega perto
+     da tela. Com autoplay, `preload` sozinho não segura o download. -->
+<script>
+(function () {
+  var vids = document.querySelectorAll('video source[data-src]');
+  if (!vids.length) return;
+  // devolve TODAS as sources do video, nao so a primeira: cada um tem webm e
+  // mp4, e quem nao toca webm depende da segunda.
+  function ligar(video) {
+    var fontes = video.querySelectorAll('source[data-src]');
+    if (!fontes.length) return;
+    Array.prototype.forEach.call(fontes, function (s) { s.src = s.dataset.src; });
+    video.load();
+    var p = video.play();
+    if (p && p.catch) p.catch(function () {});
+  }
+  if (!('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(vids, function (s) { ligar(s.parentNode); });
+    return;
+  }
+  var obs = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      ligar(e.target);
+      obs.unobserve(e.target);
+    });
+  }, { rootMargin: '300px' });
+  Array.prototype.forEach.call(vids, function (s) { obs.observe(s.parentNode); });
+})();
+</script>
 </body>
 </html>
