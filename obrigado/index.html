@@ -16,12 +16,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <title>Prontinho! Seu ebook Pesto pelo Mundo · Saucier</title>
 <link rel="canonical" href="https://saucier.com.br/obrigado/">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@700&family=Inter:wght@400;500;700;800&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@700&family=Inter:wght@400;500;700;800&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@700&family=Inter:wght@400;500;700;800&display=swap"></noscript>
+<!-- Fonte do próprio domínio, pré-carregada: começa a baixar já, sem esperar
+     folha de terceiro. `crossorigin` é obrigatório em preload de fonte. -->
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../design-system/assets/fonts/bebas-neue-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../design-system/assets/fonts/inter-latin.woff2">
 <link rel="stylesheet" href="../design-system/tokens.css">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
