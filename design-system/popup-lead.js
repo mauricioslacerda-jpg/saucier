@@ -13,7 +13,7 @@
   "use strict";
 
   var TITULO = "Leva o ebook antes de sair";
-  var LINHA  = "10 receitas de pesto, do clássico genovês ao de azeitona. Chega no seu e-mail em um minuto.";
+  var LINHA  = "10 receitas de pesto, do clássico genovês ao de azeitona. Você baixa na próxima tela, de graça.";
   var BOTAO  = "Quero o ebook grátis";
 
   var FORM_ID   = "1zuPpn4";
