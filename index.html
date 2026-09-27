@@ -12,7 +12,8 @@
 <link rel="icon" type="image/png" href="design-system/assets/saucier-logo-laranja.png"><!-- ════════════ TRACKING · CAMINHO PRONTO (trocar os IDs) ════════════
      Arquitetura recomendada: GTM é o container ÚNICO. Dentro dele você
      configura GA4 + Meta Pixel SEM tocar neste código. Os eventos
-     'generate_lead' (dataLayer) e 'Lead' (fbq) já disparam no submit.
+     'generate_lead' (dataLayer) e 'Lead' (fbq) disparam no submit, pelo
+     design-system/lead-form.js — um tratador só para todo form do Send.
      Passo a passo em: tracking-setup.md
 ═══════════════════════════════════════════════════════════════════════ -->
 <!-- Google Tag Manager  -->
@@ -1329,24 +1330,7 @@ Pode mandar exatamente assim, do jeito que você já escreve pra família, sem s
     });
   });
 
-  // Captura REAL via Hotmart Send (form 1zuPpn4, "Ebook Pesto — Site 2026", sem reCAPTCHA) — os dois forms da página.
-  // Repassa UTMs da URL para o handler + dispara generate_lead (GA4) e Lead (Meta) no envio.
-  document.querySelectorAll('form[klicksend-form-id="1zuPpn4"]').forEach(function(form){
-    try {
-      var pageParams = new URLSearchParams(window.location.search);
-      var u = new URL(form.action);
-      var base = u.searchParams.size > 0 ? u.searchParams.toString() + '&' : '';
-      form.action = u.origin + u.pathname + '?' + base + pageParams.toString();
-    } catch (e) {}
-    form.addEventListener('submit', function(){
-      try {
-        window.dataLayer = window.dataLayer || [];
-        var origem = (form.closest('section,header') && form.closest('section,header').id) || 'captura';
-        window.dataLayer.push({ event: 'generate_lead', form_id: origem, currency: 'BRL', value: 0 });
-        if (typeof fbq === 'function') fbq('track', 'Lead');
-      } catch (err) {}
-    });
-  });
+  // Captura do Send: tratada pelo design-system/lead-form.js desde 2026-09-27
 </script>
 
 <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">🌱</button>
@@ -1373,6 +1357,8 @@ Pode mandar exatamente assim, do jeito que você já escreve pra família, sem s
   })();
 </script>
 <script src="design-system/consent.js" defer></script>
+<script src="design-system/lead-form.js" defer></script>
+<script src="design-system/popup-lead.js" defer></script>
 
 <!-- Vídeo sob demanda: o arquivo só entra na rede quando o elemento chega perto
      da tela. Com autoplay, `preload` sozinho não segura o download. -->

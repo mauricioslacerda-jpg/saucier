@@ -192,3 +192,24 @@ footer a { color: hsl(var(--text-muted)); }
   .blog-filtros .filtros-linha { flex-direction: column; align-items: stretch; }
   .blog-filtros label { flex: none; }
 }
+
+/* ── Captura de lead no fim do post e no índice (2026-09-24) ─────────────── */
+.captura-lead { padding-block: var(--space-12); text-align: center; }
+.captura-lead h2 { font-family: var(--font-display); letter-spacing: var(--tracking-display);
+  font-size: var(--text-2xl); line-height: var(--leading-tight); margin: 0 0 var(--space-2); }
+.captura-lead > p { max-width: 48ch; margin: 0 auto var(--space-6); color: hsl(var(--text-muted)); }
+.captura-lead form { max-width: 640px; margin: 0 auto; }
+.captura-lead .linha { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+.captura-lead .linha input { flex: 1 1 200px; min-width: 0; padding: 12px 14px; font: inherit;
+  font-size: var(--text-base); border: 1px solid hsl(var(--border)); border-radius: var(--radius-md);
+  background: hsl(var(--surface)); color: hsl(var(--text)); }
+.captura-lead .linha input:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+.captura-lead .linha .btn { flex: 0 0 auto; }
+.captura-lead .gdpr-row { display: flex; gap: var(--space-2); align-items: flex-start;
+  margin-top: var(--space-3); font-size: var(--text-xs); line-height: var(--leading-normal);
+  color: hsl(var(--text-subtle)); text-align: left; cursor: pointer; }
+.captura-lead .gdpr-row input { margin-top: 2px; flex: 0 0 auto; }
+@media (max-width: 560px) {
+  .captura-lead .linha { flex-direction: column; }
+  .captura-lead .linha .btn { width: 100%; }
+}

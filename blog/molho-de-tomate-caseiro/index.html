@@ -50,6 +50,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   ]
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://saucier.com.br/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://saucier.com.br/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Molho de tomate caseiro: como corrigir a acidez", "item": "https://saucier.com.br/blog/molho-de-tomate-caseiro/" }
+  ]
+}
+</script>
 <!-- Fonte do próprio domínio, pré-carregada: começa a baixar já, sem esperar
      folha de terceiro. `crossorigin` é obrigatório em preload de fonte. -->
 <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -127,6 +139,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+
+<section class="captura-lead wrap">
+  <h2>Leva o ebook das 10 receitas de pesto</h2>
+  <p>Do clássico genovês ao de azeitona. Chega no seu e-mail em um minuto, de graça.</p>
+  <form klicksend-form-id="1zuPpn4" autocomplete="off" method="post" action="https://handler.send.hotmart.com/subscription/1zuPpn4?hotfeature=53">
+    <div class="linha">
+      <input type="email" autocomplete="off" name="email" placeholder="Seu melhor e-mail" value="" required>
+      <input type="tel" autocomplete="off" name="phone" placeholder="Seu WhatsApp" value="" required>
+      <button klicksend-form-submit-id="1zuPpn4" class="btn btn-verde" type="submit">Quero o ebook</button>
+    </div>
+    <div klicksend-gdpr-text style="display:none"><p>Esses dados serão utilizados para entrarmos em contato com você e disponibilizarmos mais conteúdos e ofertas. Caso você não queira mais receber os nossos e-mails, cada e-mail que você receber incluirá, ao final, um link para remover o seu e-mail da nossa lista.</p></div>
+    <label class="gdpr-row">
+      <input type="checkbox" autocomplete="off" name="gdpr" value="Concordo em receber os e-mails" required>
+      <span>Concordo em receber e-mails com receitas e novidades da Saucier.</span>
+    </label>
+  </form>
+</section>
+
+
 <section class="relacionados wrap">
   <h2>Continue lendo</h2>
   <div class="grid">
@@ -167,5 +198,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   })();
 </script>
 <script src="../../design-system/consent.js" defer></script>
+<script src="../../design-system/lead-form.js" defer></script>
+<script src="../../design-system/popup-lead.js" defer></script>
 </body>
 </html>

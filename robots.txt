@@ -1,5 +1,48 @@
+# Saucier Molhos Artesanais — saucier.com.br
+# Política declarada em 2026-09-24. Antes disto os crawlers de IA entravam pelo
+# "User-agent: *" genérico; agora a permissão é explícita, que é mais forte para GEO.
+
 User-agent: *
 Allow: /
 Disallow: /obrigado/
+Disallow: /versao-antiga/
+
+# Crawlers de IA — bem-vindos. O conteúdo da marca existe para ser citado.
+# O resumo estruturado para leitura por LLM está em /llms.txt
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
 
 Sitemap: https://saucier.com.br/sitemap.xml
