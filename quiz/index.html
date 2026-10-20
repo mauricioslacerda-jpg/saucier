@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#CC541C">
+<link rel="icon" type="image/png" href="../design-system/assets/saucier-logo-laranja.png">
+
+<!-- Google Tag Manager (mesmo container do site) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRSXCBF2');</script>
+
+<title>Qual molho destrava a sua cozinha? · Quiz Saucier</title>
+<meta name="description" content="10 perguntas, 3 minutos: o chef Mauricio Lacerda monta o roteiro dos seus 3 primeiros molhos e reserva 10% no curso por 15 minutos.">
+<link rel="canonical" href="https://saucier.com.br/quiz/">
+<meta property="og:title" content="Qual molho destrava a sua cozinha?">
+<meta property="og:description" content="10 perguntas, 3 minutos, o roteiro de 3 molhos pra sua semana.">
+<meta property="og:image" content="https://saucier.com.br/design-system/assets/saucier-og-image.png">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../design-system/assets/fonts/bebas-neue-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../design-system/assets/fonts/inter-latin.woff2">
+<link rel="stylesheet" href="../design-system/tokens.css">
+<style>
+  /* Layout: uma coluna de 440px, topo em vidro líquido (receita Zander #02) sobre um "líquido" laranja
+     na escada HSL de 4 stops com hue fixo 19 (Zander #24), papel quente embaixo. */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { overflow-x: hidden; max-width: 100%; }
+  body { font-family: var(--font-body); background: hsl(var(--bg)); color: hsl(var(--text)); line-height: var(--leading-normal); min-height: 100dvh; }
+  body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  /* o líquido: três manchas na escada HSL (hue 19), só no terço de cima, pra dar o que o vidro desfoca */
+  body::after { content: ""; position: fixed; left: 50%; top: -120px; width: 720px; height: 420px; transform: translateX(-50%); pointer-events: none; z-index: 0; opacity: .55;
+    background:
+      radial-gradient(260px 180px at 30% 40%, hsl(19 100% 90%) 0%, hsl(19 100% 90% / 0) 70%),
+      radial-gradient(300px 200px at 70% 30%, hsl(19 90% 80%) 0%, hsl(19 90% 80% / 0) 70%),
+      radial-gradient(220px 160px at 55% 75%, hsl(19 80% 60% / .55) 0%, hsl(19 80% 60% / 0) 70%);
+    filter: blur(18px); animation: liquido 14s ease-in-out infinite alternate; }
+  @keyframes liquido { from { transform: translateX(-52%) translateY(0) scale(1); } to { transform: translateX(-48%) translateY(14px) scale(1.06); } }
+  img { height: auto; display: block; max-width: 100%; }
+  h1, h2, .display { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking-display); line-height: var(--leading-tight); }
+  button { font: inherit; }
+  :root { --verde: 153 27% 31%; }
+
+  .app { position: relative; z-index: 1; max-width: 440px; margin: 0 auto; padding-block: var(--space-3) var(--space-16); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+  /* ---- vidro líquido (Zander #02: fill 10%, blur, sombra dupla, 3 sombras internas) ---- */
+  .vidro { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 8px); z-index: 20; display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; align-items: center; gap: var(--space-3);
+    padding: var(--space-2) var(--space-3); border-radius: 22px; margin-bottom: var(--space-6);
+    background: hsl(0 0% 100% / .10); -webkit-backdrop-filter: blur(12px) saturate(1.3); backdrop-filter: blur(12px) saturate(1.3);
+    border: 1px solid hsl(0 0% 100% / .55);
+    box-shadow: 0 2px 4px hsl(0 0% 0% / .08), 0 2px 8px hsl(0 0% 0% / .06), inset 0 0 8px hsl(0 0% 63% / .25), inset -2px -2px 4px hsl(0 0% 100% / .9), inset 2px 2px .5px hsl(0 0% 100% / .5); }
+  @supports not (backdrop-filter: blur(1px)) { .vidro { background: hsl(var(--bg) / .92); } }
+  .vidro .logo { grid-column: 2; justify-self: center; width: 84px; }
+  .voltar { grid-column: 1; width: 36px; height: 36px; border-radius: 50%; border: 1px solid hsl(0 0% 100% / .7); background: hsl(0 0% 100% / .35); cursor: pointer;
+    display: grid; place-items: center; color: hsl(var(--text)); visibility: hidden; }
+  .voltar.on { visibility: visible; }
+  .timer { grid-column: 3; display: none; align-items: center; gap: 6px; font-size: var(--text-xs); font-weight: 800; letter-spacing: .02em; color: hsl(var(--orange-700));
+    background: hsl(0 0% 100% / .45); border: 1px solid hsl(0 0% 100% / .8); border-radius: var(--radius-pill); padding: 6px 10px; font-variant-numeric: tabular-nums; }
+  .timer.on { display: inline-flex; }
+  .timer.acabou { color: hsl(var(--text-subtle)); }
+  .vidro .progresso { grid-column: 1 / -1; height: 3px; background: hsl(0 0% 100% / .5); border-radius: 2px; overflow: hidden; margin-top: 2px; }
+  .vidro .progresso > i { display: block; height: 100%; width: 0; background: hsl(var(--brand)); transition: width var(--dur-slow) var(--ease); }
+
+  .tela { animation: entra var(--dur-slow) var(--ease); }
+  @keyframes entra { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .eyebrow { font-size: var(--text-xs); font-weight: 800; text-transform: uppercase; letter-spacing: var(--tracking-wide); color: hsl(var(--brand)); margin-bottom: var(--space-3); }
+  .tela h1 { font-size: clamp(2rem, 7vw, 2.6rem); margin-bottom: var(--space-3); text-wrap: balance; }
+  .tela h1 span { color: hsl(var(--brand)); }
+  .tela p.fala { font-size: var(--text-base); color: hsl(var(--text)); margin-bottom: var(--space-4); max-width: 46ch; }
+  .tela p.fala.muted { color: hsl(var(--text-muted)); }
+  .tela .pergunta { font-family: var(--font-display); font-size: clamp(1.6rem, 6vw, 2rem); letter-spacing: var(--tracking-display); line-height: 1.15; margin-bottom: var(--space-2); text-wrap: balance; }
+  .tela .ajuda { font-size: var(--text-sm); color: hsl(var(--text-subtle)); margin-bottom: var(--space-6); }
+
+  /* intro */
+  .chef { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-6); }
+  .chef > div { min-width: 0; }
+  .chef img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 3px solid hsl(0 0% 100% / .9); box-shadow: var(--shadow-md); }
+  .chef b { display: block; font-size: var(--text-base); }
+  .chef small { color: hsl(var(--text-muted)); font-size: var(--text-sm); }
+
+  .opcoes { display: grid; gap: var(--space-3); margin-bottom: var(--space-6); }
+  .opcao { display: flex; align-items: center; gap: var(--space-3); width: 100%; text-align: left; padding: var(--space-4); cursor: pointer; min-width: 0;
+    background: hsl(var(--surface)); border: 1px solid hsl(var(--border)); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+    color: hsl(var(--text)); font-weight: 500; line-height: 1.3; transition: border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease); }
+  .opcao:hover { border-color: hsl(var(--brand)); }
+  .opcao:active { transform: scale(.985); }
+  .opcao:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+  .opcao .letra { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: var(--text-xs); font-weight: 800;
+    background: hsl(var(--bg-muted)); color: hsl(var(--text-muted)); }
+  .opcao > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+  .opcao small { display: block; font-weight: 400; color: hsl(var(--text-muted)); font-size: var(--text-sm); margin-top: 2px; }
+  .opcao.sel { border-color: hsl(var(--brand)); background: hsl(var(--brand-subtle)); }
+  .opcao.sel .letra { background: hsl(var(--brand)); color: hsl(var(--text-on-brand)); }
+  .escala { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-2); margin-bottom: var(--space-2); }
+  .escala .opcao { justify-content: center; padding: var(--space-4) 0; font-family: var(--font-display); font-size: var(--text-xl); }
+  .escala-legenda { display: flex; justify-content: space-between; font-size: var(--text-xs); color: hsl(var(--text-subtle)); margin-bottom: var(--space-6); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 56px; padding: var(--space-3) var(--space-8);
+    border-radius: var(--radius-pill); border: 1px solid transparent; font-weight: 700; cursor: pointer; text-decoration: none; transition: all var(--dur-fast) var(--ease); }
+  .btn-primary { background: hsl(var(--brand)); color: hsl(var(--text-on-brand)); box-shadow: var(--shadow-brand); }
+  .btn-primary:hover { background: hsl(var(--brand-hover)); transform: translateY(-1px); }
+  .btn-primary:disabled { opacity: .5; cursor: not-allowed; transform: none; box-shadow: none; }
+  .btn:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+
+  .inter { padding-top: var(--space-4); }
+  .inter .carimbo { display: inline-block; font-family: var(--font-display); font-size: var(--text-3xl); color: hsl(var(--brand)); border: 3px solid hsl(var(--brand));
+    padding: var(--space-1) var(--space-4); transform: rotate(-3deg); margin-bottom: var(--space-6); }
+  .inter p { font-size: var(--text-lg); color: hsl(var(--text)); margin-bottom: var(--space-4); max-width: 42ch; }
+  .inter p.fonte { font-size: var(--text-xs); color: hsl(var(--text-subtle)); margin-bottom: var(--space-8); }
+  .inter .foto { border-radius: var(--radius-lg); margin: 0 auto var(--space-6); max-width: 220px; transform: rotate(-2deg); border: 6px solid hsl(var(--neutral-0)); box-shadow: var(--shadow-lg); }
+
+  .loader { text-align: center; padding-top: var(--space-16); }
+  .anel { width: 160px; height: 160px; margin: 0 auto var(--space-8); border-radius: 50%; display: grid; place-items: center; position: relative;
+    background: conic-gradient(hsl(var(--brand)) calc(var(--p, 0) * 1%), hsl(var(--neutral-200)) 0); }
+  .anel::before { content: ""; position: absolute; inset: 12px; border-radius: 50%; background: hsl(var(--bg)); }
+  .anel b { position: relative; font-family: var(--font-display); font-size: var(--text-3xl); }
+  .loader .passo { color: hsl(var(--text-muted)); min-height: 1.5em; }
+
+  .resultado .perfil { background: hsl(var(--neutral-950)); color: hsl(var(--neutral-50)); padding: var(--space-8) var(--space-6); border-radius: var(--radius-xl); margin-bottom: var(--space-6); position: relative; overflow: hidden; }
+  .resultado .perfil .eyebrow { color: hsl(var(--orange-300)); }
+  .resultado .perfil h1 { color: hsl(var(--neutral-0)); margin-bottom: var(--space-2); padding-right: 96px; }
+  .resultado .perfil p { color: hsl(var(--neutral-300)); padding-right: 96px; }
+  .resultado .perfil img { position: absolute; right: -36px; bottom: -44px; width: 128px; transform: rotate(14deg); opacity: .9; }
+  .roteiro { background: hsl(var(--surface)); border: 1px solid hsl(var(--border)); border-radius: var(--radius-xl); padding: var(--space-6); margin-bottom: var(--space-6); }
+  .roteiro h2 { font-size: var(--text-2xl); margin-bottom: var(--space-4); }
+  .roteiro ol { list-style: none; display: grid; gap: var(--space-3); }
+  .roteiro li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: var(--space-3); align-items: start; }
+  .roteiro li > div { min-width: 0; overflow-wrap: anywhere; }
+  .roteiro li .n { font-family: var(--font-display); font-size: var(--text-2xl); color: hsl(var(--brand)); line-height: 1; }
+  .roteiro li b { display: block; }
+  .roteiro li small { color: hsl(var(--text-muted)); }
+  .roteiro p.fala { margin-top: var(--space-4); margin-bottom: 0; }
+
+  .oferta { background: hsl(var(--neutral-0)); border: 1px solid hsl(var(--orange-200)); border-radius: var(--radius-xl); padding: var(--space-6); margin-bottom: var(--space-6);
+    box-shadow: var(--shadow-brand); position: relative; overflow: hidden; }
+  .oferta::before { content: ""; position: absolute; inset: auto -40px -60px auto; width: 180px; height: 180px; border-radius: 50%; background: hsl(19 100% 90% / .6); filter: blur(24px); pointer-events: none; }
+  .oferta > * { position: relative; }
+  .oferta h2 { font-size: var(--text-2xl); margin-bottom: var(--space-2); }
+  .oferta .relogio { font-family: var(--font-display); font-size: var(--text-4xl); color: hsl(var(--brand)); line-height: 1; margin-bottom: var(--space-3); font-variant-numeric: tabular-nums; }
+  .oferta p { font-size: var(--text-sm); color: hsl(var(--text)); margin-bottom: var(--space-4); }
+  .oferta .preco { font-family: var(--font-display); font-size: var(--text-2xl); margin-bottom: var(--space-4); }
+  .oferta .preco s { color: hsl(var(--text-subtle)); font-size: var(--text-lg); margin-right: var(--space-2); }
+  .oferta.acabou { border-color: hsl(var(--border)); box-shadow: none; }
+  .oferta.acabou::before { display: none; }
+  .oferta .miudo { font-size: var(--text-xs); color: hsl(var(--text-subtle)); margin: var(--space-3) 0 0; }
+
+  .captura input[type=email], .captura input[type=text], .captura input[type=tel] { width: 100%; min-height: 52px; padding: 0 var(--space-4); margin-bottom: var(--space-3);
+    border: 1px solid hsl(var(--border-strong)); border-radius: var(--radius-lg); background: hsl(var(--surface)); color: hsl(var(--text)); font: inherit; }
+  .captura input:focus { outline: 2px solid hsl(var(--ring)); outline-offset: 1px; }
+  .gdpr-texto p { font-size: var(--text-xs); color: hsl(var(--text-subtle)); margin: var(--space-2) 0; }
+  .gdpr-row { display: flex; gap: var(--space-2); align-items: flex-start; font-size: var(--text-xs); color: hsl(var(--text-muted)); margin-bottom: var(--space-4); }
+  .gdpr-row input { margin-top: 3px; accent-color: hsl(var(--brand)); }
+  .captura .miudo { font-size: var(--text-xs); color: hsl(var(--text-subtle)); text-align: center; margin-top: var(--space-3); }
+
+  footer { text-align: center; padding-top: var(--space-12); color: hsl(var(--text-subtle)); font-size: var(--text-xs); }
+  footer a { color: hsl(var(--text-muted)); }
+
+  #cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; background: hsl(var(--neutral-900)); color: hsl(var(--neutral-50));
+    padding: var(--space-4) var(--space-6); display: flex; align-items: center; justify-content: center; gap: var(--space-6); flex-wrap: wrap;
+    transform: translateY(100%); transition: transform var(--dur-base) var(--ease); font-size: var(--text-xs); }
+  #cookie-banner.show { transform: translateY(0); }
+  #cookie-banner p { margin: 0; max-width: 640px; color: hsl(var(--neutral-300)); }
+  #cookie-banner .cookie-actions { display: flex; gap: var(--space-3); flex: none; }
+  #cookie-banner button { cursor: pointer; border-radius: var(--radius-pill); padding: var(--space-2) var(--space-6); border: 1px solid hsl(var(--neutral-50) / .3); background: transparent; color: hsl(var(--neutral-50)); font-weight: 700; }
+  #cookie-banner .cookie-accept { background: hsl(var(--brand)); border-color: hsl(var(--brand)); }
+
+  @media (prefers-reduced-motion: reduce) { .tela { animation: none; } .vidro .progresso > i { transition: none; } body::after { animation: none; } }
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRSXCBF2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="app">
+  <div class="vidro" id="vidro">
+    <button type="button" class="voltar" id="voltar" aria-label="Voltar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <a class="logo" href="/"><img src="../design-system/assets/saucier-logo-laranja.webp" alt="Saucier" width="1182" height="756" decoding="async"></a>
+    <span class="timer" id="timer" aria-live="off"><span>10% reservado</span><b id="timer-num">15:00</b></span>
+    <div class="progresso" aria-hidden="true"><i id="barra"></i></div>
+  </div>
+
+  <main id="tela" class="tela" aria-live="polite"></main>
+
+  <!-- O formulário do Hotmart Send da home, agora na introdução. Envia para um iframe escondido e sem
+       scripts (sandbox): a pessoa fica na página, o Send recebe o contato, e a página de obrigado do Send
+       não roda o próprio GTM lá dentro (senão o lead contaria duas vezes). O lead-form.js dispara
+       generate_lead (GA4) e Lead (Meta) e só depois envia. -->
+  <iframe name="send-frame" title="envio" sandbox="allow-forms" hidden></iframe>
+  <template id="tpl-intro">
+    <section id="quiz-intro" class="captura">
+      <div class="chef">
+        <img src="../design-system/assets/fotos/chef-feliz-pesto.webp" alt="Mauricio Lacerda, chef da Saucier" width="1500" height="1000" decoding="async">
+        <div><b>Mauricio Lacerda</b><small>chef da Saucier · SENAC e Le Cordon Bleu</small></div>
+      </div>
+      <h1>Fala, meu broto!</h1>
+      <p class="fala">Eu vendi molho de porta em porta no Rio, pra 246 famílias, antes de virar professor. Hoje eu ensino a técnica na panela de casa.</p>
+      <p class="fala">Eu te faço 10 perguntas rápidas sobre a sua cozinha e te devolvo, aqui mesmo, os 3 molhos pra você começar esta semana. Pra gente conversar direito, me diz seu nome.</p>
+      <form id="form-nome" autocomplete="off">
+        <input type="text" autocomplete="given-name" name="first_name" id="first_name" placeholder="Seu nome" value="" required>
+        <button type="submit" class="btn btn-primary" id="comecar">Bora</button>
+      </form>
+      <p class="miudo">Três minutos. Sem spam.</p>
+    </section>
+  </template>
+
+  <!-- E-mail: depois do primeiro interstício. É aqui que o Send recebe o contato e o relógio do cupom começa. -->
+  <template id="tpl-email">
+    <section id="quiz-email" class="captura">
+      <p class="pergunta" data-pergunta></p>
+      <p class="fala">É pra lá que vão os 3 molhos, com o módulo do curso que ensina cada um, e o ebook Pesto pelo Mundo. E é a partir de agora que eu seguro 10% no curso por 15 minutos, caso você queira ir além.</p>
+      <form klicksend-form-id="1zuPpn4" autocomplete="off" method="post" target="send-frame" action="https://handler.send.hotmart.com/subscription/1zuPpn4?hotfeature=53">
+        <input type="hidden" name="first_name" value="">
+        <input type="email" autocomplete="email" name="email" id="email" placeholder="Seu melhor e-mail" value="" required>
+        <div klicksend-gdpr-text class="gdpr-texto"><p>Esses dados serão utilizados para entrarmos em contato com você e disponibilizarmos mais conteúdos e ofertas. Caso você não queira mais receber os nossos e-mails, cada e-mail que você receber incluirá, ao final, um link para remover o seu e-mail da nossa lista.</p></div>
+        <div class="gdpr-row">
+          <input type="checkbox" autocomplete="off" name="gdpr" id="gdpr-quiz" value="Concordo em receber os e-mails" required>
+          <label for="gdpr-quiz">Concordo em receber e-mails com receitas e novidades da Saucier.</label>
+        </div>
+        <div style="position:absolute;left:-5000px" aria-hidden="true">
+          <input type="text" autocomplete="new-password" name="b_1zuPpn4" tabindex="-1" value="">
+        </div>
+        <button klicksend-form-submit-id="1zuPpn4" class="btn btn-primary">Guardar meu roteiro</button>
+      </form>
+    </section>
+  </template>
+
+  <!-- WhatsApp: antes da última pergunta. Opcional, pode pular. Envia ao Send sem o lead-form.js (pra não contar lead duas vezes). -->
+  <template id="tpl-tel">
+    <section id="quiz-tel" class="captura">
+      <p class="pergunta" data-pergunta></p>
+      <p class="fala">Se quiser que eu te lembre do primeiro molho no domingo, me deixa seu WhatsApp. Se não quiser, pula: o roteiro vai por e-mail de qualquer jeito.</p>
+      <form id="form-tel" autocomplete="off" method="post" target="send-frame" action="https://handler.send.hotmart.com/subscription/1zuPpn4?hotfeature=53">
+        <input type="hidden" name="first_name" value="">
+        <input type="hidden" name="email" value="">
+        <input type="hidden" name="gdpr" value="Concordo em receber os e-mails">
+        <input type="tel" autocomplete="tel" name="phone" id="phone" placeholder="Seu WhatsApp com DDD" value="" inputmode="tel" required>
+        <div style="position:absolute;left:-5000px" aria-hidden="true">
+          <input type="text" autocomplete="new-password" name="b_1zuPpn4" tabindex="-1" value="">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar e seguir</button>
+        <button type="button" class="btn" id="pular-tel" style="color:hsl(var(--text-muted));min-height:44px">Pular, só e-mail</button>
+      </form>
+    </section>
+  </template>
+
+  <footer>
+    <p>© Saucier Molhos Artesanais. Por uma vida com mais tempero 🌱</p>
+    <p><a href="/">saucier.com.br</a> · <a href="/curso/">o curso</a></p>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   QUIZ SAUCIER v4: o chef conversa com a pessoa pelo nome.
+   - Introdução captura (nome + e-mail, WhatsApp opcional) e dispara o timer
+     de 15 minutos do cupom QUIZ10 (10%). O cupom vai no link do checkout
+     (?off=QUIZ10) só enquanto o timer corre. Depois, o link sai sem cupom.
+   - Seis portas por estilo de vida; ?nicho= ou utm com a chave pulam a
+     pergunta 1 e trocam a headline da introdução.
+   - 10 perguntas; score 0-100 -> temperatura; tudo vai para GA4 e para a
+     action do Send (nicho, perfil, score, temp).
+   Nota: keter/malkuth/saucier/quiz-v4-conversa-e-timer-2026-10-16.md
+   ============================================================ */
+(function () {
+  "use strict";
+
+  var CHECKOUT = "https://pay.hotmart.com/H70087725N?src=quiz";
+  var CUPOM = "QUIZ10", DESCONTO = 10, PRECO = 290, MINUTOS = 15;
+  var IMG = "../design-system/assets/produtos/";
+  var PAGINA_MOLHO = "../quiz/resultado/";
+  /* Backup do lead fora da Hotmart: Web App do Apps Script que grava na planilha
+     "Saucier · Leads do quiz (backup)". Vazio = desligado. Spec: quiz-dados-e-backup-2026-10-16.md */
+  var BACKUP_URL = "";
+  var SLUG = { "Pesto tradicional": "pesto", "Chimichurri autêntico": "chimichurri", "Hollandaise sem talhar": "hollandaise", "Maionese caseira sem desandar": "maionese", "Ketchup sem conservante": "ketchup", "Mostarda caseira": "mostarda", "Vinagrete de verdade": "vinagrete", "Molho de tomate caseiro": "molho-de-tomate", "Pimenta fermentada": "pimenta-fermentada", "Béchamel sem embolar": "bechamel", "Molho escuro de panela": "molho-escuro" };
+
+  var NICHOS = {
+    fitness: {
+      nome: "treino e proteína",
+      opcao: "Comer bem pra treinar", sub: "a mesma proteína toda semana, sem enjoar",
+      titulo: "Frango de novo? O que muda é <span>o molho</span>.",
+      lead: "Você treina, acerta a proteína, e aí vem o frango de quarta. Eu sei. Me diz seu nome e seu e-mail, eu te faço 10 perguntas e te devolvo os 3 molhos que mudam o prato sem mexer na sua conta.",
+      inter: function (n) { return { carimbo: "zero açúcar", foto: IMG + "chimi.webp",
+        texto: n + ", o chimichurri da casa leva azeite, ervas, alho, vinagre e sal. Cinco coisas que você conhece pelo nome. Nenhum açúcar.",
+        texto2: "No curso, cada receita vem com ficha técnica e informação nutricional. Você tempera o treino sabendo exatamente o que entrou no pote.",
+        fonte: "Ficha técnica do Curso Saucier, módulo Molhos Verdes." }; },
+      perfil: { nome: "O Tempero de Treino", resumo: "Você já acerta a proteína. O que falta é o molho que muda o prato sem mexer na conta.", modulos: "Molhos Verdes · Temperos · Emulsões", foto: IMG + "chimi.webp" },
+      molhos: [
+        { m: "Chimichurri autêntico", d: "Cinco ingredientes, zero açúcar. O frango de quarta vira outro prato." },
+        { m: "Mostarda caseira", d: "Dois ingredientes e três dias. Dá gosto ao peito de frango sem pote industrial." },
+        { m: "Vinagrete de verdade", d: "Proporção, não chute: três de azeite pra uma de ácido, e o resto é gosto." }
+      ]
+    },
+    saude: {
+      nome: "rótulo limpo",
+      opcao: "Saber o que vai na minha comida", sub: "rótulo limpo, sem conservante",
+      titulo: "Você lê o rótulo. E se <span>você escrevesse</span> o rótulo?",
+      lead: "Você lê o rótulo do molho pronto e não termina a lista. Me diz seu nome e seu e-mail, eu te faço 10 perguntas e te devolvo os 3 molhos em que cada ingrediente tem nome de comida.",
+      inter: function (n) { return { carimbo: "4 ingredientes", foto: IMG + "goiabada.webp",
+        texto: n + ", o ketchup caseiro da casa leva tomate, vinagre, açúcar e sal. Quatro nomes. O do mercado leva uma lista que você não termina de ler.",
+        texto2: "Um módulo inteiro do curso é só sobre conservação, utensílios e higienização. É o que faz o molho sem conservante durar na geladeira.",
+        fonte: "Receita de ketchup sem conservante do blog Saucier; módulo Conservação, Utensílios e Higienização." }; },
+      perfil: { nome: "O Rótulo Limpo", resumo: "Você quer controlar o que entra na comida da família. Molho caseiro é o jeito mais rápido de tirar a lista do rótulo da mesa.", modulos: "Conservação e Higienização · Atomatados · Fermentação de Pimentas (bônus)", foto: IMG + "goiabada.webp" },
+      molhos: [
+        { m: "Ketchup sem conservante", d: "Tomate, vinagre, açúcar e sal. Você escreve o rótulo." },
+        { m: "Molho de tomate caseiro", d: "O atomatado que resolve massa, pizza e berinjela com a mesma panela." },
+        { m: "Pimenta fermentada", d: "Conservação por acidez, sem química. Com a picância que você quiser." }
+      ]
+    },
+    criancas: {
+      nome: "jantar com criança",
+      opcao: "Fazer meu filho comer", sub: "jantar sem guerra",
+      titulo: "Jantar sem guerra começa <span>pelo molho</span>.",
+      lead: "Todo dia às sete da noite a mesma cena. Me diz seu nome e seu e-mail, eu te faço 10 perguntas e te devolvo os 3 molhos que a criança come e que você controla.",
+      inter: function (n) { return { carimbo: "2.000 potes", foto: IMG + "pesto.webp",
+        texto: n + ", eu vendi molho pronto por dois anos no Rio. 246 famílias compravam toda semana, e o pote que mais voltava era o pesto: mais de 2.000.",
+        texto2: "Criança não come o que é bom pra ela. Come o que tem gosto e parece sempre igual. O molho é a parte do prato que você controla sem ela notar.",
+        fonte: "Base de clientes Saucier Molhos Artesanais, RJ, 2020 a 2021." }; },
+      perfil: { nome: "O Jantar em Paz", resumo: "Quem cozinha pra criança precisa de molho que repete sem cansar e que leva o que você quiser dentro.", modulos: "Atomatados · Molhos Brancos · Emulsões", foto: IMG + "pesto.webp" },
+      molhos: [
+        { m: "Molho de tomate caseiro", d: "A base do macarrão de toda semana, e tudo que você refoga junto vai dentro." },
+        { m: "Béchamel sem embolar", d: "Molho-mãe branco. Dele saem o gratinado, a lasanha e o molho de queijo." },
+        { m: "Maionese caseira sem desandar", d: "Sem conservante, e a criança ajuda a bater." }
+      ]
+    },
+    rotina: {
+      nome: "marmita da semana",
+      opcao: "Fazer a semana render", sub: "marmita e comida feita de uma vez",
+      titulo: "Um molho no domingo, <span>cinco jantares</span> na semana.",
+      lead: "A marmita cansa na quarta, e você sabe disso. Me diz seu nome e seu e-mail, eu te faço 10 perguntas e te devolvo os 3 molhos que aguentam a semana e trocam o gosto do mesmo prato todo dia.",
+      inter: function (n) { return { carimbo: "1 base, 5 jantares", foto: IMG + "pesto-azeitona.webp",
+        texto: n + ", eu sei onde a marmita cansa: na quarta. Não é o arroz, é o gosto, que é o mesmo de segunda. Troque o molho, não o prato: chimichurri na segunda, atomatado na terça, mostarda na quarta.",
+        texto2: "Dos 10 módulos do curso, um inteiro é só sobre conservação. É o que faz o molho de domingo chegar inteiro na sexta.",
+        fonte: "Módulo Conservação, Utensílios e Higienização; post \"Quanto tempo dura um molho caseiro\" no blog Saucier." }; },
+      perfil: { nome: "A Marmita que Rende", resumo: "Você já faz de uma vez. O que falta é o molho que dura a semana e troca o gosto do prato todo dia.", modulos: "Conservação e Higienização · Atomatados · Molhos Verdes", foto: IMG + "pesto-azeitona.webp" },
+      molhos: [
+        { m: "Molho de tomate caseiro", d: "A base de domingo que vira macarrão, berinjela e arroz de forno." },
+        { m: "Chimichurri autêntico", d: "Aguenta a semana na geladeira e levanta qualquer marmita fria." },
+        { m: "Mostarda caseira", d: "Dois ingredientes e três dias. Muda a quarta-feira inteira." }
+      ]
+    },
+    facilidade: {
+      nome: "jantar rápido",
+      opcao: "Resolver o jantar rápido", sub: "pouco tempo, pouca louça",
+      titulo: "Vinte minutos pra jantar? Então o molho <span>é o prato</span>.",
+      lead: "Você chega tarde e quer comer bem sem passar a noite no fogão. Me diz seu nome e seu e-mail, eu te faço 10 perguntas e te devolvo os 3 molhos que ficam prontos enquanto a água ferve.",
+      inter: function (n) { return { carimbo: "zero fogo", foto: IMG + "pesto.webp",
+        texto: n + ", pesto não vai ao fogo. Maionese é um ovo, óleo e braço. Vinagrete é proporção. Os três ficam prontos enquanto a massa cozinha.",
+        texto2: "Molho rápido não é molho pior. É emulsão e tempero, a técnica dos dois módulos que resolvem a semana de quem chega tarde.",
+        fonte: "Módulos Emulsões e Molhos Verdes do Curso Saucier." }; },
+      perfil: { nome: "O Jantar de Vinte Minutos", resumo: "Você quer comer bem sem passar a noite no fogão. Emulsão e molho verde são a técnica certa pra isso.", modulos: "Emulsões · Molhos Verdes · Temperos", foto: IMG + "pesto.webp" },
+      molhos: [
+        { m: "Pesto tradicional", d: "Verdinho, verdinho. Zero fogo, massa pronta antes de você terminar de bater." },
+        { m: "Maionese caseira sem desandar", d: "A base de uma dúzia de molhos frios, da salada ao sanduíche." },
+        { m: "Vinagrete de verdade", d: "Proporção, não chute. Três de azeite pra uma de ácido." }
+      ]
+    },
+    anfitriao: {
+      nome: "receber gente",
+      opcao: "Receber bem em casa", sub: "o jantar que vira história",
+      titulo: "O jantar que vira história começa <span>pelo molho</span>.",
+      lead: "Você recebe gente e quer estar na mesa, não no fogão. Me diz seu nome e seu e-mail, eu te faço 10 perguntas e te devolvo os 3 molhos de restaurante que ficam prontos de véspera.",
+      inter: function (n) { return { carimbo: "2.000 potes", foto: IMG + "pesto.webp",
+        texto: n + ", eu vendi molho pronto por dois anos no Rio. 246 famílias compravam toda semana, e o pote que mais voltava era o pesto: mais de 2.000.",
+        texto2: "O que eu aprendi do outro lado do balcão: o molho é o que a visita lembra. O resto é acompanhamento.",
+        fonte: "Base de clientes Saucier Molhos Artesanais, RJ, 2020 a 2021." }; },
+      perfil: { nome: "O Anfitrião", resumo: "Quem recebe em casa precisa de molho que impressiona sem prender você no fogão. Isso é técnica, não sorte.", modulos: "Molhos Escuros · Emulsões · Molhos Verdes", foto: IMG + "pesto.webp" },
+      molhos: [
+        { m: "Molho escuro de panela", d: "Fundo, redução e manteiga: o molho de restaurante feito com o que sobrou na frigideira." },
+        { m: "Hollandaise sem talhar", d: "A emulsão que assusta todo mundo e sai certa quando você entende a temperatura." },
+        { m: "Pesto tradicional", d: "O molho que mais vendi na vida, e o que mais faz gente pedir a receita." }
+      ]
+    }
+  };
+  var ORDEM = ["fitness", "saude", "criancas", "rotina", "facilidade", "anfitriao"];
+
+  var PRIMEIRO = {
+    massa:   { m: "Pesto tradicional", d: "Verdinho, verdinho. Oito ingredientes, zero fogo." },
+    carne:   { m: "Chimichurri autêntico", d: "O molho que faz qualquer carne de frigideira parecer churrasco de domingo." },
+    peixe:   { m: "Hollandaise sem talhar", d: "A emulsão que assusta todo mundo e sai certa quando você entende a temperatura." },
+    legumes: { m: "Maionese caseira sem desandar", d: "A base de uma dúzia de molhos frios, da salada ao sanduíche." },
+    lanche:  { m: "Ketchup sem conservante", d: "Tomate, vinagre, açúcar e sal. Seu hambúrguer nunca mais foi o mesmo." }
+  };
+  var PRATO_NOME = { massa: "a massa", carne: "a carne", peixe: "o peixe", legumes: "os legumes", lanche: "o lanche" };
+
+  /* ---------- As telas: introdução + 10 perguntas ---------- */
+  var TELAS = [
+    { id: "intro", tipo: "intro" },
+    { id: "gosta", tipo: "pergunta", pergunta: function (n) { return "Primeiro, " + n + ": você gosta de cozinhar?"; },
+      opcoes: [
+        { v: "amo", t: "Amo. É o meu momento" },
+        { v: "gosto", t: "Gosto, quando dá tempo" },
+        { v: "precisa", t: "Faço porque precisa" },
+        { v: "nao", t: "Não gosto, mas quero melhorar" }
+      ] },
+    { id: "nicho", tipo: "pergunta", pergunta: function () { return "E qual é o seu maior objetivo na cozinha hoje?"; }, ajuda: "Escolhe o que mais pesa. O resto a gente vê já já.",
+      opcoes: ORDEM.map(function (k) { return { v: k, t: NICHOS[k].opcao, s: NICHOS[k].sub }; }) },
+    { id: "interesses", tipo: "multi", pergunta: function () { return "E o que mais te interessa?"; }, ajuda: "Pode marcar vários. É pra eu saber o que te mandar depois.",
+      opcoes: function () {
+        var k0 = nicho();
+        var lista = ORDEM.filter(function (k) { return k !== k0; }).map(function (k) { return { v: k, t: NICHOS[k].opcao }; });
+        return lista.concat([
+          { v: "fermentacao", t: "Fermentar pimenta e fazer conserva" },
+          { v: "doces", t: "Molhos doces e caldas" },
+          { v: "autoral", t: "Criar um molho com o meu nome" },
+          { v: "vender", t: "Vender molho, como a Saucier começou" }
+        ]);
+      } },
+    { id: "fonte", tipo: "pergunta", pergunta: function () { return "E hoje, o molho lá em casa vem de onde?"; },
+      opcoes: [
+        { v: "pote", t: "Do pote ou do sachê do mercado" },
+        { v: "mesmo", t: "Eu faço, mas é sempre o mesmo" },
+        { v: "varios", t: "Eu faço vários, de olho fechado" },
+        { v: "nenhum", t: "Molho? Minha comida vai seca" }
+      ] },
+    { id: "inter-nicho", tipo: "inter", porNicho: true, botao: "Continuar" },
+    { id: "email", tipo: "email", pergunta: function (n) { return n + ", antes de seguir: me passa seu e-mail?"; } },
+    { id: "prato", tipo: "pergunta", pergunta: function () { return "Qual prato você mais queria acertar de uma vez?"; },
+      opcoes: [
+        { v: "massa", t: "Massa" },
+        { v: "carne", t: "Carne na brasa ou na frigideira" },
+        { v: "peixe", t: "Peixe e frutos do mar" },
+        { v: "legumes", t: "Legumes, saladas e grãos" },
+        { v: "lanche", t: "Hambúrguer e lanche de casa" }
+      ] },
+    { id: "trava", tipo: "multi", pergunta: function () { return "E o que te trava quando tenta fazer molho em casa?"; }, ajuda: "Pode marcar mais de um. Eu já ouvi todos.",
+      opcoes: [
+        { v: "desanda", t: "Desanda, talha ou embola" },
+        { v: "sem-gosto", t: "Fica sem gosto, aguado" },
+        { v: "combinar", t: "Não sei que molho vai com o quê" },
+        { v: "trabalho", t: "Dá trabalho e suja tudo" },
+        { v: "receita", t: "Não acho receita que funcione" },
+        { v: "nunca", t: "Nunca tentei de verdade" }
+      ] },
+    { id: "inter-metodo", tipo: "inter", botao: "Faz sentido, segue",
+      conteudo: function (n) { return { carimbo: "5 molhos-mãe",
+        texto: "Deixa eu te contar uma coisa que muda tudo, " + n + ". Escoffier, o rei dos chefs, organizou a cozinha francesa inteira em cinco molhos-mãe. Desses cinco sai quase tudo.",
+        texto2: "Por isso eu não ensino receita decorada. Ensino a base. Quem domina a base inventa o próprio molho, até o que não está em livro nenhum.",
+        fonte: "Auguste Escoffier, Le Guide Culinaire, 1903." }; } },
+    { id: "tempo", tipo: "pergunta", pergunta: function () { return "Sendo sincero comigo: quanto tempo você tem por semana pra isso?"; },
+      opcoes: [
+        { v: "20min", t: "Uns 20 minutos, no meio da semana" },
+        { v: "1h", t: "Uma hora, com calma" },
+        { v: "sabado", t: "Um sábado de manhã" },
+        { v: "depende", t: "Depende da semana" }
+      ] },
+    { id: "quando", tipo: "pergunta", pergunta: function () { return "E quando você quer resolver isso?"; },
+      opcoes: [
+        { v: "semana", t: "Esta semana", s: "quero fazer o primeiro molho até domingo" },
+        { v: "mes", t: "Este mês", s: "quero começar, mas sem correria" },
+        { v: "curioso", t: "Sem pressa", s: "tô só curioso por enquanto" }
+      ] },
+    { id: "tel", tipo: "tel", pergunta: function (n) { return n + ", seu WhatsApp?"; } },
+    { id: "vontade", tipo: "escala", pergunta: function () { return "Última: de 1 a 5, o quanto você quer parar de depender do molho pronto?"; },
+      min: "Tô bem como tá", max: "Quero largar hoje" },
+    { id: "montando", tipo: "loader", tempo: 3200, passos: ["Lendo as suas respostas", "Cruzando com os 10 módulos", "Escolhendo os 3 primeiros molhos", "Pronto"] },
+    { id: "resultado", tipo: "resultado" }
+  ];
+
+  /* ---------- Estado ---------- */
+  var KEY = "saucier_quiz_v4";
+  var st = ler() || { respostas: {}, i: 0, iniciou: false, entrada: "tela", lead: null, prazo: 0, sessao: "" };
+  if (!st.sessao) { st.sessao = (Date.now().toString(36) + Math.random().toString(36).slice(2, 8)); }
+
+  function ler() { try { return JSON.parse(sessionStorage.getItem(KEY)); } catch (e) { return null; } }
+  function gravar() { try { sessionStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} }
+  function nicho() { return NICHOS[st.respostas.nicho] ? st.respostas.nicho : null; }
+  function nome() {
+    var n = (st.lead && st.lead.nome || "").trim().split(/\s+/)[0];
+    if (!n) return "meu broto";
+    return n.charAt(0).toUpperCase() + n.slice(1).toLowerCase();
+  }
+  function evento(nomeEv, extra) {
+    try {
+      window.dataLayer = window.dataLayer || [];
+      var e = { event: nomeEv, quiz: "molho-destrava-v4", quiz_nicho: nicho() || "", quiz_entry: st.entrada };
+      for (var k in (extra || {})) e[k] = extra[k];
+      window.dataLayer.push(e);
+    } catch (e) {}
+  }
+
+  /* Porta de entrada: ?nicho=<chave>, ou utm_adset / utm_ad contendo a chave (SAU_QUIZ_<nicho>_<gancho>_v<n>). */
+  (function porta() {
+    if (st.iniciou) return;
+    var p; try { p = new URLSearchParams(location.search); } catch (e) { return; }
+    var k = (p.get("nicho") || "").toLowerCase(), origem = "param";
+    if (!NICHOS[k]) {
+      var utm = ((p.get("utm_adset") || "") + " " + (p.get("utm_ad") || "")).toLowerCase();
+      k = ORDEM.filter(function (n) { return utm.indexOf(n) !== -1; })[0] || ""; origem = "utm";
+    }
+    if (NICHOS[k]) { st.respostas.nicho = k; st.entrada = origem; gravar(); }
+  })();
+
+  /* ---------- Nível e pontuação ---------- */
+  function nivel() {
+    var f = st.respostas.fonte;
+    if (f === "varios") return { k: "avancado", t: "Você já faz vários. Comece pelo bônus Criação de Sabores: é o módulo do molho que leva o seu nome." };
+    if (f === "mesmo") return { k: "repete", t: "Você já faz um. O método dos molhos-mãe transforma essa receita em dez." };
+    return { k: "iniciante", t: "Começo do zero, no seu ritmo. Os três molhos do roteiro não exigem técnica que você ainda não tem." };
+  }
+  function score() {
+    var r = st.respostas, s = 0;
+    s += (Number(r.vontade) || 0) * 8;
+    s += { semana: 30, mes: 15, curioso: 0 }[r.quando] || 0;
+    s += { pote: 10, mesmo: 15, varios: 10, nenhum: 5 }[r.fonte] || 0;
+    s += { "1h": 10, sabado: 10, "20min": 5, depende: 0 }[r.tempo] || 0;
+    s += ((r.trava || []).length >= 2) ? 5 : 0;
+    s += { amo: 5, gosto: 3, precisa: 2, nao: 0 }[r.gosta] || 0;
+    return Math.min(100, s);
+  }
+  function temp(s) { return s >= 65 ? "quente" : s >= 35 ? "morno" : "frio"; }
+
+  /* ---------- Timer do cupom ---------- */
+  var timerEl = document.getElementById("timer"), timerNum = document.getElementById("timer-num");
+  function restante() { return Math.max(0, (st.prazo || 0) - Date.now()); }
+  function mmss(ms) { var s = Math.ceil(ms / 1000); return (s / 60 | 0) + ":" + ("0" + (s % 60)).slice(-2); }
+  function tickTimer() {
+    if (!st.prazo) return;
+    var r = restante();
+    timerEl.classList.add("on");
+    timerNum.textContent = r > 0 ? mmss(r) : "0:00";
+    timerEl.classList.toggle("acabou", r <= 0);
+    timerEl.querySelector("span").textContent = r > 0 ? "10% reservado" : "cupom expirou";
+    var rel = document.getElementById("relogio"); if (rel) rel.textContent = r > 0 ? mmss(r) : "0:00";
+    if (r <= 0) { var o = document.getElementById("oferta"); if (o && !o.classList.contains("acabou")) renderOferta(); return; }
+    setTimeout(tickTimer, 250);
+  }
+  function linkCheckout() {
+    var k = nicho() || "anfitriao";
+    return CHECKOUT + "&sck=" + k + (restante() > 0 ? "&off=" + CUPOM : "");
+  }
+  function roteiro() {
+    var k = nicho() || "anfitriao", um = PRIMEIRO[st.respostas.prato || "massa"];
+    var resto = NICHOS[k].molhos.filter(function (x) { return x.m !== um.m; });
+    return [um, resto[0], resto[1]];
+  }
+  function linkMolho() {
+    var r = roteiro().map(function (m) { return SLUG[m.m] || ""; });
+    var p = new URLSearchParams({ m: r[0], m2: r[1], m3: r[2], nicho: nicho() || "", nome: nome(), ate: String(st.prazo || 0), temp: temp(score()) });
+    return PAGINA_MOLHO + "?" + p.toString();
+  }
+  /* Backup (Google Sheets via Apps Script). sendBeacon não bloqueia a navegação e não precisa de CORS. */
+  /* Uma linha por etapa (nome, email, cada resposta, telefone, resultado), todas com o mesmo id de sessão,
+     pra quem larga no meio ficar salvo até onde chegou. */
+  function backup(etapa, extra) {
+    if (!BACKUP_URL || !st.lead || !st.lead.nome) return;
+    try {
+      var p; try { p = new URLSearchParams(location.search); } catch (e) { p = new URLSearchParams(); }
+      var r = roteiro(), a = st.respostas;
+      var d = { sessao: st.sessao, etapa: etapa, ts: new Date().toISOString(), nome: st.lead.nome, email: st.lead.email || "", phone: st.lead.phone || "",
+        nicho: nicho() || "", entrada: st.entrada, utm_source: p.get("utm_source") || "", utm_campaign: p.get("utm_campaign") || "", utm_adset: p.get("utm_adset") || "", utm_ad: p.get("utm_ad") || "",
+        gosta: a.gosta || "", interesses: (a.interesses || []).join("|"), fonte: a.fonte || "", prato: a.prato || "", trava: (a.trava || []).join("|"), tempo: a.tempo || "", quando: a.quando || "", vontade: a.vontade || "",
+        m1: a.prato ? (SLUG[r[0].m] || "") : "", m2: a.prato ? (SLUG[r[1].m] || "") : "", m3: a.prato ? (SLUG[r[2].m] || "") : "", ua: navigator.userAgent };
+      for (var k in (extra || {})) d[k] = extra[k];
+      var blob = new Blob([JSON.stringify(d)], { type: "text/plain" });
+      if (!(navigator.sendBeacon && navigator.sendBeacon(BACKUP_URL, blob))) fetch(BACKUP_URL, { method: "POST", mode: "no-cors", body: blob, keepalive: true });
+    } catch (e) {}
+  }
+
+  /* ---------- Render ---------- */
+  var tela = document.getElementById("tela");
+  var barra = document.getElementById("barra");
+  var voltar = document.getElementById("voltar");
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  function render() {
+    var t = TELAS[st.i];
+    if (!t) { st.i = 0; t = TELAS[0]; }
+    location.hash = t.id;
+    var perguntas = TELAS.filter(function (x) { return /^(pergunta|multi|escala)$/.test(x.tipo); }).length;
+    var feitas = TELAS.slice(0, st.i).filter(function (x) { return /^(pergunta|multi|escala)$/.test(x.tipo); }).length;
+    barra.style.width = (t.tipo === "resultado" ? 100 : t.tipo === "intro" ? 0 : Math.round(feitas / perguntas * 100)) + "%";
+    voltar.classList.toggle("on", st.i > 1 && t.tipo !== "resultado" && t.tipo !== "loader");
+    window.scrollTo(0, 0);
+
+    var N = nicho() && NICHOS[nicho()], n = nome();
+    var html = "";
+    if (t.tipo === "intro") {
+      html = document.getElementById("tpl-intro").innerHTML;
+      if (N && st.entrada !== "tela") {
+        html = html.replace("<h1>Fala, meu broto!</h1>", '<div class="eyebrow">Fala, meu broto!</div><h1>' + N.titulo + '</h1>')
+                   .replace(/<p class="fala">Eu te faço 10 perguntas[^<]*<\/p>/, '<p class="fala">' + esc(N.lead) + '</p>');
+      }
+    } else if (t.tipo === "email" || t.tipo === "tel") {
+      html = document.getElementById(t.tipo === "email" ? "tpl-email" : "tpl-tel").innerHTML;
+    } else if (t.tipo === "pergunta" || t.tipo === "multi" || t.tipo === "escala") {
+      html += '<p class="pergunta">' + esc(t.pergunta(n)) + '</p>';
+      if (t.ajuda) html += '<p class="ajuda">' + esc(t.ajuda) + '</p>';
+      if (t.tipo === "escala") {
+        html += '<div class="escala">';
+        for (var q = 1; q <= 5; q++) html += '<button type="button" class="opcao" data-v="' + q + '">' + q + '</button>';
+        html += '</div><div class="escala-legenda"><span>' + esc(t.min) + '</span><span>' + esc(t.max) + '</span></div>';
+      } else {
+        html += '<div class="opcoes">';
+        var sel = st.respostas[t.id] || [];
+        var opcoes = typeof t.opcoes === "function" ? t.opcoes() : t.opcoes;
+        opcoes.forEach(function (o, k) {
+          var on = t.tipo === "multi" ? sel.indexOf(o.v) !== -1 : st.respostas[t.id] === o.v;
+          html += '<button type="button" class="opcao' + (on ? " sel" : "") + '" data-v="' + esc(o.v) + '"><span class="letra">' + "ABCDEFGH"[k] + '</span><span>' + esc(o.t) + (o.s ? '<small>' + esc(o.s) + '</small>' : '') + '</span></button>';
+        });
+        html += '</div>';
+        if (t.tipo === "multi") html += '<button type="button" class="btn btn-primary" id="continuar" ' + (sel.length ? "" : "disabled") + '>Continuar</button>';
+      }
+    } else if (t.tipo === "inter") {
+      var I = t.porNicho ? (N || NICHOS.anfitriao).inter(n) : t.conteudo(n);
+      html += '<div class="inter"><div class="carimbo">' + esc(I.carimbo) + '</div>';
+      if (I.foto) html += '<img class="foto" src="' + I.foto + '" alt="" width="760" height="1013" decoding="async">';
+      html += '<p>' + esc(I.texto) + '</p>';
+      if (I.texto2) html += '<p>' + esc(I.texto2) + '</p>';
+      if (I.fonte) html += '<p class="fonte">Fonte: ' + esc(I.fonte) + '</p>';
+      html += '<button type="button" class="btn btn-primary" id="continuar">' + esc(t.botao) + '</button></div>';
+    } else if (t.tipo === "loader") {
+      html += '<div class="loader"><div class="anel" id="anel" style="--p:0"><b id="pct">0%</b></div><p class="passo" id="passo">' + esc(t.passos[0]) + ', ' + esc(n) + '</p></div>';
+    } else if (t.tipo === "resultado") {
+      html += renderResultado();
+    }
+    tela.innerHTML = html;
+    ligar(t);
+  }
+
+  function ofertaHtml() {
+    var k = nicho() || "anfitriao", T = temp(score()), ativo = restante() > 0, n = nome();
+    var com = Math.round(PRECO * (100 - DESCONTO) / 100);
+    var h = '<div class="oferta' + (ativo ? "" : " acabou") + '" id="oferta">';
+    if (ativo) {
+      h += '<div class="eyebrow">Reservado pra você</div><h2>10% no curso, por mais</h2><div class="relogio" id="relogio">' + mmss(restante()) + '</div>';
+      h += '<p>' + esc(n) + ', o curso inteiro tem esses três molhos e os outros 40, com vídeo e ficha técnica. ' + (T === "quente" ? 'Você disse que quer resolver isso esta semana, então eu já deixei o cupom no seu link. ' : 'Enquanto o relógio corre, o cupom ' + CUPOM + ' já está no seu link. ') + 'Garantia de 7 dias. O risco é do chef.</p>';
+      h += '<div class="preco"><s>R$' + PRECO + '</s> R$' + com + ' <small style="font-family:var(--font-body);font-size:var(--text-sm);color:hsl(var(--text-muted))">ou 12x no cartão</small></div>';
+      h += '<a class="btn btn-primary" id="btn-curso" href="' + linkCheckout() + '">Quero o curso com 10%</a>';
+      h += '<p class="miudo">Cupom ' + CUPOM + ' aplicado automaticamente no checkout da Hotmart enquanto o tempo corre.</p>';
+    } else {
+      h += '<div class="eyebrow">O tempo do cupom passou</div><h2>O curso continua aqui</h2>';
+      h += '<p>' + esc(n) + ', o cupom de 10% era pra quem decidia na hora, e o tempo acabou. O curso segue a R$' + PRECO + ', ou 12x no cartão, com garantia de 7 dias. Os seus 3 molhos continuam valendo, e vão pro seu e-mail de qualquer jeito.</p>';
+      h += '<a class="btn btn-primary" id="btn-curso" href="' + linkCheckout() + '">Ver o curso</a>';
+    }
+    return h + '</div>';
+  }
+  function renderOferta() { var o = document.getElementById("oferta"); if (o) o.outerHTML = ofertaHtml(); }
+
+  function renderResultado() {
+    var k = nicho() || "anfitriao", N = NICHOS[k], P = N.perfil, L = nivel(), n = nome();
+    var prato = st.respostas.prato || "massa";
+    var um = PRIMEIRO[prato];
+    var resto = N.molhos.filter(function (x) { return x.m !== um.m; });
+    var lista = [um, resto[0], resto[1]];
+    var html = '<div class="resultado">';
+    html += '<div class="perfil"><div class="eyebrow">Seu perfil de molho, ' + esc(n) + '</div><h1>' + esc(P.nome) + '</h1><p>' + esc(P.resumo) + '</p><p class="nivel">' + esc(L.t) + '</p><img src="' + P.foto + '" alt="" width="760" height="1013" decoding="async"></div>';
+    html += '<div class="roteiro"><h2>Seus 3 primeiros molhos</h2><ol>';
+    lista.forEach(function (m, i) {
+      html += '<li><span class="n">' + (i + 1) + '</span><div><b>' + esc(m.m) + '</b><small>' + esc(m.d) + '</small></div></li>';
+    });
+    var abre = { amo: "Você ama cozinhar, então eu não vou te dar o básico. ", gosto: "Você gosta de cozinhar quando dá tempo, então os três abaixo cabem no tempo que você tem. ", precisa: "Você cozinha porque precisa, então os três abaixo resolvem sem pedir muito. ", nao: "Você não gosta de cozinhar, e tudo bem: os três abaixo são os que mais entregam por minuto no fogão. " }[st.respostas.gosta] || "";
+    html += '</ol><p class="fala">' + esc(abre) + esc(n) + ', eu escolhi esses três pensando n' + esc(PRATO_NOME[prato] || "o seu prato") + ' que você quer acertar e no tempo que você tem. Faz o primeiro até domingo. Só o primeiro. Os três vão pro seu e-mail com o módulo do curso que ensina cada um: ' + esc(P.modulos) + '.</p>';
+    html += '<a class="btn btn-primary" id="btn-molho" href="' + linkMolho() + '" style="margin-top:var(--space-5)">Abrir a receita do ' + esc(um.m.split(" ")[0].toLowerCase() === "molho" ? um.m : um.m.split(" ")[0]) + '</a></div>';
+    html += ofertaHtml();
+    html += '</div>';
+    return html;
+  }
+
+  function ligar(t) {
+    if (t.tipo === "intro") {
+      /* Só o nome. Nada vai pro Send ainda; o backup já guarda a sessão com o nome. */
+      var fn = tela.querySelector("#form-nome");
+      fn.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        if (!fn.checkValidity()) { fn.reportValidity(); return; }
+        st.lead = { nome: fn.first_name.value, email: (st.lead && st.lead.email) || "", phone: (st.lead && st.lead.phone) || "" };
+        st.iniciou = true;
+        evento("quiz_start"); evento("quiz_lead", { quiz_lead_stage: "nome" });
+        gravar(); backup("nome");
+        st.i = TELAS.findIndex(function (x) { return x.id === "gosta"; }); gravar(); render();
+      });
+      return;
+    }
+    if (t.tipo === "email") {
+      var fe = tela.querySelector("form[klicksend-form-id]");
+      tela.querySelector("[data-pergunta]").textContent = t.pergunta(nome());
+      fe.first_name.value = st.lead.nome;
+      try {
+        var u = new URL(fe.action);
+        if (nicho()) u.searchParams.set("nicho", nicho());
+        u.searchParams.set("entrada", st.entrada); u.searchParams.set("sessao", st.sessao); u.searchParams.set("etapa", "email");
+        fe.action = u.toString();
+      } catch (e) {}
+      /* O lead-form.js dispara generate_lead e Lead e envia ao iframe. Aqui: guarda o e-mail, liga o relógio, segue. */
+      fe.addEventListener("submit", function () {
+        if (!fe.checkValidity()) return;
+        st.lead.email = fe.email.value;
+        st.prazo = Date.now() + MINUTOS * 60 * 1000;
+        evento("quiz_lead", { quiz_lead_stage: "email" });
+        gravar(); tickTimer(); backup("email");
+        setTimeout(avancar, 400);
+      }, true);
+      document.dispatchEvent(new CustomEvent("saucier:popup-aberto", { detail: tela }));   /* faz o lead-form.js ligar este formulário */
+      return;
+    }
+    if (t.tipo === "tel") {
+      var ft = tela.querySelector("#form-tel");
+      tela.querySelector("[data-pergunta]").textContent = t.pergunta(nome());
+      ft.first_name.value = st.lead.nome; ft.email.value = st.lead.email || "";
+      try {
+        var u3 = new URL(ft.action);
+        if (nicho()) u3.searchParams.set("nicho", nicho());
+        u3.searchParams.set("sessao", st.sessao); u3.searchParams.set("etapa", "telefone");
+        ft.action = u3.toString();
+      } catch (e) {}
+      ft.addEventListener("submit", function () {
+        if (!ft.checkValidity()) return;
+        st.lead.phone = ft.phone.value;
+        evento("quiz_lead", { quiz_lead_stage: "telefone" });
+        gravar(); backup("telefone");
+        setTimeout(avancar, 300);   /* o POST segue pro iframe; a página não sai */
+      });
+      tela.querySelector("#pular-tel").addEventListener("click", function () {
+        evento("quiz_step", { quiz_step: "tel", quiz_answer: "pulou" });
+        backup("telefone-pulou"); avancar();
+      });
+      return;
+    }
+    var btns = tela.querySelectorAll(".opcao");
+    btns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var v = b.getAttribute("data-v");
+        if (t.tipo === "multi") {
+          var arr = st.respostas[t.id] || [];
+          var k = arr.indexOf(v);
+          if (k === -1) arr.push(v); else arr.splice(k, 1);
+          st.respostas[t.id] = arr; gravar();
+          b.classList.toggle("sel");
+          var c = document.getElementById("continuar"); if (c) c.disabled = !arr.length;
+          return;
+        }
+        st.respostas[t.id] = t.tipo === "escala" ? Number(v) : v;
+        btns.forEach(function (x) { x.classList.remove("sel"); }); b.classList.add("sel");
+        evento("quiz_step", { quiz_step: t.id, quiz_answer: String(v) });
+        gravar(); backup("resposta-" + t.id);
+        setTimeout(avancar, 180);
+      });
+    });
+    var cont = document.getElementById("continuar");
+    if (cont) cont.addEventListener("click", function () {
+      if (t.tipo === "multi") { evento("quiz_step", { quiz_step: t.id, quiz_answer: (st.respostas[t.id] || []).join("|") }); backup("resposta-" + t.id); }
+      avancar();
+    });
+    if (t.tipo === "loader") rodarLoader(t);
+    if (t.tipo === "resultado") {
+      var k = nicho() || "anfitriao", L = nivel(), S = score(), T = temp(S);
+      evento("quiz_complete", { quiz_profile: k + "-" + L.k, quiz_prato: st.respostas.prato || "", quiz_vontade: st.respostas.vontade || 0, quiz_quando: st.respostas.quando || "", quiz_score: S, quiz_temp: T, quiz_cupom: restante() > 0 ? CUPOM : "", quiz_gosta: st.respostas.gosta || "", quiz_interesses: (st.respostas.interesses || []).join("|") });
+      try { if (T === "quente" && typeof fbq === "function") fbq("trackCustom", "QuizQualifiedLead", { nicho: k, score: S }); } catch (e) {}
+      backup("resultado", { perfil: k + "-" + L.k, score: S, temp: T, prato: st.respostas.prato || "", quando: st.respostas.quando || "", vontade: st.respostas.vontade || 0, cupom: restante() > 0 ? CUPOM : "" });
+      /* Segundo envio ao Send, com o mesmo e-mail e os campos do resultado (nicho, perfil, score, temp,
+         m1..m3) na query da action. Se o Send atualizar o contato pelo e-mail, os e-mails saem com os
+         molhos certos; se não, a planilha de backup é a fonte. Uma vez só por sessão. */
+      if (st.lead && st.lead.email && !st.enviouResultado) {
+        try {
+          var r = roteiro(), f = document.createElement("form");
+          f.method = "post"; f.target = "send-frame"; f.hidden = true;
+          var u2 = new URL("https://handler.send.hotmart.com/subscription/1zuPpn4?hotfeature=53");
+          var q2 = { nicho: k, perfil: k + "-" + L.k, score: String(S), temp: T, m1: SLUG[r[0].m] || "", m2: SLUG[r[1].m] || "", m3: SLUG[r[2].m] || "", etapa: "resultado", sessao: st.sessao, gosta: st.respostas.gosta || "", interesses: (st.respostas.interesses || []).join("|") };
+          for (var qk in q2) u2.searchParams.set(qk, q2[qk]);
+          f.action = u2.toString();
+          [["email", st.lead.email], ["first_name", st.lead.nome], ["phone", st.lead.phone || ""], ["gdpr", "Concordo em receber os e-mails"], ["b_1zuPpn4", ""]].forEach(function (par) {
+            var i = document.createElement("input"); i.type = "hidden"; i.name = par[0]; i.value = par[1]; f.appendChild(i);
+          });
+          document.body.appendChild(f); f.submit(); st.enviouResultado = true; gravar();
+        } catch (e) {}
+      }
+      tela.addEventListener("click", function (ev) {
+        var a = ev.target.closest("#btn-curso"); if (!a) return;
+        a.href = linkCheckout();
+        evento("quiz_checkout", { quiz_score: S, quiz_temp: T, quiz_cupom: restante() > 0 ? CUPOM : "" });
+      });
+      tickTimer();
+    }
+  }
+
+  function rodarLoader(t) {
+    var anel = document.getElementById("anel"), pct = document.getElementById("pct"), passo = document.getElementById("passo");
+    var t0 = Date.now(), n = nome();
+    (function tick() {
+      var f = Math.min(1, (Date.now() - t0) / t.tempo);
+      var p = Math.round(f * 100);
+      anel.style.setProperty("--p", p); pct.textContent = p + "%";
+      passo.textContent = t.passos[Math.min(t.passos.length - 1, Math.floor(f * t.passos.length))] + (f < 1 ? ", " + n : "");
+      if (f < 1) requestAnimationFrame(tick); else setTimeout(avancar, 350);
+    })();
+  }
+
+  function avancar() {
+    if (st.i >= TELAS.length - 1) return;
+    st.i++;
+    if (TELAS[st.i].id === "nicho" && st.entrada !== "tela" && nicho()) st.i++;   /* a porta já veio do anúncio ou do link */
+    gravar(); render();
+  }
+  voltar.addEventListener("click", function () {
+    var piso = 1;
+    if (st.i <= piso) return;
+    st.i--;
+    while (st.i > piso && /^(loader|email|tel)$/.test(TELAS[st.i].tipo) && st.i > piso) st.i--;   /* não volta pra captura já feita */
+    gravar(); render();
+  });
+
+  /* Sem nome, o quiz começa na introdução; com nome, retoma de onde parou (e o relógio, se já começou, continua). */
+  if (!st.lead || !st.lead.nome) st.i = 0;
+  var alvo = location.hash.replace("#", "");
+  var idx = TELAS.findIndex(function (x) { return x.id === alvo; });
+  if (st.lead && st.lead.nome && idx > 0 && idx <= st.i) st.i = idx;
+  if (TELAS[st.i].tipo === "resultado" && !st.lead.email) st.i = TELAS.findIndex(function (x) { return x.id === "email"; });
+  if (TELAS[st.i].tipo === "resultado" && !st.respostas.fonte) st.i = 1;
+  if (st.prazo) tickTimer();
+  render();
+})();
+</script>
+<script src="../design-system/consent.js" defer></script>
+<script src="../design-system/lead-form.js" defer></script>
+</body>
+</html>

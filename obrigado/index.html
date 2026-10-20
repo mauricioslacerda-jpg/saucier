@@ -113,7 +113,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>Seu ebook já está aqui</h1>
     <p>10 receitas de pesto de dar água na boca, uma de cada canto do mundo, com a melhor receita de pesto da internet abrindo o ebook. Baixe agora e já separa os ingredientes do primeiro.</p>
     <a class="btn btn-primary" href="../design-system/assets/ebooks/Pesto-Pelo-Mundo-Saucier.pdf" download>Baixar o ebook agora →</a>
-    <p class="aviso">Guarde o arquivo depois de baixar — esta página não volta por link.</p>
+    <p class="aviso">Guarde o arquivo depois de baixar: esta página não volta por link.</p>
+    <p class="aviso" id="aviso-quiz" hidden></p>
   </div>
 </section>
 
@@ -142,6 +143,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'generate_lead', form_id: 'ebook-pesto', currency: 'BRL', value: 0 });
     if (typeof fbq === 'function') fbq('track', 'Lead');
+  } catch (e) {}
+  /* Quem veio do quiz (mesmo navegador) ouviu a promessa dos molhos 2 e 3 por e-mail. Aqui ela é repetida. */
+  try {
+    var q = JSON.parse(sessionStorage.getItem('saucier_quiz_lead') || 'null');
+    if (q && q.molhos) {
+      var el = document.getElementById('aviso-quiz');
+      el.textContent = 'E os molhos 2 e 3 do seu roteiro de ' + q.nome + ' (' + q.molhos.join(' e ') + ') chegam no seu e-mail em alguns minutos, com o módulo do curso que ensina cada um.';
+      el.hidden = false;
+      sessionStorage.removeItem('saucier_quiz_lead');
+    }
   } catch (e) {}
 </script>
 <script src="../design-system/consent.js" defer></script>

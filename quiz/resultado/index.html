@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#CC541C">
+<link rel="icon" type="image/png" href="../../design-system/assets/saucier-logo-laranja.png">
+
+<!-- Google Tag Manager (mesmo container do site) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRSXCBF2');</script>
+
+<title>Seu primeiro molho · Saucier</title>
+<link rel="canonical" href="https://saucier.com.br/quiz/resultado/">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../design-system/assets/fonts/bebas-neue-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../design-system/assets/fonts/inter-latin.woff2">
+<link rel="stylesheet" href="../../design-system/tokens.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { overflow-x: hidden; max-width: 100%; }
+  body { font-family: var(--font-body); background: hsl(var(--bg)); color: hsl(var(--text)); line-height: var(--leading-normal); min-height: 100dvh; }
+  body::after { content: ""; position: fixed; left: 50%; top: -120px; width: 720px; height: 420px; transform: translateX(-50%); pointer-events: none; z-index: 0; opacity: .5;
+    background: radial-gradient(260px 180px at 30% 40%, hsl(19 100% 90%) 0%, hsl(19 100% 90% / 0) 70%), radial-gradient(300px 200px at 70% 30%, hsl(19 90% 80%) 0%, hsl(19 90% 80% / 0) 70%), radial-gradient(220px 160px at 55% 75%, hsl(19 80% 60% / .55) 0%, hsl(19 80% 60% / 0) 70%);
+    filter: blur(18px); }
+  img { height: auto; display: block; max-width: 100%; }
+  h1, h2 { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking-display); line-height: var(--leading-tight); text-wrap: balance; }
+  .app { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; padding-block: var(--space-3) var(--space-16); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .vidro { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 8px); z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
+    padding: var(--space-2) var(--space-4); border-radius: 22px; margin-bottom: var(--space-8);
+    background: hsl(0 0% 100% / .10); -webkit-backdrop-filter: blur(12px) saturate(1.3); backdrop-filter: blur(12px) saturate(1.3); border: 1px solid hsl(0 0% 100% / .55);
+    box-shadow: 0 2px 4px hsl(0 0% 0% / .08), 0 2px 8px hsl(0 0% 0% / .06), inset 0 0 8px hsl(0 0% 63% / .25), inset -2px -2px 4px hsl(0 0% 100% / .9), inset 2px 2px .5px hsl(0 0% 100% / .5); }
+  @supports not (backdrop-filter: blur(1px)) { .vidro { background: hsl(var(--bg) / .92); } }
+  .vidro img { width: 84px; }
+  .timer { display: none; align-items: center; gap: 6px; font-size: var(--text-xs); font-weight: 800; color: hsl(var(--orange-700)); background: hsl(0 0% 100% / .45); border: 1px solid hsl(0 0% 100% / .8); border-radius: var(--radius-pill); padding: 6px 10px; font-variant-numeric: tabular-nums; }
+  .timer.on { display: inline-flex; } .timer.acabou { color: hsl(var(--text-subtle)); }
+  .eyebrow { font-size: var(--text-xs); font-weight: 800; text-transform: uppercase; letter-spacing: var(--tracking-wide); color: hsl(var(--brand)); margin-bottom: var(--space-3); }
+  h1 { font-size: clamp(2.2rem, 7vw, 3rem); margin-bottom: var(--space-3); }
+  p.fala { font-size: var(--text-base); margin-bottom: var(--space-4); max-width: 60ch; }
+  p.fala:last-child { margin-bottom: 0; }
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); align-items: center; margin-bottom: var(--space-6); }
+  .hero > div { min-width: 0; }
+  @media (min-width: 560px) { .hero { grid-template-columns: minmax(0, 1fr) 200px; } }
+  .hero img { border-radius: var(--radius-lg); border: 6px solid hsl(var(--neutral-0)); box-shadow: var(--shadow-lg); transform: rotate(2deg); max-width: 220px; margin: 0 auto; }
+  .card { background: hsl(var(--surface)); border: 1px solid hsl(var(--border)); border-radius: var(--radius-xl); padding: var(--space-6); margin-bottom: var(--space-6); min-width: 0; overflow-wrap: anywhere; }
+  .card h2 { font-size: var(--text-2xl); margin-bottom: var(--space-3); }
+  .card h2 + h2, .card ol + h2 { margin-top: var(--space-2); }
+  .card ul, .card ol { padding-left: 1.2em; display: grid; gap: var(--space-2); margin-bottom: var(--space-4); }
+  .card li { line-height: 1.45; }
+  .card .link { display: inline-block; font-weight: 700; color: hsl(var(--brand)); }
+  .dois { display: grid; gap: var(--space-6); grid-template-columns: minmax(0, 1fr); margin-bottom: var(--space-6); }
+  @media (min-width: 560px) { .dois { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .mini { background: hsl(var(--bg-subtle)); border-radius: var(--radius-xl); padding: var(--space-6); min-width: 0; overflow-wrap: anywhere; display: flex; flex-direction: column; gap: var(--space-2); }
+  .mini .n { font-family: var(--font-display); font-size: var(--text-2xl); color: hsl(var(--brand)); line-height: 1; }
+  .mini b { display: block; }
+  .mini small { color: hsl(var(--text-muted)); display: block; flex: 1; }
+  .mini a { font-weight: 700; color: hsl(var(--brand)); font-size: var(--text-sm); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 56px; padding: var(--space-3) var(--space-8); border-radius: var(--radius-pill); border: 1px solid transparent; font-weight: 700; cursor: pointer; text-decoration: none; }
+  .btn-primary { background: hsl(var(--brand)); color: hsl(var(--text-on-brand)); box-shadow: var(--shadow-brand); }
+  .btn-primary:hover { background: hsl(var(--brand-hover)); }
+  .oferta { background: hsl(var(--neutral-0)); border: 1px solid hsl(var(--orange-200)); border-radius: var(--radius-xl); padding: var(--space-6); margin-bottom: var(--space-6); box-shadow: var(--shadow-brand); position: relative; overflow: hidden; }
+  .oferta::before { content: ""; position: absolute; inset: auto -40px -60px auto; width: 180px; height: 180px; border-radius: 50%; background: hsl(19 100% 90% / .6); filter: blur(24px); pointer-events: none; }
+  .oferta > * { position: relative; }
+  .oferta h2 { font-size: var(--text-2xl); margin-bottom: var(--space-2); }
+  .oferta .relogio { font-family: var(--font-display); font-size: var(--text-4xl); color: hsl(var(--brand)); line-height: 1; margin-bottom: var(--space-3); font-variant-numeric: tabular-nums; }
+  .oferta p { font-size: var(--text-sm); margin-bottom: var(--space-4); }
+  .oferta .preco { font-family: var(--font-display); font-size: var(--text-2xl); margin-bottom: var(--space-4); }
+  .oferta .preco s { color: hsl(var(--text-subtle)); font-size: var(--text-lg); margin-right: var(--space-2); }
+  .oferta.acabou { border-color: hsl(var(--border)); box-shadow: none; } .oferta.acabou::before { display: none; }
+  .miudo { font-size: var(--text-xs); color: hsl(var(--text-subtle)); margin-top: var(--space-3); }
+  footer { text-align: center; padding-top: var(--space-12); color: hsl(var(--text-subtle)); font-size: var(--text-xs); }
+  footer a { color: hsl(var(--text-muted)); }
+  #cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; background: hsl(var(--neutral-900)); color: hsl(var(--neutral-50)); padding: var(--space-4) var(--space-6); display: flex; align-items: center; justify-content: center; gap: var(--space-6); flex-wrap: wrap; transform: translateY(100%); transition: transform var(--dur-base) var(--ease); font-size: var(--text-xs); }
+  #cookie-banner.show { transform: translateY(0); }
+  #cookie-banner p { margin: 0; max-width: 640px; color: hsl(var(--neutral-300)); }
+  #cookie-banner .cookie-actions { display: flex; gap: var(--space-3); flex: none; }
+  #cookie-banner button { cursor: pointer; border-radius: var(--radius-pill); padding: var(--space-2) var(--space-6); border: 1px solid hsl(var(--neutral-50) / .3); background: transparent; color: hsl(var(--neutral-50)); font-weight: 700; }
+  #cookie-banner .cookie-accept { background: hsl(var(--brand)); border-color: hsl(var(--brand)); }
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRSXCBF2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="app">
+  <div class="vidro">
+    <a href="/"><img src="../../design-system/assets/saucier-logo-laranja.webp" alt="Saucier" width="1182" height="756" decoding="async"></a>
+    <span class="timer" id="timer"><span>10% reservado</span><b id="timer-num">15:00</b></span>
+  </div>
+  <main id="tela"></main>
+  <footer>
+    <p>© Saucier Molhos Artesanais. Por uma vida com mais tempero 🌱</p>
+    <p><a href="/">saucier.com.br</a> · <a href="/curso/">o curso</a> · <a href="/blog/">blog</a></p>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   PÁGINA DO MOLHO PRINCIPAL (/quiz/resultado/)
+   Destino do quiz e dos e-mails. Lê tudo da URL, então o link do e-mail
+   funciona em qualquer aparelho:
+     ?m=<molho 1>&m2=<molho 2>&m3=<molho 3>&nicho=<porta>&nome=<nome>&ate=<timestamp do cupom>&temp=<quente|morno|frio>
+   Sem parâmetros, mostra o pesto e manda pro quiz.
+   Receitas completas, com medidas, ficam nos posts do blog; aqui é a
+   porta de entrada e o cupom. Nota: quiz-v4-conversa-e-timer-2026-10-16.md
+   ============================================================ */
+(function () {
+  "use strict";
+  var CHECKOUT = "https://pay.hotmart.com/H70087725N?src=quiz-resultado";
+  var CUPOM = "QUIZ10", DESCONTO = 10, PRECO = 290;
+  var IMG = "../../design-system/assets/produtos/", FOTO = "../../design-system/assets/fotos/";
+  var MOLHOS = {
+    "pesto": { nome: "Pesto tradicional", foto: IMG + "pesto.webp", post: "../../blog/melhor-receita-pesto-tradicional/", modulo: "Molhos Verdes",
+      fala: "É o molho que mais vendi na vida, mais de 2.000 potes, e o que mais faz gente pedir a receita. Não vai ao fogo: bate e está pronto antes de a massa cozinhar.",
+      leva: ["Manjericão fresco, folha a folha", "Azeite de oliva", "Queijo parmesão", "Castanha ou pinoli", "Alho e sal"],
+      passos: ["Bata o manjericão com o azeite primeiro, pra não amargar.", "Entre com o queijo e a castanha, pulsando: pesto é textura, não creme.", "Alho e sal no fim, provando. Guarde com uma camada de azeite por cima."] },
+    "chimichurri": { nome: "Chimichurri autêntico", foto: IMG + "chimi.webp", post: "../../blog/chimichurri-autentico/", modulo: "Molhos Verdes",
+      fala: "Azeite, ervas, alho, vinagre e sal. Cinco coisas que você conhece pelo nome, nenhum açúcar, e qualquer carne de frigideira vira churrasco de domingo.",
+      leva: ["Salsa e orégano", "Alho", "Vinagre", "Azeite", "Pimenta e sal"],
+      passos: ["Pique as ervas na faca, não no liquidificador: chimichurri é picado, não batido.", "Alho, vinagre, sal e pimenta primeiro; o azeite por último.", "Descansa uma hora antes de servir. Dura a semana na geladeira coberto de azeite."] },
+    "hollandaise": { nome: "Hollandaise sem talhar", foto: IMG + "pesto-azeitona.webp", post: "../../blog/molho-hollandaise-sem-talhar/", modulo: "Emulsões",
+      fala: "A emulsão que assusta todo mundo. Gema, manteiga clarificada e limão. Sai certa quando você entende a temperatura, e é o que vira o assunto do jantar.",
+      leva: ["Gemas", "Manteiga clarificada", "Limão", "Sal"],
+      passos: ["Bata as gemas em banho-maria, fogo baixo, até clarear e engrossar.", "Manteiga morna em fio fino, sem parar de bater.", "Limão e sal no fim. Se começar a talhar, uma colher de água morna batida com força recupera."] },
+    "maionese": { nome: "Maionese caseira sem desandar", foto: IMG + "temperovovo.webp", post: "../../blog/maionese-caseira-sem-desandar/", modulo: "Emulsões",
+      fala: "Um ovo, óleo e braço. Sem conservante, e dela saem uma dúzia de molhos frios, da salada ao sanduíche.",
+      leva: ["Gema", "Óleo", "Limão ou vinagre", "Mostarda", "Sal"],
+      passos: ["Tudo em temperatura ambiente: gema gelada com óleo morno desanda.", "Óleo em fio bem fino até a emulsão pegar; só depois acelere.", "Ácido e sal no fim. Faça pouco e faça de novo: dura dois dias."] },
+    "ketchup": { nome: "Ketchup sem conservante", foto: IMG + "goiabada.webp", post: "../../blog/ketchup-caseiro-sem-conservante/", modulo: "Atomatados",
+      fala: "Tomate, vinagre, açúcar e sal. Quatro nomes, e você escreve o rótulo. Seu hambúrguer nunca mais foi o mesmo.",
+      leva: ["Tomate", "Vinagre", "Açúcar", "Sal", "Especiarias a gosto"],
+      passos: ["Cozinhe o tomate em fogo baixo até concentrar.", "Vinagre, açúcar e sal, provando a cada vez: o ponto é o seu.", "Bata, peneire se quiser liso, e guarde em vidro esterilizado."] },
+    "mostarda": { nome: "Mostarda caseira", foto: IMG + "temperodochef.webp", post: "../../blog/mostarda-caseira/", modulo: "Picantes",
+      fala: "Dois ingredientes e três dias. Dura semanas e muda a quarta-feira inteira.", leva: ["Semente de mostarda", "Vinagre", "Sal"],
+      passos: ["Deixe a semente de molho no vinagre por dois ou três dias.", "Bata até a textura que você gosta.", "Sal, e descansa: a mostarda nova é mais forte; acalma em uma semana."] },
+    "vinagrete": { nome: "Vinagrete de verdade", foto: IMG + "chimi.webp", post: "../../blog/molhos-mae-guia-completo/", modulo: "Emulsões",
+      fala: "Proporção, não chute: três de azeite pra uma de ácido, e o resto é gosto.", leva: ["Azeite", "Limão ou vinagre", "Sal", "Erva ou cebola a gosto"],
+      passos: ["Ácido e sal primeiro, pra dissolver.", "Azeite aos poucos, batendo com garfo.", "Prove e corrija: o seu vinagrete é o que a sua salada pede."] },
+    "molho-de-tomate": { nome: "Molho de tomate caseiro", foto: IMG + "goiabada.webp", post: "../../blog/molho-de-tomate-caseiro/", modulo: "Atomatados",
+      fala: "A base que resolve massa, pizza e berinjela com a mesma panela. Tudo que você refoga junto vai dentro.", leva: ["Tomate", "Cebola e alho", "Azeite", "Sal"],
+      passos: ["Refogue cebola e alho no azeite, sem dourar.", "Tomate, fogo baixo, tempo: o sabor vem de concentrar.", "Corrija a acidez no cozimento, não com açúcar. Congela por três meses."] },
+    "pimenta-fermentada": { nome: "Pimenta fermentada", foto: IMG + "abacaxi.webp", post: "../../blog/molho-de-pimenta-fermentado/", modulo: "Fermentação de Pimentas (bônus)",
+      fala: "Conservação por acidez, sem química, com a picância que você quiser.", leva: ["Pimenta", "Sal", "Água"],
+      passos: ["Pimenta limpa, salmoura na proporção certa, pimenta submersa.", "Fermenta longe da luz; você vê bolha e sente o cheiro ácido.", "Bata e guarde. O bônus do curso ensina a proporção e os sinais."] },
+    "bechamel": { nome: "Béchamel sem embolar", foto: IMG + "temperovovo.webp", post: "../../blog/molho-bechamel-sem-embolar/", modulo: "Molhos Brancos",
+      fala: "Molho-mãe branco. Dele saem o gratinado, a lasanha e o molho de queijo.", leva: ["Manteiga", "Farinha", "Leite", "Sal e noz-moscada"],
+      passos: ["Manteiga e farinha em partes iguais, cozidas até perder o cheiro de cru.", "Leite aos poucos, sempre mexendo.", "Sal e noz-moscada. Filme encostado na superfície pra guardar."] },
+    "molho-escuro": { nome: "Molho escuro de panela", foto: IMG + "pesto-azeitona.webp", post: "../../blog/demi-glace-molho-mais-respeitado/", modulo: "Molhos Escuros",
+      fala: "Fundo, redução e manteiga: o molho de restaurante feito com o que sobrou na frigideira.", leva: ["O fundo da frigideira da carne", "Líquido (água, vinho ou caldo)", "Manteiga gelada", "Sal"],
+      passos: ["Tirou a carne? Líquido na frigideira quente e raspe o fundo.", "Reduza até encorpar.", "Manteiga gelada no fim, fora do fogo, girando a panela. Dois minutos."] }
+  };
+  var NICHO_NOME = { fitness: "treino e proteína", saude: "rótulo limpo", criancas: "jantar com criança", rotina: "marmita da semana", facilidade: "jantar rápido", anfitriao: "receber gente" };
+
+  var p; try { p = new URLSearchParams(location.search); } catch (e) { p = new URLSearchParams(); }
+  var m1 = MOLHOS[p.get("m")] ? p.get("m") : "pesto", m2 = MOLHOS[p.get("m2")] ? p.get("m2") : "", m3 = MOLHOS[p.get("m3")] ? p.get("m3") : "";
+  var nicho = NICHO_NOME[p.get("nicho")] ? p.get("nicho") : "", temp = p.get("temp") || "";
+  var nome = (p.get("nome") || "").trim().split(/\s+/)[0]; nome = nome ? nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase() : "meu broto";
+  var ate = Number(p.get("ate")) || 0;
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function restante() { return Math.max(0, ate - Date.now()); }
+  function mmss(ms) { var s = Math.ceil(ms / 1000); return (s / 60 | 0) + ":" + ("0" + (s % 60)).slice(-2); }
+  function linkCheckout() { return CHECKOUT + (nicho ? "&sck=" + nicho : "") + (restante() > 0 ? "&off=" + CUPOM : ""); }
+
+  var M = MOLHOS[m1];
+  var html = '<div class="eyebrow">Seu primeiro molho' + (nicho ? ", porta " + esc(NICHO_NOME[nicho]) : "") + '</div>';
+  html += '<div class="hero"><div><h1>' + esc(M.nome) + '</h1><p class="fala">' + esc(nome) + ', ' + esc(M.fala.charAt(0).toLowerCase() + M.fala.slice(1)) + '</p><p class="fala">Faz esse até domingo. Só esse. Os outros dois ficam logo abaixo, e a receita completa, com medidas, está no blog.</p></div><img src="' + M.foto + '" alt="" width="760" height="1013" decoding="async"></div>';
+  html += '<div class="card"><h2>O que leva</h2><ul>' + M.leva.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join("") + '</ul><h2>Como eu faço</h2><ol>' + M.passos.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join("") + '</ol><a class="link" href="' + M.post + '">Receita completa, com medidas, no blog →</a><p class="miudo">No curso, esse molho fica no módulo ' + esc(M.modulo) + '.</p></div>';
+  if (m2 || m3) {
+    html += '<div class="dois">';
+    [m2, m3].forEach(function (k, i) { if (!k) return; var X = MOLHOS[k]; html += '<div class="mini"><div class="n">' + (i + 2) + '</div><b>' + esc(X.nome) + '</b><small>' + esc(X.fala) + '</small><a href="' + X.post + '">Ver a receita →</a></div>'; });
+    html += '</div>';
+  } else {
+    html += '<div class="card"><h2>Quer os outros dois?</h2><p class="fala">O quiz da Saucier pergunta pra que você cozinha e devolve os 3 molhos certos pro seu caso, em dois minutos.</p><a class="btn btn-primary" href="../">Descobrir meus 3 molhos</a></div>';
+  }
+  var com = Math.round(PRECO * (100 - DESCONTO) / 100);
+  if (ate) {
+    if (restante() > 0) {
+      html += '<div class="oferta" id="oferta"><div class="eyebrow">Reservado pra você</div><h2>10% no curso, por mais</h2><div class="relogio" id="relogio">' + mmss(restante()) + '</div><p>' + esc(nome) + ', o curso inteiro tem esses três molhos e os outros 40, com vídeo e ficha técnica. Enquanto o relógio corre, o cupom ' + CUPOM + ' já está no seu link. Garantia de 7 dias. O risco é do chef.</p><div class="preco"><s>R$' + PRECO + '</s> R$' + com + '</div><a class="btn btn-primary" id="btn-curso" href="' + linkCheckout() + '">Quero o curso com 10%</a><p class="miudo">Cupom aplicado automaticamente no checkout da Hotmart enquanto o tempo corre.</p></div>';
+    } else {
+      html += '<div class="oferta acabou" id="oferta"><div class="eyebrow">O tempo do cupom passou</div><h2>O curso continua aqui</h2><p>' + esc(nome) + ', o cupom de 10% era pra quem decidia na hora. O curso segue a R$' + PRECO + ', ou 12x no cartão, com garantia de 7 dias.</p><a class="btn btn-primary" id="btn-curso" href="' + linkCheckout() + '">Ver o curso</a></div>';
+    }
+  } else {
+    html += '<div class="oferta acabou" id="oferta"><h2>O curso tem esse e os outros 40</h2><p>10 módulos e 2 bônus, com vídeo e ficha técnica de cada molho. R$' + PRECO + ', ou 12x no cartão, garantia de 7 dias. O risco é do chef.</p><a class="btn btn-primary" id="btn-curso" href="' + linkCheckout() + '">Ver o curso</a></div>';
+  }
+  document.getElementById("tela").innerHTML = html;
+
+  var timerEl = document.getElementById("timer"), timerNum = document.getElementById("timer-num");
+  (function tick() {
+    if (!ate) return;
+    var r = restante(); timerEl.classList.add("on"); timerNum.textContent = r > 0 ? mmss(r) : "0:00"; timerEl.classList.toggle("acabou", r <= 0);
+    timerEl.querySelector("span").textContent = r > 0 ? "10% reservado" : "cupom expirou";
+    var rel = document.getElementById("relogio"); if (rel) rel.textContent = r > 0 ? mmss(r) : "0:00";
+    var b = document.getElementById("btn-curso"); if (b) b.href = linkCheckout();
+    if (r <= 0) { var o = document.getElementById("oferta"); if (o && !o.classList.contains("acabou")) { o.classList.add("acabou"); o.querySelector("h2").textContent = "O tempo do cupom passou"; o.querySelector("p").textContent = nome + ", o cupom de 10% era pra quem decidia na hora. O curso segue a R$" + PRECO + ", ou 12x no cartão, com garantia de 7 dias."; b.textContent = "Ver o curso"; } return; }
+    setTimeout(tick, 250);
+  })();
+  try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: "quiz_resultado_view", quiz_nicho: nicho, quiz_m1: m1, quiz_temp: temp, quiz_cupom: restante() > 0 ? CUPOM : "" }); } catch (e) {}
+  document.addEventListener("click", function (ev) { var a = ev.target.closest("#btn-curso"); if (!a) return; try { window.dataLayer.push({ event: "quiz_checkout", quiz_nicho: nicho, quiz_temp: temp, quiz_cupom: restante() > 0 ? CUPOM : "", quiz_origem: "resultado" }); } catch (e) {} });
+})();
+</script>
+<script src="../../design-system/consent.js" defer></script>
+</body>
+</html>
